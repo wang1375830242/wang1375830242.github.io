@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-02-20T12:45:56.525Z</updated>
+  <updated>2020-02-21T02:37:26.701Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo 常用命令</title>
+    <link href="/2020/02/21/Hexo-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>/2020/02/21/Hexo-常用命令/</id>
+    <published>2020-02-21T02:22:16.000Z</published>
+    <updated>2020-02-21T02:37:26.701Z</updated>
+    
+    <summary type="html">
+    
+      Hexo 比较常用的命令
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>测试，我的第一篇文章</title>
