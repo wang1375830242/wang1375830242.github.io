@@ -47,6 +47,10 @@
 
   /*End of Initial Variables*/
   </script>
+  <!--自定义看板娘-->
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="/live2d-widget/autoload.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
   <script type="text/javascript">
   var bg = "http://47.107.231.6/wordpress/wp-content/uploads/2020/02/アズールレーン_63069334.jpg,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/wallhaven-672007-1.png,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/pixiv57793944.png,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/fleurir-PID66213177-by-アシマ@3日目東ラ39b.png,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/｡･：＊：･✿-PID65231071-by-hakusai.jpg,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/r63888719_by__LM7_-scaled.jpg,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/308827.jpg,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/ETpv24.jpg,".split(",");
   var bgindex = Math.floor(Math.random()*bg.length);
@@ -482,6 +486,30 @@ $(document).ready(function() {
       </div>
     </div>
   </section>
+    <!-- ʵ�ֻ������� -->
+  <div class="skin-menu no-select" id="mainskin" style="position: fixed">
+ <div class="theme-controls row-container">
+  <ul class="menu-list">
+   <li id="white-bg"> <i class="fa fa-television" aria-hidden="true"></i></li>
+   <li id="sakura-bg"> <i class="iconfont icon-sakura"></i></li>
+   <li id="gribs-bg"> <i class="fa fa-slack" aria-hidden="true"></i></li>
+   <li id="KAdots-bg"> <i class="iconfont icon-dots"></i></li>
+   <li id="totem-bg"> <i class="fa fa-optin-monster" aria-hidden="true"></i></li>
+   <li id="pixiv-bg"> <i class="iconfont icon-pixiv"></i></li>
+   <li id="bing-bg"> <i class="iconfont icon-bing"></i></li>
+   <li id="dark-bg"> <i class="fa fa-moon-o" aria-hidden="true"></i></li>
+  </ul>
+ </div>
+</div>
+<canvas id="night-mode-cover"></canvas> 
+  <div class="changeSkin-gear no-select">
+  <div class="keys" id="setbtn"> 
+   <span id="open-skinMenu"> 切换主题 | SCHEME TOOL  
+     <i class="iconfont icon-gear inline-block rotating"></i> 
+   </span>
+  </div>
+</div>
+  
   <div id="mo-nav" class="">
   <div class="m-avatar">
     <img src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/8972361_tiny.th_.jpg">
@@ -689,5 +717,5 @@ $(document).ready(function() {
     })
   });
 </script>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
