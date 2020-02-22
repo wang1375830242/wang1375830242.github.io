@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/https://www.sakura521.cn/bangumi/index.html</loc>
+    
+    <lastmod>2020-02-22T14:19:07.207Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>/https://www.sakura521.cn/2020/02/21/live-2d-%E7%9C%8B%E6%9D%BF%E5%A8%98/</loc>
     
     <lastmod>2020-02-21T06:17:05.499Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>/https://www.sakura521.cn/music/index.html</loc>
     
     <lastmod>2020-02-20T13:04:38.052Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/https://www.sakura521.cn/bangumi/index.html</loc>
-    
-    <lastmod>2020-02-20T12:57:00.324Z</lastmod>
     
   </url>
   
@@ -58,28 +58,14 @@
   </url>
   
   <url>
-    <loc>/https://www.sakura521.cn/client/index.html</loc>
-    
-    <lastmod>2019-11-16T09:29:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/https://www.sakura521.cn/about/index.html</loc>
-    
-    <lastmod>2019-11-16T09:29:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/https://www.sakura521.cn/donate/index.html</loc>
-    
-    <lastmod>2019-11-16T09:29:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>/https://www.sakura521.cn/comment/index.html</loc>
+    
+    <lastmod>2019-11-16T09:29:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/https://www.sakura521.cn/client/index.html</loc>
     
     <lastmod>2019-11-16T09:29:49.000Z</lastmod>
     
@@ -93,28 +79,21 @@
   </url>
   
   <url>
+    <loc>/https://www.sakura521.cn/donate/index.html</loc>
+    
+    <lastmod>2019-11-16T09:29:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/https://www.sakura521.cn/about/index.html</loc>
+    
+    <lastmod>2019-11-16T09:29:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>/https://www.sakura521.cn/rss/index.html</loc>
-    
-    <lastmod>2019-11-16T09:29:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/https://www.sakura521.cn/links/index.html</loc>
-    
-    <lastmod>2019-11-16T09:29:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/https://www.sakura521.cn/tags/index.html</loc>
-    
-    <lastmod>2019-11-16T09:29:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/https://www.sakura521.cn/scaffolds/draft.html</loc>
     
     <lastmod>2019-11-16T09:29:49.000Z</lastmod>
     
@@ -128,7 +107,7 @@
   </url>
   
   <url>
-    <loc>/https://www.sakura521.cn/scaffolds/page.html</loc>
+    <loc>/https://www.sakura521.cn/scaffolds/draft.html</loc>
     
     <lastmod>2019-11-16T09:29:49.000Z</lastmod>
     
@@ -136,6 +115,27 @@
   
   <url>
     <loc>/https://www.sakura521.cn/theme-sakura/index.html</loc>
+    
+    <lastmod>2019-11-16T09:29:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/https://www.sakura521.cn/links/index.html</loc>
+    
+    <lastmod>2019-11-16T09:29:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/https://www.sakura521.cn/scaffolds/page.html</loc>
+    
+    <lastmod>2019-11-16T09:29:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/https://www.sakura521.cn/tags/index.html</loc>
     
     <lastmod>2019-11-16T09:29:49.000Z</lastmod>
     
