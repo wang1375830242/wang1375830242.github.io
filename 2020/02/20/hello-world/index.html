@@ -60,14 +60,24 @@
   }
   </script>
   
-  <!--  樱花飘落效果 -->
-  <!--   -->
-  <script type="text/javascript">
-  var windowWidth = $(window).width(); 
-  if (windowWidth > 768) { 
-  document.write('<script type="text/javascript" src="/js/sakura.js"></script>
-   
-<!--   -->
+  <!--百度的自动推送-->
+  
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+ 
+
 
   <style type="text/css">
   .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
@@ -407,9 +417,9 @@
           
             <div class="post-nepre half next">
           
-            <a href="/2018/12/12/Hexo-Theme-Sakura - 副本/" rel="next">
+            <a href="/2018/12/12/Hexo-Theme-Sakura/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/8BE1BC16-9159-45EC-AE4D-9C88CB96DB6E.jpeg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/8BE1BC16-9159-45EC-AE4D-9C88CB96DB6E.jpeg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/pixiv57793944.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/pixiv57793944.png">
               </div>
               <span class="label">
               Next Post</span>
@@ -504,7 +514,8 @@
     </div>
     <div class="footer-device">
     <p style="font-family: 'Ubuntu', sans-serif;">
-        <span style="color: #b9b9b9;">Theme <a href="https://www.sakura521.cn" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i>, 备案/许可证编号为：冀ICP备20003003号</a>
+        <span style="color: #b9b9b9;">Theme <a href="https://www.sakura521.cn" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> 
+		备案/许可证编号为：冀ICP备20003003号</a>
         </span>
 		</br><span id="sitetime"></span>
       </p>

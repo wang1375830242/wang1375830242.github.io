@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="/"/>
+  <link href="http://yoursite.com/"/>
   <updated>2020-02-21T06:17:05.499Z</updated>
-  <id>/</id>
+  <id>http://yoursite.com/</id>
   
   <author>
     <name>小坏孩</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>live 2d 看板娘 官方文档</title>
-    <link href="/2020/02/21/live-2d-%E7%9C%8B%E6%9D%BF%E5%A8%98/"/>
-    <id>/2020/02/21/live-2d-看板娘/</id>
+    <link href="http://yoursite.com/2020/02/21/live-2d-%E7%9C%8B%E6%9D%BF%E5%A8%98/"/>
+    <id>http://yoursite.com/2020/02/21/live-2d-看板娘/</id>
     <published>2020-02-21T06:17:16.000Z</published>
     <updated>2020-02-21T06:17:05.499Z</updated>
     
@@ -29,15 +29,15 @@
     
     </summary>
     
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
   
   <entry>
     <title>Hexo 常用命令</title>
-    <link href="/2020/02/21/Hexo-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>/2020/02/21/Hexo-常用命令/</id>
+    <link href="http://yoursite.com/2020/02/21/Hexo-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2020/02/21/Hexo-常用命令/</id>
     <published>2020-02-21T02:22:16.000Z</published>
     <updated>2020-02-21T02:37:26.701Z</updated>
     
@@ -47,15 +47,15 @@
     
     </summary>
     
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
   
   <entry>
     <title>测试，我的第一篇文章</title>
-    <link href="/2020/02/20/%E6%B5%8B%E8%AF%95%EF%BC%8C%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-    <id>/2020/02/20/测试，我的第一篇文章/</id>
+    <link href="http://yoursite.com/2020/02/20/%E6%B5%8B%E8%AF%95%EF%BC%8C%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+    <id>http://yoursite.com/2020/02/20/测试，我的第一篇文章/</id>
     <published>2020-02-20T12:15:44.000Z</published>
     <updated>2020-02-20T12:45:56.525Z</updated>
     
@@ -65,19 +65,19 @@
     
     </summary>
     
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="web" scheme="/tags/web/"/>
+      <category term="web" scheme="http://yoursite.com/tags/web/"/>
     
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+      <category term="悦读" scheme="http://yoursite.com/tags/%E6%82%A6%E8%AF%BB/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="/2020/02/20/hello-world/"/>
-    <id>/2020/02/20/hello-world/</id>
+    <link href="http://yoursite.com/2020/02/20/hello-world/"/>
+    <id>http://yoursite.com/2020/02/20/hello-world/</id>
     <published>2020-02-20T08:13:25.127Z</published>
     <updated>2020-02-20T12:47:05.627Z</updated>
     
@@ -98,30 +98,8 @@
   
   <entry>
     <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura - 副本/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2020-02-20T12:47:47.722Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura/</id>
+    <link href="http://yoursite.com/2018/12/12/Hexo-Theme-Sakura/"/>
+    <id>http://yoursite.com/2018/12/12/Hexo-Theme-Sakura/</id>
     <published>2018-12-12T14:16:01.000Z</published>
     <updated>2020-02-20T12:46:28.478Z</updated>
     
@@ -131,12 +109,34 @@
     
     </summary>
     
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="web" scheme="/tags/web/"/>
+      <category term="web" scheme="http://yoursite.com/tags/web/"/>
     
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+      <category term="悦读" scheme="http://yoursite.com/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo-Theme-Sakura</title>
+    <link href="http://yoursite.com/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC/"/>
+    <id>http://yoursite.com/2018/12/12/Hexo-Theme-Sakura - 副本/</id>
+    <published>2018-12-12T14:16:01.000Z</published>
+    <updated>2020-02-20T12:47:47.722Z</updated>
+    
+    <summary type="html">
+    
+      hexo-sakura主题使用教程
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="web" scheme="http://yoursite.com/tags/web/"/>
+    
+      <category term="悦读" scheme="http://yoursite.com/tags/%E6%82%A6%E8%AF%BB/"/>
     
   </entry>
   
