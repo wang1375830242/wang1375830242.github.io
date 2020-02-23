@@ -69,11 +69,11 @@ function bot_ui_ini() {
             }).then(function () {
                 botui.message.add({
                     delay: 1500,
-                    content: "向往技术却误入商科，但后来喜欢上了经济学…"
+                    content: "选的软件工程专业"
                 }).then(function () {
                     botui.message.add({
                         delay: 1200,
-                        content: "因为数据分析也需要Coder嘛"
+                        content: "向往技术，所以还加入项目组学习一些新的技术"
                     }).then(function () {
                         botui.message.add({
                             delay: 1500,
