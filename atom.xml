@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/https://www.sakura521.cn/"/>
-  <updated>2020-02-26T08:42:13.910Z</updated>
+  <updated>2020-02-27T07:39:14.757Z</updated>
   <id>/https://www.sakura521.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java泛型 学习笔记</title>
+    <link href="/https://www.sakura521.cn/2020/02/27/Java%E6%B3%9B%E5%9E%8B-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>/https://www.sakura521.cn/2020/02/27/Java泛型-学习笔记/</id>
+    <published>2020-02-27T06:26:22.000Z</published>
+    <updated>2020-02-27T07:39:14.757Z</updated>
+    
+    <summary type="html">
+    
+      Java泛型
+    
+    </summary>
+    
+      <category term="技术" scheme="/https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="技术" scheme="/https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="java" scheme="/https://www.sakura521.cn/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>Java8 Lambda表达式 学习笔记</title>
@@ -65,7 +87,7 @@
     <link href="/https://www.sakura521.cn/2020/02/25/Java-%E9%AB%98%E7%BA%A7for%E5%BE%AA%E7%8E%AF-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>/https://www.sakura521.cn/2020/02/25/Java-高级for循环-学习笔记/</id>
     <published>2020-02-25T07:05:34.000Z</published>
-    <updated>2020-02-25T07:32:53.352Z</updated>
+    <updated>2020-02-26T07:05:38.825Z</updated>
     
     <summary type="html">
     

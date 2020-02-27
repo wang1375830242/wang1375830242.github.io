@@ -22,7 +22,7 @@ function bot_ui_ini() {
     var botui = new BotUI("hello-mashiro")
     botui.message.add({
         delay: 800,
-        content: "Hi, there👋"
+        content: "Hi👋"
     }).then(function () {
         botui.message.add({
             delay: 1100,
@@ -69,11 +69,11 @@ function bot_ui_ini() {
             }).then(function () {
                 botui.message.add({
                     delay: 1500,
-                    content: "向往技术却误入商科，但后来喜欢上了经济学…"
+                    content: "向往计算机所以进入了软件工程专业。"
                 }).then(function () {
                     botui.message.add({
                         delay: 1200,
-                        content: "因为数据分析也需要Coder嘛"
+                        content: "并且也加入了学校的项目组进行学习。"
                     }).then(function () {
                         botui.message.add({
                             delay: 1500,
@@ -81,7 +81,7 @@ function bot_ui_ini() {
                         }).then(function () {
                             botui.message.add({
                                 delay: 1500,
-                                content: "研究的方向没有"
+                                content: "没有什么主要的研究的方向"
                             }).then(function () {
                                 botui.message.add({
                                     delay: 1800,
