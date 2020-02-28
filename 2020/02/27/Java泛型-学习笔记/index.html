@@ -545,8 +545,7 @@ public class Point&lt;T&gt; {
         this.x = x;
     }
 </code></pre>
-<p>(3)、 使用泛型类</p>
-<p>用法：</p>
+<h3 id="（3）、-使用泛型类"><a href="#（3）、-使用泛型类" class="headerlink" title="（3）、 使用泛型类"></a>（3）、 使用泛型类</h3><p>用法：</p>
 <pre><code class="java">        Point&lt;Integer&gt; pointInt = new Point&lt;&gt;();
         pointInt.setX(new Integer(100));
         System.out.println(pointInt.getX());
@@ -568,6 +567,100 @@ public class Point&lt;T&gt; {
         Point&lt;Float&gt; floatPoint = new Point&lt;&gt;();
 </code></pre>
 <p>尖括号中，你传进去的是什么，T就代表什么类型。这就是泛型的最大作用，我们只需要考虑逻辑实现，就能拿给各种类来用。</p>
+<h3 id="（4）、-使用泛型实现的优势"><a href="#（4）、-使用泛型实现的优势" class="headerlink" title="（4）、 使用泛型实现的优势"></a>（4）、 使用泛型实现的优势</h3><p>相比较开篇时使用Object的方式，又两个优点：</p>
+<h4 id="（4-1）、-不用强制转换"><a href="#（4-1）、-不用强制转换" class="headerlink" title="（4.1）、 不用强制转换"></a>（4.1）、 不用强制转换</h4><p>​            //使用Object作为返回值，要强制转化成指定类型</p>
+<p>​            Float floatX = (Float)floatPoint.getX();</p>
+<p>​            //使用泛型时，不用强制转换，直接出来就是String</p>
+<p>​            System.out.println(p.getVar());</p>
+<h4 id="（4-2）、-在setX-如果传入类型不对，编译时会报错"><a href="#（4-2）、-在setX-如果传入类型不对，编译时会报错" class="headerlink" title="（4.2）、 在setX()如果传入类型不对，编译时会报错"></a>（4.2）、 在setX()如果传入类型不对，编译时会报错</h4><p>​            <img src="https://s2.ax1x.com/2020/02/28/3DP6Z6.png" alt></p>
+<p>​            可以看出，当我们构造时使用的是String，而在setX时，传进去Integer类型时，就会报错，而不是像Object实现方式一样，在运行时才会报强制转换错误。</p>
+<h2 id="2、-多泛型变量定义及字母规范"><a href="#2、-多泛型变量定义及字母规范" class="headerlink" title="2、 多泛型变量定义及字母规范"></a>2、 多泛型变量定义及字母规范</h2><h3 id="（1）、-多泛型变量定义"><a href="#（1）、-多泛型变量定义" class="headerlink" title="（1）、 多泛型变量定义"></a>（1）、 多泛型变量定义</h3><p>上在我们只定义了一个泛型变量T，那如果我们需要传进去多个泛型呢？</p>
+<p>只需要在类似下面这样就可以了；</p>
+<pre><code class="java">class morePoint&lt;T,U&gt;{
+}
+</code></pre>
+<p>也就是在原来的T后面用逗号隔开，多个就像下面这样：</p>
+<pre><code class="java">class morePoint&lt;T,U,A,C,B&gt;{
+}
+</code></pre>
+<p>举个例子，我们在Point上再加另一个字段name，也可泛型来表示，代码如下：</p>
+<pre><code class="java">package cn.sakura.demo;
+
+public class MorePoint&lt;T, U&gt; {
+
+    private T x;
+    private T y;
+
+    private U name;
+
+    public T getX() {
+        return x;
+    }
+
+    public void setX(T x) {
+        this.x = x;
+    }
+
+    public T getY() {
+        return y;
+    }
+
+    public void setY(T y) {
+        this.y = y;
+    }
+
+    public U getName() {
+        return name;
+    }
+
+    public void setName(U name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;morePoint{&quot; +
+                &quot;x=&quot; + x +
+                &quot;, y=&quot; + y +
+                &quot;, name=&quot; + name +
+                &#39;}&#39;;
+    }
+
+
+    public static void main(String[] args) {
+        MorePoint&lt;Integer, String&gt; morePoint = new MorePoint&lt;Integer, String&gt;();
+        morePoint.setName(&quot;sakura&quot;);
+        System.out.println(morePoint.getName());
+    }
+
+
+}
+</code></pre>
+<h3 id="（2）、-字母规范"><a href="#（2）、-字母规范" class="headerlink" title="（2）、 字母规范"></a>（2）、 字母规范</h3><p>在定义泛型类时，我们已经提到用于指定泛型的变量是一个大写字母：</p>
+<pre><code class="java">class Point&lt;T&gt;{  
+ …………  
+}  
+</code></pre>
+<p>其中任何大写字母都可以，他们的意义完全相同，但是为了提高可读性，大家默认在不同的情境下使用的字母意义如下：</p>
+<ul>
+<li>E    Element,常用在java，Collection里，如： List<e>,lterator<e>,Set<e></e></e></e></li>
+<li>K,V    Key,Value,代表Map的键值对</li>
+<li>N    Number,数字</li>
+<li>T    Type,类型，如String,Integer等等</li>
+</ul>
+<h2 id="3、-泛型接口定义及使用"><a href="#3、-泛型接口定义及使用" class="headerlink" title="3、 泛型接口定义及使用"></a>3、 泛型接口定义及使用</h2><p>在接口上定义泛型与在类中定义泛型是一样的，代码如下：</p>
+<pre><code class="java">interface Info&lt;T&gt; {        // 在接口上定义泛型    
+    public T getVar(); // 定义抽象方法，抽象方法的返回值就是泛型类型    
+
+    public void setVar(T x);
+}    
+</code></pre>
+<p>与泛型类的定义一样，也是在接口名后加尖括号；</p>
+<h3 id="（1）、-使用方法一：非泛型类"><a href="#（1）、-使用方法一：非泛型类" class="headerlink" title="（1）、 使用方法一：非泛型类"></a>（1）、 使用方法一：非泛型类</h3><p>在使用的时候，就出现了问题，先看看下面的这个使用方法：</p>
+<blockquote>
+<p>未完</p>
+</blockquote>
+<h1 id="转载原网址："><a href="#转载原网址：" class="headerlink" title="转载原网址："></a>转载原网址：</h1><p><a href="https://www.cnblogs.com/jpfss/p/9928747.html" target="_blank" rel="noopener">https://www.cnblogs.com/jpfss/p/9928747.html</a></p>
 
         </div>
         <!-- .entry-content -->
@@ -596,9 +689,26 @@ public class Point&lt;T&gt; {
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/02/28/Mysql-学习笔记/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/191215/000846-15763397267e73.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/191215/000846-15763397267e73.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                MySQL 学习笔记</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
         
           
-            <div class="post-nepre full next">
+            <div class="post-nepre half next">
           
             <a href="/2020/02/26/Java8-Lambda表达式-学习笔记/" rel="next">
               <div class="background">
@@ -1083,7 +1193,7 @@ WIDGET = {FID: 'vw92ONuJRL'}
 
     preload="auto"
 
-    volume="0.7"
+    volume="0.5"
 
     mutex="true"
 
