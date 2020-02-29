@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">java中Map及Map.Entry详解 学习笔记 | 樱花🌸</title>
+  <title itemprop="name">MySQL 学习笔记 | 樱花🌸</title>
   
     <link rel="shortcut icon" href="https://2heng.xin/favicon.ico">
   
@@ -342,11 +342,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://s2.ax1x.com/2020/02/24/38k4KJ.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://s2.ax1x.com/2020/02/24/38k4KJ.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://pic.netbian.com/uploads/allimg/191215/000846-15763397267e73.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/191215/000846-15763397267e73.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      java中Map及Map.Entry详解 学习笔记</h1>
+      MySQL 学习笔记</h1>
       <p class="entry-census">
         <span>
           <a href="sakura521.cn">
@@ -358,7 +358,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2020-2-25<span class="bull">
+        2020-2-28<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -372,48 +372,122 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="Java-高级for循环-学习笔记"><a href="#Java-高级for循环-学习笔记" class="headerlink" title="Java 高级for循环 学习笔记"></a>Java 高级for循环 学习笔记</h1><h2 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h2><p>Map是java中的接口，Map.Entry是Map的一个内部接口。</p>
-<p>Map提供了一些常用方法，如keySet()、entrySet()等方法。</p>
-<p>keySet()方法返回值是Map中key值的集合；entrySet()的返回值也是返回一个Set集合，此集合的类型为Map.Entry。</p>
-<p>Map.Entry是Map声明的一个内部接口，此接口为泛型，定义为Entry&lt;K,V&gt;。它表示Map中的一个实体（一个key-value对）。接口中有getKey(),getValue方法。</p>
-<h2 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h2><pre><code class="java">import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-
-public class mapEntryDemo {
-    public static void main(String[] args) {
-        Map&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();
-        map.put(&quot;key1&quot;, &quot;value1&quot;);
-        map.put(&quot;key2&quot;, &quot;value2&quot;);
-        map.put(&quot;key3&quot;, &quot;value3&quot;);
+          <p>下是在<a href="https://www.zhihu.com/" target="_blank" rel="noopener">知乎</a>找到的Mysql的学习笔记</p>
+<p><code>以下是在知乎找到的Mysql的学习笔记</code></p>
+<h2 id="1、-基本操作"><a href="#1、-基本操作" class="headerlink" title="1、 基本操作"></a>1、 基本操作</h2><pre><code class="mysql">/* 启动 MySQL */
+net start mysql
+/* 连接与断开服务器 */
+mysql -h 地址 -p 端口 -u 用户名 -p 密码
+/* 跳过权限验证登陆MySQL */
+mysqld --skip-grant-tables
+-- 修改root密码
+密码加密函数password()
+update mysql.user set password-password(&#39;root&#39;);
+/* 显示哪些线程正在运行 */
+SHOW PROCESSLIST
+SHOW VARIABLES
 </code></pre>
-<h3 id="第一种-通过map-keySet遍历key和value"><a href="#第一种-通过map-keySet遍历key和value" class="headerlink" title="第一种  通过map.keySet遍历key和value"></a>第一种  通过map.keySet遍历key和value</h3><pre><code class="java">        sop(&quot;通过map.keySet遍历key和value&quot;);
-        for (String key : map.keySet()) {
-            sop(&quot;key=&quot; + key + &quot;+ &quot; + &quot;: value=&quot;+map.get(key));
-        }
+<h2 id="2、-数据库的操作"><a href="#2、-数据库的操作" class="headerlink" title="2、 数据库的操作"></a>2、 数据库的操作</h2><pre><code class="mysql">/* 数据库的操作 */
+-- 查看当前数据库
+    slect database();
+-- 显示当前时间，用户名，数据库版本
+    select now(),user(),version();
+-- 创建数据库
+    create database[if not exists] 数据库名 数据库选择
+    数据库选项：
+        CHARACTER SET charset_name
+        COLLATE collation_name
+-- 查看已有库
+    show databases[ like  &#39;pattern&#39;]
+-- 查看当前库信息
+    show create database 数据库名
+-- 修改库的选项信息
+    alter database 库名 选项信息
+-- 删除库
+    drop database[ if exists] 数据库名
+        同时删除该数据库相关的目录以及目录内容
 </code></pre>
-<h3 id="第二种-通过Map-entrySet使用iterator遍历key和value"><a href="#第二种-通过Map-entrySet使用iterator遍历key和value" class="headerlink" title="第二种  通过Map.entrySet使用iterator遍历key和value"></a>第二种  通过Map.entrySet使用iterator遍历key和value</h3><pre><code class="java">         sop(&quot;通过Map.entrySet使用iterator遍历key和value&quot;);
-        Iterator&lt;Map.Entry&lt;String,String&gt;&gt; it = map.entrySet().iterator();
-        while (it.hasNext()){
-            Map.Entry&lt;String,String&gt; entry = it.next();
-            sop(&quot;key=&quot;+entry.getKey()+&quot;+ value=&quot;+entry.getValue());
-        }
+<h2 id="3、-表的操作"><a href="#3、-表的操作" class="headerlink" title="3、 表的操作"></a>3、 表的操作</h2><pre><code class="mysql">/* 表的操作 */
+-- 创建表
+    create [temporary] table [if not exists] [库名.]表名(表的结构定义)[表选项]
+        每个字段必须有数据类型
+        最后一个字段后不会有逗号
+        temporary 临时表，会话结束时表自动消失
+        对于字段的定义：
+            字段名 数据类型 [NOT NULL | NULL][DEFAULT default_value][AUTO_INCREMENT][UNIQUE[KEY]]|[PRIMARY]KEY][COMMENT &#39;string&#39;]
+-- 表选项
+    -- 字符集
+        CHARSET = chareset_name
+        如果表没有设定，则使用数据库字符集
+    -- 存储引擎
+        ENGINE = engine_name
+        表在管理数据时采用的不同的数据结构，结构不同会导致处理方式，提供的特性操作等不同
+        常见的引擎：InnoDB MyISAM Memory/Heap BDB Merge Examole CSV MaxDB Archive
+        不同的引擎在保存表的结构和数据时采用不同的方式
+        MyISAM表文件含义：.frm表定义，.MYD表数据，.MYI表索引
+        InnoDB表文件含义：.frm表定义，表空间数据和日志文件
+        SHOW ENGINES -- 显示存储引擎的状态信息
+        SHOW ENGINE 引擎名{LOGS|STATUS} -- 显示存储引擎的日志或状态信息
+    -- 数据文件目录
+        DATA DIRECTORY = ‘目录’
+    -- 索引文件目录
+        INDEX DIRECTORY = ‘目录’
+    -- 表注释
+        COMMENT = &#39;string&#39;
+    -- 分区选项
+        PARTITION BY ..(详细见手册)
+-- 查看所有表
+    SHOW TABLES[LIKE &#39;pattern&#39;]
+    SHOW TABLES FROM 表名
+-- 查看表结构
+    SHOW CREATE TABLE 表名 （信息更详细）
+    DESC 表名 / DESCRIBE 表名 / EXOLAIN 表名 / SHOW COLUMNS FROM 表名 [LIKE &#39;PATTERN&#39;]
+    SHOW TABLE STATUS [FROM db_name][LIKE &#39;pattern&#39;]
+-- 修改表
+    -- 修改表本身的选项
+        ALTER TABLE 表名 ENGINE = MYISAM;
+        EG:   ALTER TABLE 表名 ENGINE=MYISAN;
+    -- 对表进行重命名
+        RENAME TABLE 原表名 TO 新表名
+        RENAME TABLE 原表名 TO 库名。表名 
+            -- RENAME 可以交换两个表名
+    -- 修改表的字段机构
+        ALTER TABLE 表名 操作名
+        -- 操作名
+            ADD[COLUMN] 字段名 -- 增加字段
+                AFTER 字段    -- 表示增加在该字段名后面
+                FIRST        -- 表示增加在第一个
+            ADD PRIMARY KEY(字段名) -- 创建主键
+            ADD UNIQUE [索引名]（字段名） -- 创建一个索引
+            ADD INDEX [索引名](字段名)   -- 创建一个普通索引
+            ADD 
+            DROP [COLUMN] 字段名   -- 删除字段
+            MODIFY[COLUMN] 字段名 字段属性 -- 支持对字段属性进行修改，不能修改字段名
+            CHANGE[COLUMN] 原字段名 新字段名 字段属性 -- 支持对字段名修改
+            DROP PRIMARY KEY -- 删除主键（删除主键前删除其AUTO_INCREMENT属性）
+            DEOP INDEX 索引名 -- 删除索引
+            DROP FOREIGN KEY 外键  -- 删除外键
+-- 删除表
+    DROP TABLE [IF EXISTS] 表名 ...
+-- 清空数据
+    TRUNCATE [TABLE] 表名
+-- 复制表结构
+    CREATE TABLE 表名 LIKE 要复制的表名
+-- 复制表结构和数据
+    CREATE TABLE 表名 [AS] SELECT * FROM 要复制的表
+-- 检查表是否有错误
+    CHECK TABLE tbl_name[,tbl_name]...[option]...
+-- 优化表
+    OPTIMIZE[LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name[,tbl_name]...
+-- 修复表
+    REPAIR [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [,tbl_name]...[QUICK][EXTENDED][USE_FRM]
+-- 分析表
+    ANALYZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name[,tbl_name]...
 </code></pre>
-<h3 id="第三种-通过Map-entrySet遍历key和value"><a href="#第三种-通过Map-entrySet遍历key和value" class="headerlink" title="第三种  通过Map.entrySet遍历key和value"></a>第三种  通过Map.entrySet遍历key和value</h3><pre><code class="java">        sop(&quot;通过Map.entrySet遍历key和value&quot;);
-        for (Map.Entry&lt;String,String&gt; entry:map.entrySet()){
-            sop(entry.getKey()+&quot;:&quot;+entry.getValue());
-        }
-</code></pre>
-<h3 id="第四种-通过Map-values-遍历所有的value，但不遍历key"><a href="#第四种-通过Map-values-遍历所有的value，但不遍历key" class="headerlink" title="第四种  通过Map.values()遍历所有的value，但不遍历key"></a>第四种  通过Map.values()遍历所有的value，但不遍历key</h3><pre><code>        sop(&quot;通过Map.values()遍历所有的value，但不遍历key&quot;);
-        for (String v : map.values()) {
-            sop(&quot;value:&quot; + v);
-        }
-</code></pre><h3 id="补充-sop"><a href="#补充-sop" class="headerlink" title="补充 sop"></a>补充 sop</h3><pre><code class="java">    private static void sop(Object s) {
-        System.out.println(s);
-    }
-}
-</code></pre>
-<h2 id="转载原地址："><a href="#转载原地址：" class="headerlink" title="转载原地址："></a>转载原地址：</h2><p><a href="https://blog.csdn.net/yaomingyang/article/details/78748130" target="_blank" rel="noopener">java中Map及Map.Entry详解</a></p>
+<blockquote>
+<p>未完</p>
+</blockquote>
+<h2 id="转载原地址"><a href="#转载原地址" class="headerlink" title="转载原地址"></a>转载原地址</h2><p>知乎： <a href="https://zhuanlan.zhihu.com/p/71232689" target="_blank" rel="noopener">老夫整理的1000行MySQL学习笔记传授有缘人</a></p>
 
         </div>
         <!-- .entry-content -->
@@ -445,15 +519,15 @@ public class mapEntryDemo {
           
             <div class="post-nepre half previous">
           
-            <a href="/2020/02/26/Java8-Lambda表达式-学习笔记/" rel="prev">
+            <a href="/2020/02/28/RSSExplanation.html" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/200102/193708-15779650287a6a.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/200102/193708-15779650287a6a.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/191129/183446-157502368699b5.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/191129/183446-157502368699b5.jpg">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                Java8 Lambda表达式 学习笔记</h3>
+                RSS 介绍</h3>
                 <hr>
               </div>
             </a>
@@ -463,15 +537,15 @@ public class mapEntryDemo {
           
             <div class="post-nepre half next">
           
-            <a href="/2020/02/25/Java-高级for循环-学习笔记/" rel="next">
+            <a href="/2020/02/27/generics.html" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://s2.ax1x.com/2020/02/24/38Awi6.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://s2.ax1x.com/2020/02/24/38Awi6.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/200216/183702-1581849422e4c0.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/200216/183702-1581849422e4c0.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                Java 高级for循环 学习笔记</h3>
+                Java泛型 学习笔记</h3>
                 <hr>
               </div>
             </a>
@@ -504,7 +578,7 @@ public class mapEntryDemo {
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>やってしまった後悔（こうかい）はだんだん小（ちい）さくなるが</p>
+        <p><i class="iconfont icon-write"></i>Suffering is the most powerful teacher of life</p>
       </section>
     </main><!-- #main -->
   </div><!-- #primary -->

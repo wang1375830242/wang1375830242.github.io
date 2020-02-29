@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: 悦读 | 樱花🌸</title>
+  <title itemprop="name">java中Map及Map.Entry详解 学习笔记 | 樱花🌸</title>
   
-    <link rel="shortcut icon" href="http://47.107.231.6/wordpress/wp-content/themes/Sakura/images/favicon.ico">
+    <link rel="shortcut icon" href="https://2heng.xin/favicon.ico">
   
+
   <meta http-equiv="x-dns-prefetch-control" content="on">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
   <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
@@ -35,9 +36,9 @@
   mashiro_option.qzone_autocomplete = false;
   mashiro_option.site_name = "さくら荘その小坏孩";
   mashiro_option.author_name = "小坏孩";
-  mashiro_option.site_url = "http://sakura521.cn";
-  mashiro_option.v_appId = "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz";
-  mashiro_option.v_appKey = "mgOpfzbkHYqU92CV4IDlAUHQ";
+  mashiro_option.site_url = "https://www.sakura521.cn";
+  mashiro_option.v_appId = "rNqgMHWy3w8Nrka5h7qEuHXb-gzGzoHsz";
+  mashiro_option.v_appKey = "IwkVmKGABneOkwfgUAKQiTYY";
   mashiro_option.mathjax = "0";
   mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
   mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
@@ -47,13 +48,37 @@
 
   /*End of Initial Variables*/
   </script>
+  <!--自定义看板娘-->
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="/live2d-widget/autoload.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
   <script type="text/javascript">
-  var bg = "http://47.107.231.6/wordpress/wp-content/uploads/2020/02/アズールレーン_63069334.jpg,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/wallhaven-672007-1.png,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/pixiv57793944.png,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/fleurir-PID66213177-by-アシマ@3日目東ラ39b.png,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/｡･：＊：･✿-PID65231071-by-hakusai.jpg,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/r63888719_by__LM7_-scaled.jpg,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/308827.jpg,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/ETpv24.jpg,".split(",");
+  var bg = "http://47.107.231.6/wordpress/wp-content/uploads/2020/02/アズールレーン_63069334.jpg,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/wallhaven-672007-1.png,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/pixiv57793944.png,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/fleurir-PID66213177-by-アシマ@3日目東ラ39b.png,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/｡･：＊：･✿-PID65231071-by-hakusai.jpg,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/r63888719_by__LM7_-scaled.jpg,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/308827.jpg,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/ETpv24.jpg,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/Konachan.com-r-1-scaled.jpg,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/Konachan.com-ls-black_hair-f-toriki-touhou.jpg,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/Konachan.com-r-scaled.jpg,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/Konachan.com-212931-black_hair-brown_eyes-ghostblade-jade_wlop-japanese_clothes-jpeg_artifacts-kimono-realistic-short_hair-tattoo-wlop.jpg,http://47.107.231.6/wordpress/wp-content/uploads/2020/02/57CADA26-7D58-413A-81E8-1FECC5B575E1.jpeg".split(",");
   var bgindex = Math.floor(Math.random()*bg.length);
   if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
     alert('朋友，IE浏览器未适配哦~');
   }
   </script>
+  
+  <!--百度的自动推送-->
+  
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+ 
+
+
   <style type="text/css">
   .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
   </style>
@@ -72,7 +97,7 @@
   <figure id="centerbg" class="centerbg">
     <div class="focusinfo no-select">
       <div class="header-tou">
-        <a href="http://sakura521.cn">
+        <a href="https://www.sakura521.cn">
           <img src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/8972361_tiny.th_.jpg">
         </a>
       </div>
@@ -106,7 +131,7 @@
                     <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/wechat.png">
                   </a>
                   <div class="wechatInner">
-                    <img src="/img/custom/wechat.jpg">
+                    <img src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/fleurir-PID66213177-by-アシマ@3日目東ラ39b.png">
                   </div>
                 </li>
               
@@ -193,34 +218,6 @@
                         </a>
                       </li>
                     
-                      <li>
-                        <a href="/categories/生活/">
-                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                          生活
-                        </a>
-                      </li>
-                    
-                      <li>
-                        <a href="/categories/资源/">
-                          <i class="fa fa-cloud-download" aria-hidden="true"></i>
-                          资源
-                        </a>
-                      </li>
-                    
-                      <li>
-                        <a href="/categories/随想/">
-                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
-                          随想
-                        </a>
-                      </li>
-                    
-                      <li>
-                        <a href="/categories/转载/">
-                          <i class="fa fa-book" aria-hidden="true"></i>
-                          转载
-                        </a>
-                      </li>
-                    
                   </ul>
                 
               </li>
@@ -250,16 +247,16 @@
                       </li>
                     
                       <li>
-                        <a href="/music/">
-                          <i class="fa fa-headphones" aria-hidden="true"></i>
-                          歌单
+                        <a href="/tags/java/">
+                          <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                          Java
                         </a>
                       </li>
                     
                       <li>
-                        <a href="/tags/图集/">
-                          <i class="fa fa-photo" aria-hidden="true"></i>
-                          图集
+                        <a href="/music/">
+                          <i class="fa fa-headphones" aria-hidden="true"></i>
+                          歌单
                         </a>
                       </li>
                     
@@ -278,6 +275,16 @@
               </li>
             
               <li>
+                <a href="/donate/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+                    赞赏
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
                 <a href="/">
                   <span class="faa-parent animated-hover">
                     <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
@@ -286,6 +293,13 @@
                 </a>
                 
                   <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
                     
                       <li>
                         <a href="/theme-sakura/">
@@ -322,267 +336,182 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/reading.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://s2.ax1x.com/2020/02/24/38k4KJ.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://s2.ax1x.com/2020/02/24/38k4KJ.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      java中Map及Map.Entry详解 学习笔记</h1>
+      <p class="entry-census">
+        <span>
+          <a href="sakura521.cn">
+            <img src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/8972361_tiny.th_.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="sakura521.cn">小坏孩</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-2-25<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">悦读</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (8)/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (8)/">
-    Hexo-Theme-Sakura</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2018-12-12</div>
-    <p>
-    hexo-sakura主题使用教程</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (8)/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (2)/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (2)/">
-    Hexo-Theme-Sakura</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2018-12-12</div>
-    <p>
-    hexo-sakura主题使用教程</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (2)/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (7)/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (7)/">
-    Hexo-Theme-Sakura</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2018-12-12</div>
-    <p>
-    hexo-sakura主题使用教程</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (7)/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (6)/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (6)/">
-    Hexo-Theme-Sakura</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2018-12-12</div>
-    <p>
-    hexo-sakura主题使用教程</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (6)/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (9)/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (9)/">
-    Hexo-Theme-Sakura</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2018-12-12</div>
-    <p>
-    hexo-sakura主题使用教程</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2018/12/12/Hexo-Theme-Sakura - 副本 (9)/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2018/12/12/Hexo-Theme-Sakura - 副本/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2018/12/12/Hexo-Theme-Sakura - 副本/">
-    Hexo-Theme-Sakura</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2018-12-12</div>
-    <p>
-    hexo-sakura主题使用教程</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2018/12/12/Hexo-Theme-Sakura - 副本/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2018/12/12/Hexo-Theme-Sakura/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2018/12/12/Hexo-Theme-Sakura/">
-    Hexo-Theme-Sakura</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2018-12-12</div>
-    <p>
-    hexo-sakura主题使用教程</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2018/12/12/Hexo-Theme-Sakura/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!-- 
-      <nav class="navigator">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
-        <a class="extend prev" rel="prev" href="/tags/悦读/"><i class="iconfont icon-back"></i></a><a class="page-number" href="/tags/悦读/">1</a><span class="page-number current">2</span>
-      </nav>
-     -->
-    
-  </div>
+        <div class="entry-content">
+          <h1 id="Java-高级for循环-学习笔记"><a href="#Java-高级for循环-学习笔记" class="headerlink" title="Java 高级for循环 学习笔记"></a>Java 高级for循环 学习笔记</h1><h2 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h2><p>Map是java中的接口，Map.Entry是Map的一个内部接口。</p>
+<p>Map提供了一些常用方法，如keySet()、entrySet()等方法。</p>
+<p>keySet()方法返回值是Map中key值的集合；entrySet()的返回值也是返回一个Set集合，此集合的类型为Map.Entry。</p>
+<p>Map.Entry是Map声明的一个内部接口，此接口为泛型，定义为Entry&lt;K,V&gt;。它表示Map中的一个实体（一个key-value对）。接口中有getKey(),getValue方法。</p>
+<h2 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h2><pre><code class="java">import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class mapEntryDemo {
+    public static void main(String[] args) {
+        Map&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();
+        map.put(&quot;key1&quot;, &quot;value1&quot;);
+        map.put(&quot;key2&quot;, &quot;value2&quot;);
+        map.put(&quot;key3&quot;, &quot;value3&quot;);
+</code></pre>
+<h3 id="第一种-通过map-keySet遍历key和value"><a href="#第一种-通过map-keySet遍历key和value" class="headerlink" title="第一种  通过map.keySet遍历key和value"></a>第一种  通过map.keySet遍历key和value</h3><pre><code class="java">        sop(&quot;通过map.keySet遍历key和value&quot;);
+        for (String key : map.keySet()) {
+            sop(&quot;key=&quot; + key + &quot;+ &quot; + &quot;: value=&quot;+map.get(key));
+        }
+</code></pre>
+<h3 id="第二种-通过Map-entrySet使用iterator遍历key和value"><a href="#第二种-通过Map-entrySet使用iterator遍历key和value" class="headerlink" title="第二种  通过Map.entrySet使用iterator遍历key和value"></a>第二种  通过Map.entrySet使用iterator遍历key和value</h3><pre><code class="java">         sop(&quot;通过Map.entrySet使用iterator遍历key和value&quot;);
+        Iterator&lt;Map.Entry&lt;String,String&gt;&gt; it = map.entrySet().iterator();
+        while (it.hasNext()){
+            Map.Entry&lt;String,String&gt; entry = it.next();
+            sop(&quot;key=&quot;+entry.getKey()+&quot;+ value=&quot;+entry.getValue());
+        }
+</code></pre>
+<h3 id="第三种-通过Map-entrySet遍历key和value"><a href="#第三种-通过Map-entrySet遍历key和value" class="headerlink" title="第三种  通过Map.entrySet遍历key和value"></a>第三种  通过Map.entrySet遍历key和value</h3><pre><code class="java">        sop(&quot;通过Map.entrySet遍历key和value&quot;);
+        for (Map.Entry&lt;String,String&gt; entry:map.entrySet()){
+            sop(entry.getKey()+&quot;:&quot;+entry.getValue());
+        }
+</code></pre>
+<h3 id="第四种-通过Map-values-遍历所有的value，但不遍历key"><a href="#第四种-通过Map-values-遍历所有的value，但不遍历key" class="headerlink" title="第四种  通过Map.values()遍历所有的value，但不遍历key"></a>第四种  通过Map.values()遍历所有的value，但不遍历key</h3><pre><code>        sop(&quot;通过Map.values()遍历所有的value，但不遍历key&quot;);
+        for (String v : map.values()) {
+            sop(&quot;value:&quot; + v);
+        }
+</code></pre><h3 id="补充-sop"><a href="#补充-sop" class="headerlink" title="补充 sop"></a>补充 sop</h3><pre><code class="java">    private static void sop(Object s) {
+        System.out.println(s);
+    }
+}
+</code></pre>
+<h2 id="转载原地址："><a href="#转载原地址：" class="headerlink" title="转载原地址："></a>转载原地址：</h2><p><a href="https://blog.csdn.net/yaomingyang/article/details/78748130" target="_blank" rel="noopener">java中Map及Map.Entry详解</a></p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/zfb.jpg"></li>
+                <li class="wechat-code"><img src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/wx.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/02/26/lambda.html" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/200102/193708-15779650287a6a.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/200102/193708-15779650287a6a.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                Java8 Lambda表达式 学习笔记</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/02/25/javafor.html" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://s2.ax1x.com/2020/02/24/38Awi6.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://s2.ax1x.com/2020/02/24/38Awi6.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                Java 高级for循环 学习笔记</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "rNqgMHWy3w8Nrka5h7qEuHXb-gzGzoHsz",
+        appKey: "IwkVmKGABneOkwfgUAKQiTYY",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="sakura521.cn" class="profile gravatar"><img src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/8972361_tiny.th_.jpg" itemprop="image" alt="小坏孩" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="sakura521.cn" itemprop="url" rel="author">小坏孩</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>やってしまった後悔（こうかい）はだんだん小（ちい）さくなるが</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
@@ -616,7 +545,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2020 小坏孩<br>
-      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      powered_by <a href="https://www.sakura521.cn" target="_blank">樱花🌸</a>
     </div>
   </div>
 </footer> -->
@@ -627,17 +556,82 @@
         <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
         <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
       </div>
-      <p style="color: #666666;">&copy 2018</p>
+      <p style="color: #666666;">&copy 2020</p>
     </div>
     <div class="footer-device">
     <p style="font-family: 'Ubuntu', sans-serif;">
-        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages</a>
+        <span style="color: #b9b9b9;">Theme <a href="https://www.sakura521.cn" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> 
+		备案/许可证编号为：冀ICP备20003003号</a>
         </span>
+		</br><span id="sitetime"></span>
       </p>
     </div>
   </div><!-- .site-info -->
 </footer>
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?51ea89e1e2a8781a80db7231945e68ad";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- 百度自动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 
+
+
+<!-- 建站的时间 -->
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2020, 02, 19, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
 
 
 <!-- <script src="/js/tocbot.js"></script> -->
@@ -656,9 +650,9 @@
 <script type="text/javascript">
 /* <![CDATA[ */
 if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-  var Poi = {"pjax":"1","movies":{"url": "http://47.107.231.6/wordpress/wp-content/uploads/2020/02/","name":"The-Pet-Girl-of-Sakurasou.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.3/","name":"The Pet Girl of Sakurasou.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
 } else {
-  var Poi = {"pjax":"1","movies":{"url": "http://47.107.231.6/wordpress/wp-content/uploads/2020/02/","name":"The-Pet-Girl-of-Sakurasou.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.3/","name":"The Pet Girl of Sakurasou.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
 }
 /* ]]> */
 
@@ -713,6 +707,37 @@ $(document).ready(function() {
       </div>
     </div>
   </section>
+    <!-- ʵ�ֻ������� -->
+  <div class="skin-menu no-select" id="mainskin" style="position: fixed">
+ <div class="theme-controls row-container">
+  <ul class="menu-list">
+   <li id="white-bg"> <i class="fa fa-television" aria-hidden="true"></i></li>
+   <li id="sakura-bg"> <i class="iconfont icon-sakura"></i></li>
+   <li id="gribs-bg"> <i class="fa fa-slack" aria-hidden="true"></i></li>
+   <li id="KAdots-bg"> <i class="iconfont icon-dots"></i></li>
+   <li id="totem-bg"> <i class="fa fa-optin-monster" aria-hidden="true"></i></li>
+   <li id="pixiv-bg"> <i class="iconfont icon-pixiv"></i></li>
+   <li id="bing-bg"> <i class="iconfont icon-bing"></i></li>
+   <li id="dark-bg"> <i class="fa fa-moon-o" aria-hidden="true"></i></li>
+  </ul>
+ </div>
+</div>
+<canvas id="night-mode-cover"></canvas> 
+  <div class="changeSkin-gear no-select">
+  <div class="keys" id="setbtn"> 
+   <span id="open-skinMenu"> 切换主题 | SCHEME TOOL  
+     <i class="iconfont icon-gear inline-block rotating"></i> 
+   </span>
+  </div>
+</div>
+  
+ 
+<!-- weather -->
+<script type="text/javascript">
+WIDGET = {FID: 'vw92ONuJRL'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+  
   <div id="mo-nav" class="">
   <div class="m-avatar">
     <img src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/8972361_tiny.th_.jpg">
@@ -758,34 +783,6 @@ $(document).ready(function() {
                 </a>
               </li>
             
-              <li>
-                <a href="/categories/生活/">
-                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                  生活
-                </a>
-              </li>
-            
-              <li>
-                <a href="/categories/资源/">
-                  <i class="fa fa-cloud-download" aria-hidden="true"></i>
-                  资源
-                </a>
-              </li>
-            
-              <li>
-                <a href="/categories/随想/">
-                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
-                  随想
-                </a>
-              </li>
-            
-              <li>
-                <a href="/categories/转载/">
-                  <i class="fa fa-book" aria-hidden="true"></i>
-                  转载
-                </a>
-              </li>
-            
           </ul>
         
       </li>
@@ -815,16 +812,16 @@ $(document).ready(function() {
               </li>
             
               <li>
-                <a href="/music/">
-                  <i class="fa fa-headphones" aria-hidden="true"></i>
-                  歌单
+                <a href="/tags/java/">
+                  <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                  Java
                 </a>
               </li>
             
               <li>
-                <a href="/tags/图集/">
-                  <i class="fa fa-photo" aria-hidden="true"></i>
-                  图集
+                <a href="/music/">
+                  <i class="fa fa-headphones" aria-hidden="true"></i>
+                  歌单
                 </a>
               </li>
             
@@ -843,6 +840,16 @@ $(document).ready(function() {
       </li>
     
       <li>
+        <a href="/donate/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+            赞赏
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
         <a href="/">
           <span class="faa-parent animated-hover">
             <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
@@ -851,6 +858,13 @@ $(document).ready(function() {
         </a>
         
           <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
             
               <li>
                 <a href="/theme-sakura/">
@@ -916,7 +930,7 @@ $(document).ready(function() {
 </style>
 <meting-js
 
-    id="2042053363"
+    id="4886582349&"
 
     server="netease"
 
@@ -924,7 +938,7 @@ $(document).ready(function() {
 
     fixed="true"
 
-    autoplay="false"
+    autoplay="true"
 
     loop="all"
 
@@ -932,7 +946,7 @@ $(document).ready(function() {
 
     preload="auto"
 
-    volume="0.7"
+    volume="0.5"
 
     mutex="true"
 
