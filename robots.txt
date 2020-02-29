@@ -5,6 +5,11 @@ Allow: /about/
 Allow: /archives/
 Allow: /categories/
 Allow: /tags/
+Allow: /bangumi/
+Allow: /music/
+Allow: /donate/
+Allow: /theme-sakura/
+Allow: /lab/
 Disallow: /js/
 Disallow: /css/
 Disallow: /fonts/
@@ -12,5 +17,5 @@ Disallow: /vendors/
 Disallow: /fancybox/
 Disallow: /categories/
 
-Sitemap: http://rogn.top/sitemap.xml
-Sitemap: http://rogn.top/baidusitemap.xml
+Sitemap: https://www.sakura521.cn/sitemap.xml
+Sitemap: https://www.sakura521.cn/baidusitemap.xml
