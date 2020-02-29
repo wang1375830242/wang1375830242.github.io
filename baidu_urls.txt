@@ -1,5 +1,5 @@
-/https://www.sakura521.cn/2020/02/28/RSSExplanation.html
-/https://www.sakura521.cn/2020/02/28/MysqlStudy.html
-/https://www.sakura521.cn/2020/02/27/generics.html
-/https://www.sakura521.cn/2020/02/26/lambda.html
-/https://www.sakura521.cn/2020/02/25/map.html
+https://www.sakura521.cn/2020/02/28/RSSExplanation.html
+https://www.sakura521.cn/2020/02/28/MysqlStudy.html
+https://www.sakura521.cn/2020/02/27/generics.html
+https://www.sakura521.cn/2020/02/26/lambda.html
+https://www.sakura521.cn/2020/02/25/map.html
