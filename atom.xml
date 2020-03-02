@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sakura521.cn/"/>
-  <updated>2020-02-29T12:20:35.317Z</updated>
+  <updated>2020-03-02T04:18:21.004Z</updated>
   <id>https://www.sakura521.cn/</id>
   
   <author>
@@ -17,11 +17,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>免费CDN：jsDeliver+Github 搭建过程记录</title>
+    <link href="https://www.sakura521.cn/2020/03/02/freeCDN.html"/>
+    <id>https://www.sakura521.cn/2020/03/02/freeCDN.html</id>
+    <published>2020-03-02T02:30:30.000Z</published>
+    <updated>2020-03-02T04:18:21.004Z</updated>
+    
+    <summary type="html">
+    
+      jsDeliver+Github 搭建过程记录
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>RSS 介绍</title>
     <link href="https://www.sakura521.cn/2020/02/28/RSSExplanation.html"/>
     <id>https://www.sakura521.cn/2020/02/28/RSSExplanation.html</id>
     <published>2020-02-28T12:56:45.000Z</published>
-    <updated>2020-02-29T12:20:35.317Z</updated>
+    <updated>2020-03-02T03:05:29.068Z</updated>
     
     <summary type="html">
     
@@ -39,7 +57,7 @@
     <link href="https://www.sakura521.cn/2020/02/28/MysqlStudy.html"/>
     <id>https://www.sakura521.cn/2020/02/28/MysqlStudy.html</id>
     <published>2020-02-28T07:31:03.000Z</published>
-    <updated>2020-02-29T12:10:33.441Z</updated>
+    <updated>2020-03-02T03:05:21.025Z</updated>
     
     <summary type="html">
     
@@ -61,7 +79,7 @@
     <link href="https://www.sakura521.cn/2020/02/27/generics.html"/>
     <id>https://www.sakura521.cn/2020/02/27/generics.html</id>
     <published>2020-02-27T06:26:22.000Z</published>
-    <updated>2020-02-29T12:14:23.618Z</updated>
+    <updated>2020-03-02T03:04:31.384Z</updated>
     
     <summary type="html">
     
@@ -83,7 +101,7 @@
     <link href="https://www.sakura521.cn/2020/02/26/lambda.html"/>
     <id>https://www.sakura521.cn/2020/02/26/lambda.html</id>
     <published>2020-02-26T06:17:38.000Z</published>
-    <updated>2020-02-29T12:08:38.109Z</updated>
+    <updated>2020-03-02T03:03:55.575Z</updated>
     
     <summary type="html">
     
@@ -105,7 +123,7 @@
     <link href="https://www.sakura521.cn/2020/02/25/map.html"/>
     <id>https://www.sakura521.cn/2020/02/25/map.html</id>
     <published>2020-02-25T08:04:21.000Z</published>
-    <updated>2020-02-29T12:09:44.497Z</updated>
+    <updated>2020-03-02T03:05:03.167Z</updated>
     
     <summary type="html">
     
@@ -127,7 +145,7 @@
     <link href="https://www.sakura521.cn/2020/02/25/javafor.html"/>
     <id>https://www.sakura521.cn/2020/02/25/javafor.html</id>
     <published>2020-02-25T07:05:34.000Z</published>
-    <updated>2020-02-29T12:09:29.909Z</updated>
+    <updated>2020-03-02T03:04:38.704Z</updated>
     
     <summary type="html">
     
@@ -149,7 +167,7 @@
     <link href="https://www.sakura521.cn/2020/02/21/live2D.html"/>
     <id>https://www.sakura521.cn/2020/02/21/live2D.html</id>
     <published>2020-02-21T06:17:16.000Z</published>
-    <updated>2020-02-29T12:09:57.019Z</updated>
+    <updated>2020-03-02T03:05:12.953Z</updated>
     
     <summary type="html">
     
@@ -167,7 +185,7 @@
     <link href="https://www.sakura521.cn/2020/02/21/hexo.html"/>
     <id>https://www.sakura521.cn/2020/02/21/hexo.html</id>
     <published>2020-02-21T02:22:16.000Z</published>
-    <updated>2020-02-29T12:08:22.651Z</updated>
+    <updated>2020-03-02T03:03:33.653Z</updated>
     
     <summary type="html">
     
@@ -185,7 +203,7 @@
     <link href="https://www.sakura521.cn/2020/02/20/Firstpost.html"/>
     <id>https://www.sakura521.cn/2020/02/20/Firstpost.html</id>
     <published>2020-02-20T12:15:44.000Z</published>
-    <updated>2020-02-29T12:12:13.300Z</updated>
+    <updated>2020-03-02T03:05:55.045Z</updated>
     
     <summary type="html">
     
@@ -207,7 +225,7 @@
     <link href="https://www.sakura521.cn/2020/02/20/helloword.html"/>
     <id>https://www.sakura521.cn/2020/02/20/helloword.html</id>
     <published>2020-02-20T08:13:25.127Z</published>
-    <updated>2020-02-29T12:07:18.324Z</updated>
+    <updated>2020-03-02T03:02:39.628Z</updated>
     
     <summary type="html">
     

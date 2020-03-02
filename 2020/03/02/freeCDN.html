@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">client | 樱花🌸</title>
+  <title itemprop="name">免费CDN：jsDeliver+Github 搭建过程记录 | 樱花🌸</title>
   
     <link rel="shortcut icon" href="https://2heng.xin/favicon.ico">
   
@@ -336,65 +336,160 @@
   </div>
 </header>
 
-        <div class="pattern-center-blank"></div>
-  
-    <div class="pattern-center ">
-      <div class="pattern-attachment-img">
-        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/client.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-      </div>
-      <header class="pattern-header ">
-        <h1 class="entry-title">
-        Android客户端</h1>
-      </header>
-    </div>
-  
-  <div id="content" class="site-content">
-    <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
-      <p>直接下载 or 扫码下载：<br>
-<div style="text-align: center;">
-<img class="lazyload" data-src="https://view.moezx.cc/images/2018/06/08/app-download.png#in-center#width-50" style="width: 200px; height: 200px;" alt>
-</div>
-</p>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
 
-      <!-- .entry-content -->
-      
-      <div class="single-reward">
-        <div class="reward-open">赏
-          <div class="reward-main">
-            <ul class="reward-row">
-              <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.02/images/zfb.jpg"></li>
-              <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.02/images/wx.jpg"></li>
-            </ul>
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://pic.netbian.com/uploads/allimg/190413/202741-15551584619a4b.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/190413/202741-15551584619a4b.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      免费CDN：jsDeliver+Github 搭建过程记录</h1>
+      <p class="entry-census">
+        <span>
+          <a href="sakura521.cn">
+            <img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/8972361_tiny.th.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="sakura521.cn">小坏孩</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-3-2<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="CDN-维基百科解释"><a href="#CDN-维基百科解释" class="headerlink" title="CDN 维基百科解释"></a>CDN 维基百科解释</h1><p><strong>内容分发网络</strong>（英语：<strong>C</strong>ontent <strong>D</strong>elivery <strong>N</strong>etwork或<strong>C</strong>ontent <strong>D</strong>istribution <strong>N</strong>etwork，缩写：<strong>CDN</strong>）是指一种透过<a href="https://zh.wikipedia.org/wiki/互聯網" target="_blank" rel="noopener">互联网</a>互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、影片、应用程序及其他文件发送给用户，来提供高性能、可扩展性及低成本的网络内容传递给用户。</p>
+<h1 id="1、-首先创建一个Github仓库"><a href="#1、-首先创建一个Github仓库" class="headerlink" title="1、 首先创建一个Github仓库"></a>1、 首先创建一个Github仓库</h1><p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/GITHUBCDN.png" alt></p>
+<p><code>我的仓库名为CDN并不是图中的CDNNAME，因为我已经创建了名字为CDN的仓库，不能创建重复的。</code></p>
+<h1 id="2、-克隆Github仓库到本地"><a href="#2、-克隆Github仓库到本地" class="headerlink" title="2、 克隆Github仓库到本地"></a>2、 克隆Github仓库到本地</h1><p>先在本地创建一个文件夹，任意位置都可以（最好不要在C盘），然后进入到文件夹中。</p>
+<p>然后再去Github仓库，复制仓库的ssh地址。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/wewae.png" alt></p>
+<p>在本地目录中右键Git Bash Here,在命令窗口中执行一下命令：</p>
+<pre><code class="Git">git clone 复制的仓库ssh地址
+</code></pre>
+<h1 id="3、-上传文件到Github仓库"><a href="#3、-上传文件到Github仓库" class="headerlink" title="3、 上传文件到Github仓库"></a>3、 上传文件到Github仓库</h1><p>将你要上传的图片视频保存到刚才那个本地文件夹中（上传的单个文件不要大于50M），然后在文件夹中右键Git Bash Here,执行一下命令：</p>
+<pre><code class="Git">git status                    //查看状态
+git add .                     //添加所有文件到暂存区  不要忘记后面那个.
+git commit -m &#39;提交信息&#39;      //把文件提交到仓库
+git push                      //推送至远程仓库
+</code></pre>
+<h1 id="4、-发布版本"><a href="#4、-发布版本" class="headerlink" title="4、 发布版本"></a>4、 发布版本</h1><p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/ASDDA.png" alt></p>
+<p>然后自定义一个发布版本号</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/wdadw.png" alt></p>
+<p>到现在就可以使用了。</p>
+<h1 id="5、-更新版本"><a href="#5、-更新版本" class="headerlink" title="5、 更新版本"></a>5、 更新版本</h1><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>可以跟上面3、4步骤一样去更新它。</p>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>还有更简便的，前提是已经安装了TortoiseGit.如果没有直接跳过此方法。</p>
+<p>1、 首先右键 Git提交</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/23FDSF.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/2FSDF.jpg" alt></p>
+<p><code>提交右边有个向下的小箭头，可以点选提交并推送。直接完事，然后去github上创建新的版本就可以了。</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/ASDASD.png" alt></p>
+<p>成功后点击推送。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/fefefxc.png" alt></p>
+<p>这就提交到了Github</p>
+<p>接下来就是进行第四步的创建版本了。</p>
+<h1 id="6、-使用方法"><a href="#6、-使用方法" class="headerlink" title="6、 使用方法"></a>6、 使用方法</h1><p>文件网址位置：<a href="https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径</a>        </p>
+<p>@发布的版本号 可以不写，默认就是最新版本。</p>
+<pre><code>https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.02/images/Konachan.com-ls-black_hair-f-toriki-touhou.jpg
+
+https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/Konachan.com-ls-black_hair-f-toriki-touhou.jpg
+</code></pre><p><code>第一个是代版本号的，第二个不带版本号。两个都是一样的图片。</code></p>
+<h1 id="7、-更加具体的方法官网查看"><a href="#7、-更加具体的方法官网查看" class="headerlink" title="7、 更加具体的方法官网查看"></a>7、 更加具体的方法官网查看</h1><p><a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">https://www.jsdelivr.com/</a></p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.02/images/zfb.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.02/images/wx.jpg"></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-      <footer class="post-footer">
-        <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-        <div class="post-tags">
-        </div>
-        <div class="post-share">
-          <div class="social-share sharehidden share-component"></div>
-          <i class="iconfont show-share icon-forward"></i>
-        </div>
-      </footer><!-- .entry-footer -->
-    </article>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
       <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2020/02/28/RSSExplanation.html" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/191129/183446-157502368699b5.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/191129/183446-157502368699b5.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                RSS 介绍</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "rNqgMHWy3w8Nrka5h7qEuHXb-gzGzoHsz",
+        appKey: "IwkVmKGABneOkwfgUAKQiTYY",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="/about/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.02/images/8972361_tiny.th.jpg" itemprop="image" alt="小坏孩" height="70" width="70"></a>
+          <a href="sakura521.cn" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/8972361_tiny.th.jpg" itemprop="image" alt="小坏孩" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="https://www.sakura521.cn" itemprop="url" rel="author">小坏孩</a>
+            <a href="sakura521.cn" itemprop="url" rel="author">小坏孩</a>
             </h3>
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>Live your life with passion! With some drive!</p>
+        <p><i class="iconfont icon-write"></i>All things come to those who wait.</p>
       </section>
+    </main><!-- #main -->
   </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
