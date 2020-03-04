@@ -403,8 +403,7 @@
 <li>jackson-databind:数据绑定（依赖 core 和 annotations ）</li>
 </ul>
 <p>而 jackson-databind 依赖另外两个,所以单独引用时,只引用 jackson-databind 就可以使用了.</p>
-<h1 id="2、-使用"><a href="#2、-使用" class="headerlink" title="2、 使用"></a>2、 使用</h1><p>实体类：</p>
-<pre><code class="java">package cn.sakura521.jacksondemo.entity;
+<h1 id="2、-使用"><a href="#2、-使用" class="headerlink" title="2、 使用"></a>2、 使用</h1><h2 id="实体类："><a href="#实体类：" class="headerlink" title="实体类："></a>实体类：</h2><pre><code class="java">package cn.sakura521.jacksondemo.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -464,15 +463,14 @@ public class User {
     }
 }
 </code></pre>
-<h3 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h3><pre><code class="java">ObjectMapper是JSON操作的核心，Jackson的所有JSON操作都是在ObjectMapper中实现。
+<h2 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h2><pre><code class="java">ObjectMapper是JSON操作的核心，Jackson的所有JSON操作都是在ObjectMapper中实现。
 ObjectMapper有多个JSON序列化的方法，可以把JSON字符串保存File、OutputStream等不同的介质中。
 writeValue(File arg0, Object arg1)把arg1转成json序列，并保存到arg0文件中。
 writeValue(OutputStream arg0, Object arg1)把arg1转成json序列，并保存到arg0输出流中。
 writeValueAsBytes(Object arg0)把arg0转成json序列，并把结果输出成字节数组。
 writeValueAsString(Object arg0)把arg0转成json序列，并把结果输出成字符串。
 </code></pre>
-<p>示例：</p>
-<pre><code class="java">package cn.sakura521.jacksondemo;
+<h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><pre><code class="java">package cn.sakura521.jacksondemo;
 
 import cn.sakura521.jacksondemo.entity.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -522,7 +520,7 @@ public class jacksonDemo {
 
 }
 </code></pre>
-<h3 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h3><pre><code class="java">package cn.sakura521.jacksondemo;
+<h2 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h2><pre><code class="java">package cn.sakura521.jacksondemo;
 
 import cn.sakura521.jacksondemo.entity.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -554,7 +552,7 @@ public class jacksonDemo {
 
 }
 </code></pre>
-<h3 id="JSON注释"><a href="#JSON注释" class="headerlink" title="JSON注释"></a>JSON注释</h3><pre><code class="tex">Jackson提供了一系列注解，方便对JSON序列化和反序列化进行控制，下面介绍一些常用的注解。
+<h2 id="JSON注释"><a href="#JSON注释" class="headerlink" title="JSON注释"></a>JSON注释</h2><pre><code class="tex">Jackson提供了一系列注解，方便对JSON序列化和反序列化进行控制，下面介绍一些常用的注解。
 
 @JsonIgnore 此注解用于属性上，作用是进行JSON操作时忽略该属性。
 
@@ -572,7 +570,7 @@ public class jacksonDemo {
     private Date date;
     private String url;
 </code></pre>
-<h3 id="readTree"><a href="#readTree" class="headerlink" title="readTree"></a>readTree</h3><p>在jackson中，有些场景下，在实现一些基础服务和拦截器的时候，我们可能需要在不知道JSON字符串所属对象类型的情况下，对JSON字符串中的某些属性进行遍历和修改，比如，设置或查询一些报文头字段。</p>
+<h2 id="readTree"><a href="#readTree" class="headerlink" title="readTree"></a>readTree</h2><p>在jackson中，有些场景下，在实现一些基础服务和拦截器的时候，我们可能需要在不知道JSON字符串所属对象类型的情况下，对JSON字符串中的某些属性进行遍历和修改，比如，设置或查询一些报文头字段。</p>
 <p>在jackson中，使用最多的jsonNode抽象类并没有提供修改节点值的方法，而是在ObjectNode节点中提供修改接口，这个节点在官方说明中，一般用户创建新的节点。</p>
 <p>在ObjectNode节点中提供修改接口（put）,JsonNode提供查询的接口：</p>
 <pre><code class="java">JsonNode rootNode = mapper.readTree(jsonStr);//jsonStr是一个json字符串 
