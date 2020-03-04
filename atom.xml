@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sakura521.cn/"/>
-  <updated>2020-03-02T04:18:21.004Z</updated>
+  <updated>2020-03-04T07:11:22.972Z</updated>
   <id>https://www.sakura521.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot 使用jackson处理json数据 学习笔记</title>
+    <link href="https://www.sakura521.cn/2020/03/04/jackson.html"/>
+    <id>https://www.sakura521.cn/2020/03/04/jackson.html</id>
+    <published>2020-03-04T06:37:40.000Z</published>
+    <updated>2020-03-04T07:11:22.972Z</updated>
+    
+    <summary type="html">
+    
+      SpringBoot 使用jackson处理json数据
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="java" scheme="https://www.sakura521.cn/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>免费CDN：jsDeliver+Github 搭建过程记录</title>
@@ -244,10 +266,10 @@
   
   <entry>
     <title>Hexo-Theme-Sakura</title>
-    <link href="https://www.sakura521.cn/2018/12/12/Sakura2.html"/>
-    <id>https://www.sakura521.cn/2018/12/12/Sakura2.html</id>
+    <link href="https://www.sakura521.cn/2018/12/12/sakura.html"/>
+    <id>https://www.sakura521.cn/2018/12/12/sakura.html</id>
     <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2020-02-29T12:07:46.877Z</updated>
+    <updated>2020-02-29T12:08:05.911Z</updated>
     
     <summary type="html">
     
@@ -266,10 +288,10 @@
   
   <entry>
     <title>Hexo-Theme-Sakura</title>
-    <link href="https://www.sakura521.cn/2018/12/12/sakura.html"/>
-    <id>https://www.sakura521.cn/2018/12/12/sakura.html</id>
+    <link href="https://www.sakura521.cn/2018/12/12/Sakura2.html"/>
+    <id>https://www.sakura521.cn/2018/12/12/Sakura2.html</id>
     <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2020-02-29T12:08:05.911Z</updated>
+    <updated>2020-02-29T12:07:46.877Z</updated>
     
     <summary type="html">
     
