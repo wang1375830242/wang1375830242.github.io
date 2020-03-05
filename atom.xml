@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sakura521.cn/"/>
-  <updated>2020-03-04T07:18:03.568Z</updated>
+  <updated>2020-03-05T09:40:42.053Z</updated>
   <id>https://www.sakura521.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java 递归算法 小练习 学习笔记</title>
+    <link href="https://www.sakura521.cn/2020/03/05/recursion.html"/>
+    <id>https://www.sakura521.cn/2020/03/05/recursion.html</id>
+    <published>2020-03-05T09:22:35.000Z</published>
+    <updated>2020-03-05T09:40:42.053Z</updated>
+    
+    <summary type="html">
+    
+      java 递归算法 小练习
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="java" scheme="https://www.sakura521.cn/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot 使用jackson处理json数据 学习笔记</title>

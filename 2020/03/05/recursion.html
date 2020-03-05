@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Hello World | 樱花🌸</title>
+  <title itemprop="name">java 递归算法 小练习 学习笔记 | 樱花🌸</title>
   
     <link rel="shortcut icon" href="https://2heng.xin/favicon.ico">
   
@@ -342,23 +342,23 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/8972361_tiny.th.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/8972361_tiny.th.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/gui.webp);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/gui.webp">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      Hello World</h1>
+      java 递归算法 小练习 学习笔记</h1>
       <p class="entry-census">
         <span>
-          <a href="">
-            <img src="">
+          <a href="sakura521.cn">
+            <img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/8972361_tiny.th.jpg">
           </a>
         </span>
         <span>
-          <a href=""></a>
+          <a href="sakura521.cn">小坏孩</a>
         </span>
         <span class="bull">
         ·</span>
-        2020-2-20<span class="bull">
+        2020-3-5<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -372,19 +372,114 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+          <p><code>**递归**（英语：Recursion），又译为**递回**，在[数学](https://zh.wikipedia.org/wiki/数学)与[计算机科学](https://zh.wikipedia.org/wiki/计算机科学)中，是指在[函数](https://zh.wikipedia.org/wiki/函数)的定义中使用函数自身的方法。递归一词还较常用于描述以[自相似](https://zh.wikipedia.org/wiki/自相似)方法重复事物的过程。例如，当两面镜子相互之间近似平行时，镜中嵌套的图像是以无限递归的形式出现的。也可以理解为自我复制的过程。</code></p>
+<h2 id="递归简单的小例子"><a href="#递归简单的小例子" class="headerlink" title="递归简单的小例子"></a>递归简单的小例子</h2><h3 id="用递归计算1-2-。。。-1000的和"><a href="#用递归计算1-2-。。。-1000的和" class="headerlink" title="用递归计算1+2+。。。+1000的和"></a>用递归计算1+2+。。。+1000的和</h3><pre><code class="java">public class d {
+
+    int sum=0;
+    int i=1;
+    public void sum(){
+        sum+=i;
+        i++;
+        if(i&lt;=1000){
+            sum();//递归就是调用自身
+        }
+    }
+public static void main(String[] args) {
+    d s = new d();
+    s.sum();
+    System.out.println(&quot;计算结果是&quot;+s.sum);
+}
+}
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
+<h3 id="用递归进行数字的阶乘"><a href="#用递归进行数字的阶乘" class="headerlink" title="用递归进行数字的阶乘"></a>用递归进行数字的阶乘</h3><pre><code class="java">package cn.sakura521.recursive;
+
+public class Factorial {
+
+    int fact(int n) {
+        int result;
+        if (n == 1) {
+            return 1;
+        }
+        result = fact(n - 1) * n;
+        return result;
+    }
+
+
+    public static void main(String[] args) {
+
+        Factorial factorial = new Factorial();
+
+        System.out.println(factorial.fact(6));
+    }
+
+}
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
+<h3 id="用递归实现斐波那契数列"><a href="#用递归实现斐波那契数列" class="headerlink" title="用递归实现斐波那契数列"></a>用递归实现<a href="http://baike.baidu.com/view/816.htm" target="_blank" rel="noopener">斐波那契数列</a></h3><pre><code class="java">package cn.sakura521.recursive;
+
+public class Fibonacci {
+    //写法一
+    int sum(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        if (n == 1 || n == 2) {
+            return 1;
+        }
+        return sum(n - 1) + sum(n - 2);
+    }
+
+    //写法二
+    int Fib(int n) {
+//        return n &lt; 3 ? 1 : (Fib(n - 1) + Fib(n - 2));
+        return n == 0 ? 0 : n &lt; 3 ? 1 : (Fib(n - 1) + Fib(n - 2));
+    }
+
+
+    public static void main(String[] args) {
+        Fibonacci f = new Fibonacci();
+        System.out.println(f.sum(5));
+        System.out.println(f.Fib(5));
+    }
+
+
+}
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
+<h3 id="用递归打印数组前values-中的前-i-个元素"><a href="#用递归打印数组前values-中的前-i-个元素" class="headerlink" title="用递归打印数组前values 中的前 i 个元素"></a>用递归打印数组前values 中的前 i 个元素</h3><pre><code class="java">package cn.sakura521.recursive;
+
+public class RecTest {
+
+    int values[];
+
+    RecTest(int i) {
+        values = new int[i];
+    }
+
+    void printArray(int i) {
+        if (i == 0) {
+            return;
+        } else {
+            printArray(i - 1);
+        }
+        System.out.println(&quot;[&quot; + (i - 1) + &quot;]&quot; + values[i - 1]);
+
+    }
+
+    public static void main(String[] args) {
+        int m = 10;
+        RecTest recTest = new RecTest(m);
+        int i;
+        for (i = 0; i &lt; m; i++) {
+            recTest.values[i] = i;
+        }
+        recTest.printArray(m);
+    }
+
+
+}
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<blockquote>
+<p>递归算法设计的基本思想是：对于一个复杂的问题，把原问题分解为若干个相对简单类同的子问题，继续下去直到子问题简单到能够直接求解，也就是说到了递推的出口，这样原问题就有递推关键要抓住的是：<br>（1）递归出口<br>（2）地推逐步向出口逼近<br>得解。</p>
+</blockquote>
 
         </div>
         <!-- .entry-content -->
@@ -413,36 +508,19 @@
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2020/02/20/Firstpost.html" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/アズールレーン_63069334.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/アズールレーン_63069334.jpg">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                测试，我的第一篇文章</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
         
           
-            <div class="post-nepre half next">
+            <div class="post-nepre full next">
           
-            <a href="/2018/12/12/Sakura2.html" rel="next">
+            <a href="/2020/03/04/jackson.html" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/8BE1BC16-9159-45EC-AE4D-9C88CB96DB6E.jpeg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/8BE1BC16-9159-45EC-AE4D-9C88CB96DB6E.jpeg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/191012/103831-15708479117885.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/191012/103831-15708479117885.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                Hexo-Theme-Sakura</h3>
+                SpringBoot 使用jackson处理json数据 学习笔记</h3>
                 <hr>
               </div>
             </a>
@@ -467,16 +545,16 @@
 
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="" class="profile gravatar"><img src="" itemprop="image" alt="" height="70" width="70"></a>
+          <a href="sakura521.cn" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/8972361_tiny.th.jpg" itemprop="image" alt="小坏孩" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="" itemprop="url" rel="author"></a>
+            <a href="sakura521.cn" itemprop="url" rel="author">小坏孩</a>
             </h3>
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i></p>
+        <p><i class="iconfont icon-write"></i>Keep on going never give up</p>
       </section>
     </main><!-- #main -->
   </div><!-- #primary -->
