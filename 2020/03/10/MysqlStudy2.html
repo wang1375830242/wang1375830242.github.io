@@ -678,7 +678,39 @@ h. distinct, all 选项
     distinct 去除重复记录
     默认为 all, 全部记录
 </code></pre>
-<h2 id="8、-UNION"><a href="#8、-UNION" class="headerlink" title="8、 UNION"></a>8、 UNION</h2><pre><code class="mysql">/* UNION */ ------------------
+<h2 id="8、-insert"><a href="#8、-insert" class="headerlink" title="8、 insert"></a>8、 insert</h2><pre><code class="mysql">/* insert */ ------------------
+select语句获得的数据可以用insert插入。
+
+可以省略对列的指定，要求 values () 括号内，提供给了按照列顺序出现的所有字段的值。
+    或者使用set语法。
+    insert into tbl_name set field=value,...；
+
+可以一次性使用多个值，采用(), (), ();的形式。
+    insert into tbl_name values (), (), ();
+
+可以在列值指定时，使用表达式。
+    insert into tbl_name values (field_value, 10+10, now());
+可以使用一个特殊值 default，表示该列使用默认值。
+    insert into tbl_name values (field_value, default);
+
+可以通过一个查询的结果，作为需要插入的值。
+    insert into tbl_name select ...;
+
+可以指定在插入的值出现主键（或唯一索引）冲突时，更新其他非主键列的信息。
+    insert into tbl_name values/set/select on duplicate key update 字段=值, …;
+</code></pre>
+<h2 id="9、-delete"><a href="#9、-delete" class="headerlink" title="9、 delete"></a>9、 delete</h2><pre><code class="mysql">DELETE FROM tbl_name [WHERE where_definition] [ORDER BY ...] [LIMIT row_count]
+
+按照条件删除
+
+指定删除的最多记录数。Limit
+
+可以通过排序条件删除。order by + limit
+
+支持多表删除，使用类似连接语法。
+delete from 需要删除数据多表1，表2 using 表连接操作 条件。
+</code></pre>
+<h2 id="10、-UNION"><a href="#10、-UNION" class="headerlink" title="10、 UNION"></a>10、 UNION</h2><pre><code class="mysql">/* UNION */ ------------------
     将多个select查询的结果组合成一个结果集合。
     SELECT ... UNION [ALL|DISTINCT] SELECT ...
     默认 DISTINCT 方式，即所有返回的行都是唯一的
@@ -687,7 +719,7 @@ h. distinct, all 选项
     需要各select查询的字段数量一样。
     每个select查询的字段列表(数量、类型)应一致，因为结果中的字段名以第一条select语句为准。
 </code></pre>
-<h2 id="9、-子查询"><a href="#9、-子查询" class="headerlink" title="9、 子查询"></a>9、 子查询</h2><pre><code class="mysql">/* 子查询 */ ------------------
+<h2 id="11、-子查询"><a href="#11、-子查询" class="headerlink" title="11、 子查询"></a>11、 子查询</h2><pre><code class="mysql">/* 子查询 */ ------------------
     - 子查询需用括号包裹。
 -- from型
     from后要求是一个表，必须给子查询结果取个别名。
@@ -718,7 +750,7 @@ h. distinct, all 选项
     != some()    不等同于 not in，不等于其中某一个。
     all, some 可以配合其他运算符一起使用。
 </code></pre>
-<h2 id="10、-连接查询"><a href="#10、-连接查询" class="headerlink" title="10、 连接查询"></a>10、 连接查询</h2><pre><code class="mysql">/* 连接查询(join) */ ------------------
+<h2 id="12、-连接查询"><a href="#12、-连接查询" class="headerlink" title="12、 连接查询"></a>12、 连接查询</h2><pre><code class="mysql">/* 连接查询(join) */ ------------------
     将多个表的字段进行连接，可以指定连接条件。
 -- 内连接(inner join)
     - 默认就是内连接，可省略inner。
@@ -745,7 +777,7 @@ h. distinct, all 选项
 
 select info.id, info.name, info.stu_num, extra_info.hobby, extra_info.sex from info, extra_info where info.stu_num = extra_info.stu_id;
 </code></pre>
-<h2 id="11、-导入导出"><a href="#11、-导入导出" class="headerlink" title="11、 导入导出"></a>11、 导入导出</h2><pre><code class="mysql">/* 导入导出 */ ------------------
+<h2 id="13、-导入导出"><a href="#13、-导入导出" class="headerlink" title="13、 导入导出"></a>13、 导入导出</h2><pre><code class="mysql">/* 导入导出 */ ------------------
 select * into outfile 文件地址 [控制格式] from 表名;    -- 导出表数据
 load data [local] infile 文件地址 [replace|ignore] into table 表名 [控制格式];    -- 导入数据
     生成的数据默认的分隔符是制表符
@@ -766,6 +798,73 @@ lines    控制行格式
 默认：lines terminated by &#39;\n&#39;
     terminated by &#39;string&#39;    -- 终止
 </code></pre>
+<h2 id="14、-truncate"><a href="#14、-truncate" class="headerlink" title="14、 truncate"></a>14、 truncate</h2><pre><code class="mysql">/* truncate */ ------------------
+TRUNCATE [TABLE] tbl_name
+清空数据
+删除重建表
+
+区别：
+1，truncate 是删除表再创建，delete 是逐条删除
+2，truncate 重置auto_increment的值。而delete不会
+3，truncate 不知道删除了几条，而delete知道。
+4，当被用于带分区的表时，truncate 会保留分区
+</code></pre>
+<h2 id="15、-备份与还原"><a href="#15、-备份与还原" class="headerlink" title="15、 备份与还原"></a>15、 备份与还原</h2><pre><code class="mysql">备份，将数据的结构与表内数据保存起来。
+利用 mysqldump 指令完成。
+
+-- 导出
+1. 导出一张表
+　　mysqldump -u用户名 -p密码 库名 表名 &gt; 文件名(D:/a.sql)
+2. 导出多张表
+　　mysqldump -u用户名 -p密码 库名 表1 表2 表3 &gt; 文件名(D:/a.sql)
+3. 导出所有表
+　　mysqldump -u用户名 -p密码 库名 &gt; 文件名(D:/a.sql)
+4. 导出一个库 
+　　mysqldump -u用户名 -p密码 -B 库名 &gt; 文件名(D:/a.sql)
+
+可以-w携带备份条件
+
+-- 导入
+1. 在登录mysql的情况下：
+　　source  备份文件
+2. 在不登录的情况下
+　　mysql -u用户名 -p密码 库名 &lt; 备份文件
+</code></pre>
+<h2 id="16、-视图"><a href="#16、-视图" class="headerlink" title="16、 视图"></a>16、 视图</h2><blockquote>
+<p>视图是一个虚拟表，其内容由查询定义。同真实的表一样，视图包含一系列带有名称的列和行数据。但是，视图并不在数据库中以存储的数据值集形式存在。行和列数据来自由定义视图的查询所引用的表，并且在引用视图时动态生成。<br>    视图具有表结构文件，但不存在数据文件。<br>    对其中所引用的基础表来说，视图的作用类似于筛选。定义视图的筛选可以来自当前或其它数据库的一个或多个表，或者其它视图。通过视图进行查询没有任何限制，通过它们进行数据修改时的限制也很少。<br>    视图是存储在数据库中的查询的sql语句，它主要出于两种原因：安全原因，视图可以隐藏一些数据，如：社会保险基金表，可以用视图只显示姓名，地址，而不显示社会保险号和工资数等，另一原因是可使复杂的查询易于理解和使用。</p>
+</blockquote>
+<pre><code class="mysql">-- 创建视图
+CREATE [OR REPLACE] [ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}] VIEW view_name [(column_list)] AS select_statement
+    - 视图名必须唯一，同时不能与表重名。
+    - 视图可以使用select语句查询到的列名，也可以自己指定相应的列名。
+    - 可以指定视图执行的算法，通过ALGORITHM指定。
+    - column_list如果存在，则数目必须等于SELECT语句检索的列数
+
+-- 查看结构
+    SHOW CREATE VIEW view_name 
+
+-- 删除视图
+    - 删除视图后，数据依然存在。
+    - 可同时删除多个视图。
+    DROP VIEW [IF EXISTS] view_name ...
+
+-- 修改视图结构
+    - 一般不修改视图，因为不是所有的更新视图都会映射到表上。
+    ALTER VIEW view_name [(column_list)] AS select_statement
+
+-- 视图作用
+    1. 简化业务逻辑
+    2. 对客户端隐藏真实的表结构
+
+-- 视图算法(ALGORITHM)
+    MERGE        合并
+        将视图的查询语句，与外部查询需要先合并再执行！
+    TEMPTABLE    临时表
+        将视图执行完毕后，形成临时表，再做外层查询！
+    UNDEFINED    未定义(默认)，指的是MySQL自主去选择相应的算法。
+</code></pre>
+<p><code>未完</code></p>
+<h2 id="转载原地址"><a href="#转载原地址" class="headerlink" title="转载原地址"></a>转载原地址</h2><p>知乎： <a href="https://zhuanlan.zhihu.com/p/71232689" target="_blank" rel="noopener">老夫整理的1000行MySQL学习笔记传授有缘人</a></p>
 
         </div>
         <!-- .entry-content -->
