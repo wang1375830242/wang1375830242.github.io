@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: web | 樱花🌸</title>
+  <title itemprop="name">Node.js(Windows) 安装详细教程 | 樱花🌸</title>
   
     <link rel="shortcut icon" href="https://2heng.xin/favicon.ico">
   
@@ -347,130 +347,147 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="web.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://pic.netbian.com/uploads/allimg/180517/183147-1526553107e340.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/180517/183147-1526553107e340.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      Node.js(Windows) 安装详细教程</h1>
+      <p class="entry-census">
+        <span>
+          <a href="sakura521.cn">
+            <img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/8972361_tiny.th.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="sakura521.cn">小坏孩</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-3-12<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">web</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="https://nodejs.org/dist/v9.11.1/node-v9.11.1-x64.msi" target="_blank" rel="noopener">Node稳定版</a></p>
+<p><a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">官网下载地址</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装的时候也是一路next即可。</p>
+<p>安装完成后检验，在cmd窗口输入</p>
+<pre><code class="cmd">node -v
+npm -v
+</code></pre>
+<p>显示结果如下代表安装成功</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/nodenpm.png" alt></p>
+<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><p>首先在NodeJs下建立”node_global”及”node_cache”两个文件夹</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/jrgidpo.png" alt></p>
+<p>打开cmd，输入</p>
+<pre><code>npm config set prefix &quot;你的路径\nodejs\node_global&quot;
+
+npm config set cache &quot;你的路径\nodejs\node_cache&quot;
+</code></pre><p>然后关闭cmd窗口（不关后面可能不行）</p>
+<p>右键我的电脑-属性-高级系统设置-高级-环境变量</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/shonoxc.png" alt></p>
+<p>在系统变量下新建“NODE_PATH”,变量值填写    你的路径\nodejs\node_global\node_modules</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/xitongbianl1.png" alt></p>
+<p>在变量path新建新的路径</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/yuzcxv.png" alt></p>
+<p>做到这就算完成了。</p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.02/images/zfb.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.02/images/wx.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2020/03/12/gitTutorial.html" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/190706/214422-15624206629fc6.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/190706/214422-15624206629fc6.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                Git安装教程(Windows) 以及连接Github</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/02/20/Firstpost.html">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/アズールレーン_63069334.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/02/20/Firstpost.html">
-    测试，我的第一篇文章</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-2-20</div>
-    <p>
-    一个小标签</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/02/20/Firstpost.html">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2018/12/12/sakura.html">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/pixiv57793944.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2018/12/12/sakura.html">
-    Hexo-Theme-Sakura</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2018-12-12</div>
-    <p>
-    hexo-sakura主题使用教程</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2018/12/12/sakura.html">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2018/12/12/Sakura2.html">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/8BE1BC16-9159-45EC-AE4D-9C88CB96DB6E.jpeg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2018/12/12/Sakura2.html">
-    Hexo-Theme-Sakura</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2018-12-12</div>
-    <p>
-    hexo-sakura主题使用教程</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2018/12/12/Sakura2.html">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "rNqgMHWy3w8Nrka5h7qEuHXb-gzGzoHsz",
+        appKey: "IwkVmKGABneOkwfgUAKQiTYY",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ...",
+		notify: false
+      })
+  }
+</script>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="sakura521.cn" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/8972361_tiny.th.jpg" itemprop="image" alt="小坏孩" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="sakura521.cn" itemprop="url" rel="author">小坏孩</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>Cease to struggle and you cease to live.</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

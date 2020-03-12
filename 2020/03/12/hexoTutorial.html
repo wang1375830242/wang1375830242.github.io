@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: web | 樱花🌸</title>
+  <title itemprop="name">Hexo博客 搭建超详细教程 | 樱花🌸</title>
   
     <link rel="shortcut icon" href="https://2heng.xin/favicon.ico">
   
@@ -347,130 +347,193 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="web.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://www.obzhi.com/wp-content/uploads/2017/07/guanglu.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://www.obzhi.com/wp-content/uploads/2017/07/guanglu.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      Hexo博客 搭建超详细教程</h1>
+      <p class="entry-census">
+        <span>
+          <a href="sakura521.cn">
+            <img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/8972361_tiny.th.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="sakura521.cn">小坏孩</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-3-12<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">web</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p><code>不说hexo是啥了，毕竟都开始准备搭建了，网上又各种介绍。</code></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这个搭建教程是不需要服务器的，因为是搭建到github上的。</p>
+<p>当然也可以搭建到服务器，如果感觉不喜欢别人的服务器，推荐使用<a href="https://www.aliyun.com/minisite/goods?userCode=ms0yockk" target="_blank" rel="noopener">阿里云</a>的服务器，以前我是搭建到这个上面的，现在搬到了github＋coding双部署。</p>
+<h1 id="安装Git以及连接GitHub"><a href="#安装Git以及连接GitHub" class="headerlink" title="安装Git以及连接GitHub"></a>安装Git以及连接GitHub</h1><p>在你的Windows电脑上安装Git以及连接GitHub,教程见下面的网址。</p>
+<p><a href="https://www.sakura521.cn/2020/03/12/gitTutorial.html">https://www.sakura521.cn/2020/03/12/gitTutorial.html</a></p>
+<h1 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h1><p>这个是方便Hexo在本地搭建修改的。教程见下面网址。</p>
+<p><a href="https://www.sakura521.cn/2020/03/12/nodeTutorial.html">https://www.sakura521.cn/2020/03/12/nodeTutorial.html</a></p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>主题来了，来安装Hexo这博客框架。</p>
+<p>首先创建一个文件夹，命名为你想要的名字。我的名字叫SakuraHexo，这个文件夹就是用来放博客所有文件的地方。进入文件夹后，按住Shift键同时右键鼠标。 </p>
+<p>点    在此处打开Powershell窗口(S) </p>
+<p>使用npm命令来安装Hexo</p>
+<pre><code class="nginx">npm install -g hexo-cli 
+</code></pre>
+<p>安装完成后会有几个报错，这个没关系无视(☆-ｖ-)它就可以了</p>
+<p>然后输入 hexo -v 来验证是否安装成功</p>
+<pre><code class="nginx">hexo -v
+</code></pre>
+<p>然后初始化我们的网址，输入</p>
+<pre><code class="nginx">hexo init
+</code></pre>
+<p>接着输入 npm install 来安装这个网址所需要的依赖插件</p>
+<pre><code class="nginx">npm install
+</code></pre>
+<p>完成后，输入hexo g 来生成静态网页</p>
+<pre><code class="nginx">hexo g
+</code></pre>
+<p>结果显示</p>
+<pre><code class="nginx">INFO  Generated: 
+INFO  Generated: 
+INFO  Generated: 
+INFO  Generated: 
+INFO  * files generated in 1.12 s
+</code></pre>
+<p>hexo s 开启本地服务器</p>
+<pre><code class="nginx">hexo s
+</code></pre>
+<p>结果显示</p>
+<pre><code>INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.
+</code></pre><p>这就代表启动成功了。</p>
+<p>想看网站的样式在浏览器输入网址<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>就可以查看了。</p>
+<p>如果想关闭本地服务，Ctrl+C 就可以了 或者关闭这个命令窗口。</p>
+<h1 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h1><p>使用最多的几个</p>
+<pre><code class="nginx">hexo new &quot;一个新的文章&quot;    #这是创建新的文章的命令
+hexo g    #生成静态网页
+hexo s    #启动本地服务
+hexo d    #部署到github或别地方
+</code></pre>
+<p>其他更详细点的Hexo命令在下面网址看</p>
+<p><a href="https://www.sakura521.cn/2020/02/21/hexo.html">Hexo常用命令</a></p>
+<h1 id="Hexo美化"><a href="#Hexo美化" class="headerlink" title="Hexo美化"></a>Hexo美化</h1><p>Hexo有各种各样的主题。本博客使用的<a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" rel="noopener">hexo-theme-sakura</a></p>
+<p>这个主题的使用教程在下面网址</p>
+<p><a href="https://www.sakura521.cn/2018/12/12/Sakura2.html">https://www.sakura521.cn/2018/12/12/Sakura2.html</a></p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.02/images/zfb.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.02/images/wx.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/03/12/gitTutorial.html" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/190706/214422-15624206629fc6.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/190706/214422-15624206629fc6.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                Git安装教程(Windows) 以及连接Github</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/03/12/AdSense.html" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/191115/232632-15738315927970.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/191115/232632-15738315927970.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                Hexo接入Google AdSense广告</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/02/20/Firstpost.html">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/アズールレーン_63069334.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/02/20/Firstpost.html">
-    测试，我的第一篇文章</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-2-20</div>
-    <p>
-    一个小标签</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/02/20/Firstpost.html">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2018/12/12/sakura.html">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/pixiv57793944.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2018/12/12/sakura.html">
-    Hexo-Theme-Sakura</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2018-12-12</div>
-    <p>
-    hexo-sakura主题使用教程</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2018/12/12/sakura.html">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2018/12/12/Sakura2.html">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/8BE1BC16-9159-45EC-AE4D-9C88CB96DB6E.jpeg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2018/12/12/Sakura2.html">
-    Hexo-Theme-Sakura</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2018-12-12</div>
-    <p>
-    hexo-sakura主题使用教程</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2018/12/12/Sakura2.html">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "rNqgMHWy3w8Nrka5h7qEuHXb-gzGzoHsz",
+        appKey: "IwkVmKGABneOkwfgUAKQiTYY",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ...",
+		notify: false
+      })
+  }
+</script>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="sakura521.cn" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/8972361_tiny.th.jpg" itemprop="image" alt="小坏孩" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="sakura521.cn" itemprop="url" rel="author">小坏孩</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>困難が我々を強くし、勝利が我々を賢くし、行動が我々に誇りを与える</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

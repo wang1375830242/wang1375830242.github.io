@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sakura521.cn/"/>
-  <updated>2020-03-12T04:26:42.117Z</updated>
+  <updated>2020-03-12T08:22:59.341Z</updated>
   <id>https://www.sakura521.cn/</id>
   
   <author>
@@ -15,6 +15,66 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Node.js(Windows) 安装详细教程</title>
+    <link href="https://www.sakura521.cn/2020/03/12/nodeTutorial.html"/>
+    <id>https://www.sakura521.cn/2020/03/12/nodeTutorial.html</id>
+    <published>2020-03-12T07:56:03.000Z</published>
+    <updated>2020-03-12T08:22:59.341Z</updated>
+    
+    <summary type="html">
+    
+      Node.js(Windows) 安装详细教程
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git安装教程(Windows) 以及连接Github</title>
+    <link href="https://www.sakura521.cn/2020/03/12/gitTutorial.html"/>
+    <id>https://www.sakura521.cn/2020/03/12/gitTutorial.html</id>
+    <published>2020-03-12T07:11:30.000Z</published>
+    <updated>2020-03-12T07:51:21.196Z</updated>
+    
+    <summary type="html">
+    
+      Git安装教程(Windows) 以及连接Github
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo博客 搭建超详细教程</title>
+    <link href="https://www.sakura521.cn/2020/03/12/hexoTutorial.html"/>
+    <id>https://www.sakura521.cn/2020/03/12/hexoTutorial.html</id>
+    <published>2020-03-12T06:27:40.000Z</published>
+    <updated>2020-03-12T08:25:50.301Z</updated>
+    
+    <summary type="html">
+    
+      Hexo博客 搭建超详细教程
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo接入Google AdSense广告</title>
@@ -347,28 +407,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://www.sakura521.cn/2018/12/12/Sakura2.html"/>
-    <id>https://www.sakura521.cn/2018/12/12/Sakura2.html</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2020-02-29T12:07:46.877Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://www.sakura521.cn/tags/web/"/>
-    
-      <category term="悦读" scheme="https://www.sakura521.cn/tags/%E6%82%A6%E8%AF%BB/"/>
     
   </entry>
   
