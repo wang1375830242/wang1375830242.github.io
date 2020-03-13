@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sakura521.cn/"/>
-  <updated>2020-03-12T08:22:59.341Z</updated>
+  <updated>2020-03-13T02:51:09.936Z</updated>
   <id>https://www.sakura521.cn/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo Sakura主题美化 超详细</title>
+    <link href="https://www.sakura521.cn/2020/03/13/sakurameihua.html"/>
+    <id>https://www.sakura521.cn/2020/03/13/sakurameihua.html</id>
+    <published>2020-03-13T01:35:44.000Z</published>
+    <updated>2020-03-13T02:51:09.936Z</updated>
+    
+    <summary type="html">
+    
+      Hexo Sakura主题美化 超详细
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>Node.js(Windows) 安装详细教程</title>
@@ -61,7 +81,7 @@
     <link href="https://www.sakura521.cn/2020/03/12/hexoTutorial.html"/>
     <id>https://www.sakura521.cn/2020/03/12/hexoTutorial.html</id>
     <published>2020-03-12T06:27:40.000Z</published>
-    <updated>2020-03-12T08:25:50.301Z</updated>
+    <updated>2020-03-13T02:53:02.458Z</updated>
     
     <summary type="html">
     
@@ -407,28 +427,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://www.sakura521.cn/2018/12/12/sakura.html"/>
-    <id>https://www.sakura521.cn/2018/12/12/sakura.html</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2020-02-29T12:08:05.911Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://www.sakura521.cn/tags/web/"/>
-    
-      <category term="悦读" scheme="https://www.sakura521.cn/tags/%E6%82%A6%E8%AF%BB/"/>
     
   </entry>
   
