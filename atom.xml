@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sakura521.cn/"/>
-  <updated>2020-03-13T02:51:09.936Z</updated>
+  <updated>2020-03-13T05:07:19.942Z</updated>
   <id>https://www.sakura521.cn/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PicGo+jsDelivr+GitHub搭建免费cdn加速图床</title>
+    <link href="https://www.sakura521.cn/2020/03/13/picgocdn.html"/>
+    <id>https://www.sakura521.cn/2020/03/13/picgocdn.html</id>
+    <published>2020-03-13T04:36:41.000Z</published>
+    <updated>2020-03-13T05:07:19.942Z</updated>
+    
+    <summary type="html">
+    
+      PicGo+jsDelivr+GitHub搭建免费cdn加速图床
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo Sakura主题美化 超详细</title>
@@ -209,7 +229,7 @@
     <link href="https://www.sakura521.cn/2020/03/02/freeCDN.html"/>
     <id>https://www.sakura521.cn/2020/03/02/freeCDN.html</id>
     <published>2020-03-02T02:30:30.000Z</published>
-    <updated>2020-03-02T04:18:21.004Z</updated>
+    <updated>2020-03-13T05:09:44.918Z</updated>
     
     <summary type="html">
     
@@ -405,28 +425,6 @@
       <category term="web" scheme="https://www.sakura521.cn/tags/web/"/>
     
       <category term="悦读" scheme="https://www.sakura521.cn/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://www.sakura521.cn/2020/02/20/helloword.html"/>
-    <id>https://www.sakura521.cn/2020/02/20/helloword.html</id>
-    <published>2020-02-20T08:13:25.127Z</published>
-    <updated>2020-03-02T03:02:39.628Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
