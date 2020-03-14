@@ -1,5 +1,5 @@
-https://www.sakura521.cn/2020/03/13/picgocdn.html
-https://www.sakura521.cn/2020/03/13/sakurameihua.html
-https://www.sakura521.cn/2020/03/12/nodeTutorial.html
-https://www.sakura521.cn/2020/03/12/gitTutorial.html
-https://www.sakura521.cn/2020/03/12/hexoTutorial.html
+https://www.sakura521.cn/技术/picgocdn.html
+https://www.sakura521.cn/技术/sakurameihua.html
+https://www.sakura521.cn/技术/nodeTutorial.html
+https://www.sakura521.cn/技术/gitTutorial.html
+https://www.sakura521.cn/技术/hexoTutorial.html
