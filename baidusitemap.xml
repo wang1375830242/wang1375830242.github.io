@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.sakura521.cn/java/jackson.html</loc>
+    <lastmod>2020-03-15</lastmod>
+  </url>  <url>
+    <loc>https://www.sakura521.cn/java/MysqlStudy2.html</loc>
+    <lastmod>2020-03-15</lastmod>
+  </url>  <url>
     <loc>https://www.sakura521.cn/yule/undefined.html</loc>
     <lastmod>2020-03-14</lastmod>
   </url>  <url>
@@ -28,14 +34,8 @@
     <loc>https://www.sakura521.cn/java/MysqlStudy.html</loc>
     <lastmod>2020-03-10</lastmod>
   </url>  <url>
-    <loc>https://www.sakura521.cn/java/MysqlStudy2.html</loc>
-    <lastmod>2020-03-10</lastmod>
-  </url>  <url>
     <loc>https://www.sakura521.cn/java/recursion.html</loc>
     <lastmod>2020-03-05</lastmod>
-  </url>  <url>
-    <loc>https://www.sakura521.cn/java/jackson.html</loc>
-    <lastmod>2020-03-04</lastmod>
   </url>  <url>
     <loc>https://www.sakura521.cn/keywords/Firstpost.html</loc>
     <lastmod>2020-03-02</lastmod>
