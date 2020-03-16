@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sakura521.cn/"/>
-  <updated>2020-03-14T01:42:51.695Z</updated>
+  <updated>2020-03-16T09:16:40.259Z</updated>
   <id>https://www.sakura521.cn/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>编程专用字体 JetBrains Mono</title>
+    <link href="https://www.sakura521.cn/%E6%8A%80%E6%9C%AF/JetBrainsMono.html"/>
+    <id>https://www.sakura521.cn/技术/JetBrainsMono.html</id>
+    <published>2020-03-16T08:35:30.000Z</published>
+    <updated>2020-03-16T09:16:40.259Z</updated>
+    
+    <summary type="html">
+    
+      编程专用字体 JetBrains Mono
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>PicGo+jsDelivr+GitHub搭建免费cdn加速图床</title>
@@ -403,28 +423,6 @@
     
       <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>测试，我的第一篇文章</title>
-    <link href="https://www.sakura521.cn/keywords/Firstpost.html"/>
-    <id>https://www.sakura521.cn/keywords/Firstpost.html</id>
-    <published>2020-02-20T12:15:44.000Z</published>
-    <updated>2020-03-02T03:05:55.045Z</updated>
-    
-    <summary type="html">
-    
-      一个小标签
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://www.sakura521.cn/tags/web/"/>
-    
-      <category term="悦读" scheme="https://www.sakura521.cn/tags/%E6%82%A6%E8%AF%BB/"/>
     
   </entry>
   
