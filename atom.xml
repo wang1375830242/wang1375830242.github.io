@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sakura521.cn/"/>
-  <updated>2020-03-16T09:20:43.101Z</updated>
+  <updated>2020-03-17T02:54:09.325Z</updated>
   <id>https://www.sakura521.cn/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>给新手推荐的IDEA插件 干货分享</title>
+    <link href="https://www.sakura521.cn/%E5%B9%B2%E8%B4%A7/IDEAPlugins.html"/>
+    <id>https://www.sakura521.cn/干货/IDEAPlugins.html</id>
+    <published>2020-03-17T01:52:11.000Z</published>
+    <updated>2020-03-17T02:54:09.325Z</updated>
+    
+    <summary type="html">
+    
+      给新手推荐的IDEA插件 干货分享
+    
+    </summary>
+    
+      <category term="干货" scheme="https://www.sakura521.cn/categories/%E5%B9%B2%E8%B4%A7/"/>
+    
+    
+      <category term="干货" scheme="https://www.sakura521.cn/tags/%E5%B9%B2%E8%B4%A7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>编程专用字体 JetBrains Mono</title>
-    <link href="https://www.sakura521.cn/%E6%8A%80%E6%9C%AF/JetBrainsMono.html"/>
-    <id>https://www.sakura521.cn/技术/JetBrainsMono.html</id>
+    <link href="https://www.sakura521.cn/%E5%B9%B2%E8%B4%A7/JetBrainsMono.html"/>
+    <id>https://www.sakura521.cn/干货/JetBrainsMono.html</id>
     <published>2020-03-16T08:35:30.000Z</published>
-    <updated>2020-03-16T09:20:43.101Z</updated>
+    <updated>2020-03-17T01:56:24.119Z</updated>
     
     <summary type="html">
     
@@ -29,10 +49,10 @@
     
     </summary>
     
-      <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="干货" scheme="https://www.sakura521.cn/categories/%E5%B9%B2%E8%B4%A7/"/>
     
     
-      <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+      <category term="干货" scheme="https://www.sakura521.cn/tags/%E5%B9%B2%E8%B4%A7/"/>
     
   </entry>
   
@@ -400,24 +420,6 @@
     <summary type="html">
     
       live 2d 看板娘
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo 常用命令</title>
-    <link href="https://www.sakura521.cn/null/hexo.html"/>
-    <id>https://www.sakura521.cn/null/hexo.html</id>
-    <published>2020-02-21T02:22:16.000Z</published>
-    <updated>2020-03-02T03:03:33.653Z</updated>
-    
-    <summary type="html">
-    
-      Hexo 比较常用的命令
     
     </summary>
     
