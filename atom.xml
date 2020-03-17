@@ -101,7 +101,7 @@
     <link href="https://www.sakura521.cn/%E6%8A%80%E6%9C%AF/nodeTutorial.html"/>
     <id>https://www.sakura521.cn/技术/nodeTutorial.html</id>
     <published>2020-03-12T07:56:03.000Z</published>
-    <updated>2020-03-14T01:43:25.227Z</updated>
+    <updated>2020-03-17T12:52:54.506Z</updated>
     
     <summary type="html">
     
@@ -161,7 +161,7 @@
     <link href="https://www.sakura521.cn/%E6%8A%80%E6%9C%AF/AdSense.html"/>
     <id>https://www.sakura521.cn/技术/AdSense.html</id>
     <published>2020-03-12T04:05:33.000Z</published>
-    <updated>2020-03-14T01:49:39.201Z</updated>
+    <updated>2020-03-17T09:36:28.493Z</updated>
     
     <summary type="html">
     
@@ -266,10 +266,10 @@
   
   <entry>
     <title>免费CDN：jsDeliver+Github 搭建过程记录</title>
-    <link href="https://www.sakura521.cn/null/freeCDN.html"/>
-    <id>https://www.sakura521.cn/null/freeCDN.html</id>
+    <link href="https://www.sakura521.cn/%E6%8A%80%E6%9C%AF/freeCDN.html"/>
+    <id>https://www.sakura521.cn/技术/freeCDN.html</id>
     <published>2020-03-02T02:30:30.000Z</published>
-    <updated>2020-03-14T01:42:08.912Z</updated>
+    <updated>2020-03-17T12:53:03.184Z</updated>
     
     <summary type="html">
     
@@ -279,6 +279,8 @@
     
       <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
     
+    
+      <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
