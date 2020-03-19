@@ -4,7 +4,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Hexo博客 搭建超详细教程 | 樱花🌸</title>
+<meta name="keywords" content="jsDeliver,Github,cdn,搭建,过程,记录,Hexo,Sakura,樱花,前端博客,JavaScript,html5,css3,Jquery,NodeJs,Ubuntu,hexo,sakura,github,Github,博客,免费博客,学生博客,css,js,html,java">
+
+  
+<meta name="description" content="jsDeliver+Github 搭建过程记录">
+
+  
+  <title itemprop="name">免费CDN：jsDeliver+Github 搭建过程记录 | 樱花🌸</title>
   
     <link rel="shortcut icon" href="https://2heng.xin/favicon.ico">
   
@@ -355,11 +361,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(http://www.obzhi.com/wp-content/uploads/2017/07/guanglu.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://www.obzhi.com/wp-content/uploads/2017/07/guanglu.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://pic.netbian.com/uploads/allimg/190413/202741-15551584619a4b.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/190413/202741-15551584619a4b.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      Hexo博客 搭建超详细教程</h1>
+      免费CDN：jsDeliver+Github 搭建过程记录</h1>
       <p class="entry-census">
         <span>
           <a href="sakura521.cn">
@@ -371,7 +377,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2020-3-12<span class="bull">
+        2020-3-2<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -385,59 +391,54 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <p><code>不说hexo是啥了，毕竟都开始准备搭建了，网上又各种介绍。</code></p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这个搭建教程是不需要服务器的，因为是搭建到github上的。</p>
-<p>当然也可以搭建到服务器，如果感觉不喜欢别人的服务器，推荐使用<a href="https://www.aliyun.com/minisite/goods?userCode=ms0yockk" target="_blank" rel="noopener">阿里云</a>的服务器，以前我是搭建到这个上面的，现在搬到了github＋coding双部署。</p>
-<h1 id="安装Git以及连接GitHub"><a href="#安装Git以及连接GitHub" class="headerlink" title="安装Git以及连接GitHub"></a>安装Git以及连接GitHub</h1><p>在你的Windows电脑上安装Git以及连接GitHub,教程见下面的网址。</p>
-<p><a href="https://www.sakura521.cn/技术/gitTutorial.html">详细教程</a></p>
-<h1 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h1><p>这个是方便Hexo在本地搭建修改的。教程见下面网址。</p>
-<p><a href="https://www.sakura521.cn/技术/nodeTutorial.html">详细教程</a></p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>主题来了，来安装Hexo这博客框架。</p>
-<p>首先创建一个文件夹，命名为你想要的名字。我的名字叫SakuraHexo，这个文件夹就是用来放博客所有文件的地方。进入文件夹后，按住Shift键同时右键鼠标。 </p>
-<p>点    在此处打开PowerShell窗口(S) </p>
-<p>使用npm命令来安装Hexo</p>
-<pre><code class="nginx">npm install -g hexo-cli 
+          <h1 id="CDN-维基百科解释"><a href="#CDN-维基百科解释" class="headerlink" title="CDN 维基百科解释"></a>CDN 维基百科解释</h1><p><strong>内容分发网络</strong>（英语：<strong>C</strong>ontent <strong>D</strong>elivery <strong>N</strong>etwork或<strong>C</strong>ontent <strong>D</strong>istribution <strong>N</strong>etwork，缩写：<strong>CDN</strong>）是指一种透过<a href="https://zh.wikipedia.org/wiki/互聯網" target="_blank" rel="noopener">互联网</a>互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、影片、应用程序及其他文件发送给用户，来提供高性能、可扩展性及低成本的网络内容传递给用户。</p>
+<h1 id="1、-首先创建一个Github仓库"><a href="#1、-首先创建一个Github仓库" class="headerlink" title="1、 首先创建一个Github仓库"></a>1、 首先创建一个Github仓库</h1><p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/GITHUBCDN.png" alt></p>
+<p><code>我的仓库名为CDN并不是图中的CDNNAME，因为我已经创建了名字为CDN的仓库，不能创建重复的。</code></p>
+<h1 id="2、-克隆Github仓库到本地"><a href="#2、-克隆Github仓库到本地" class="headerlink" title="2、 克隆Github仓库到本地"></a>2、 克隆Github仓库到本地</h1><p>先在本地创建一个文件夹，任意位置都可以（最好不要在C盘），然后进入到文件夹中。</p>
+<p>然后再去Github仓库，复制仓库的ssh地址。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/wewae.png" alt></p>
+<p>在本地目录中右键Git Bash Here,在命令窗口中执行一下命令：</p>
+<pre><code class="Git">git clone 复制的仓库ssh地址
 </code></pre>
-<p>安装完成后会有几个报错，这个没关系无视(☆-ｖ-)它就可以了</p>
-<p>然后输入 hexo -v 来验证是否安装成功</p>
-<pre><code class="nginx">hexo -v
+<h1 id="3、-上传文件到Github仓库"><a href="#3、-上传文件到Github仓库" class="headerlink" title="3、 上传文件到Github仓库"></a>3、 上传文件到Github仓库</h1><p>将你要上传的图片视频保存到刚才那个本地文件夹中（上传的单个文件不要大于50M），然后在文件夹中右键Git Bash Here,执行一下命令：</p>
+<pre><code class="Git">git status                    //查看状态
+git add .                     //添加所有文件到暂存区  不要忘记后面那个.
+git commit -m &#39;提交信息&#39;      //把文件提交到仓库
+git push                      //推送至远程仓库
 </code></pre>
-<p>然后初始化我们的网址，输入</p>
-<pre><code class="nginx">hexo init
-</code></pre>
-<p>接着输入 npm install 来安装这个网址所需要的依赖插件</p>
-<pre><code class="nginx">npm install
-</code></pre>
-<p>完成后，输入hexo g 来生成静态网页</p>
-<pre><code class="nginx">hexo g
-</code></pre>
-<p>结果显示</p>
-<pre><code class="nginx">INFO  Generated: 
-INFO  Generated: 
-INFO  Generated: 
-INFO  Generated: 
-INFO  * files generated in 1.12 s
-</code></pre>
-<p>hexo s 开启本地服务器</p>
-<pre><code class="nginx">hexo s
-</code></pre>
-<p>结果显示</p>
-<pre><code>INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.
-</code></pre><p>这就代表启动成功了。</p>
-<p>想看网站的样式在浏览器输入网址<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>就可以查看了。</p>
-<p>如果想关闭本地服务，Ctrl+C 就可以了 或者关闭这个命令窗口。</p>
-<h1 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h1><p>使用最多的几个</p>
-<pre><code class="nginx">hexo new &quot;一个新的文章&quot;    #这是创建新的文章的命令
-hexo g    #生成静态网页
-hexo s    #启动本地服务
-hexo d    #部署到github或别地方
-</code></pre>
-<p>其他更详细点的Hexo命令在下面网址看</p>
-<p><a href="https://www.sakura521.cn/2020/02/21/hexo.html">Hexo常用命令</a></p>
-<h1 id="Hexo美化"><a href="#Hexo美化" class="headerlink" title="Hexo美化"></a>Hexo美化</h1><p>Hexo有各种各样的主题。本博客使用的<a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" rel="noopener">hexo-theme-sakura</a></p>
-<p>这个主题的使用教程在下面网址</p>
-<p><a href="https://www.sakura521.cn/2018/12/12/Sakura2.html">主题使用教程</a></p>
-<p><a href="https://www.sakura521.cn/2020/03/13/sakurameihua.html">主题美化详细教程</a></p>
+<h1 id="4、-发布版本"><a href="#4、-发布版本" class="headerlink" title="4、 发布版本"></a>4、 发布版本</h1><p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/ASDDA.png" alt></p>
+<p>然后自定义一个发布版本号</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/wdadw.png" alt></p>
+<p>到现在就可以使用了。</p>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4531214479514249" data-ad-slot="6907628200"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+
+<h1 id="5、-更新版本"><a href="#5、-更新版本" class="headerlink" title="5、 更新版本"></a>5、 更新版本</h1><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>可以跟上面3、4步骤一样去更新它。</p>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>还有更简便的，前提是已经安装了TortoiseGit.如果没有直接跳过此方法。</p>
+<p>1、 首先右键 Git提交</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/23FDSF.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/2FSDF.jpg" alt></p>
+<p><code>提交右边有个向下的小箭头，可以点选提交并推送。直接完事，然后去github上创建新的版本就可以了。</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/ASDASD.png" alt></p>
+<p>成功后点击推送。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/fefefxc.png" alt></p>
+<p>这就提交到了Github</p>
+<p>接下来就是进行第四步的创建版本了。</p>
+<h1 id="6、-使用方法"><a href="#6、-使用方法" class="headerlink" title="6、 使用方法"></a>6、 使用方法</h1><p>文件网址位置：<a href="https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径</a>        </p>
+<p>@发布的版本号 可以不写，默认就是最新版本。</p>
+<pre><code>https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.02/images/Konachan.com-ls-black_hair-f-toriki-touhou.jpg
+
+https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/Konachan.com-ls-black_hair-f-toriki-touhou.jpg
+</code></pre><p><code>第一个是代版本号的，第二个不带版本号。两个都是一样的图片。</code></p>
+<h1 id="7、-更加具体的方法官网查看"><a href="#7、-更加具体的方法官网查看" class="headerlink" title="7、 更加具体的方法官网查看"></a>7、 更加具体的方法官网查看</h1><p><a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">https://www.jsdelivr.com/</a></p>
+<h1 id="8、-更方便的一种方式"><a href="#8、-更方便的一种方式" class="headerlink" title="8、 更方便的一种方式"></a>8、 更方便的一种方式</h1><p>2020.3.13更新的新方法</p>
+<p>使用 <a href="https://www.sakura521.cn/技术/picgocdn.html">PicGo+jsDelivr+GitHub搭建免费cdn加速图床</a></p>
 
         </div>
 		
@@ -481,15 +482,15 @@ hexo d    #部署到github或别地方
           
             <div class="post-nepre half previous">
           
-            <a href="/技术/gitTutorial.html" rel="prev">
+            <a href="/technology/jackson.html" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/190706/214422-15624206629fc6.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/190706/214422-15624206629fc6.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/191012/103831-15708479117885.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/191012/103831-15708479117885.jpg">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                Git安装教程(Windows) 以及连接Github</h3>
+                SpringBoot 使用jackson处理json数据 学习笔记</h3>
                 <hr>
               </div>
             </a>
@@ -499,15 +500,15 @@ hexo d    #部署到github或别地方
           
             <div class="post-nepre half next">
           
-            <a href="/技术/AdSense.html" rel="next">
+            <a href="/technology/RSSExplanation.html" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/191115/232632-15738315927970.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/191115/232632-15738315927970.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/191129/183446-157502368699b5.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/191129/183446-157502368699b5.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                Hexo接入Google AdSense广告</h3>
+                RSS 介绍</h3>
                 <hr>
               </div>
             </a>
@@ -571,7 +572,7 @@ hexo d    #部署到github或别地方
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>困難が我々を強くし、勝利が我々を賢くし、行動が我々に誇りを与える</p>
+        <p><i class="iconfont icon-write"></i>All things come to those who wait.</p>
       </section>
     </main><!-- #main -->
   </div><!-- #primary -->

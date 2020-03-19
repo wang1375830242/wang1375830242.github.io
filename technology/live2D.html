@@ -4,7 +4,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Java泛型 学习笔记 | 樱花🌸</title>
+<meta name="keywords" content="live,2d,看板娘,Hexo,Sakura,樱花,前端博客,JavaScript,html5,css3,Jquery,NodeJs,Ubuntu,hexo,sakura,github,Github,博客,免费博客,学生博客,css,js,html,java">
+
+  
+<meta name="description" content="live 2d 看板娘">
+
+  
+  <title itemprop="name">live 2d 看板娘 官方文档 | 樱花🌸</title>
   
     <link rel="shortcut icon" href="https://2heng.xin/favicon.ico">
   
@@ -355,11 +361,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(http://pic.netbian.com/uploads/allimg/200216/183702-1581849422e4c0.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/200216/183702-1581849422e4c0.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://pic.netbian.com//uploads/allimg/180803/084010-15332568107994.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com//uploads/allimg/180803/084010-15332568107994.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      Java泛型 学习笔记</h1>
+      live 2d 看板娘 官方文档</h1>
       <p class="entry-census">
         <span>
           <a href="sakura521.cn">
@@ -371,7 +377,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2020-2-27<span class="bull">
+        2020-2-21<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -385,295 +391,73 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <p><code>**Java泛型详解： 和Class的使用。 泛型类，泛型方法的详细使用实例**</code></p>
-<hr>
-<h1 id="一、-引入"><a href="#一、-引入" class="headerlink" title="一、 引入"></a>一、 引入</h1><h2 id="1、-泛型是什么"><a href="#1、-泛型是什么" class="headerlink" title="1、 泛型是什么"></a>1、 泛型是什么</h2><p>ArrayList 就是泛型。那ArrayList能完成哪些想不到的功能呢？先看下面这段代码：</p>
-<pre><code class="java">    ArrayList&lt;String&gt; strList = new ArrayList&lt;String&gt;();
-    ArrayList&lt;Integer&gt; intList = new ArrayList&lt;Integer&gt;();
-    ArrayList&lt;Double&gt; doubleList = new ArrayList&lt;Double&gt;();
-</code></pre>
-<p>这里构造了三个List分别装String、Integer和Double；这就是ArrayList的过人之处，既各种类型的变量都可以组装成对应的List。而不必针对每个类型分别实现一个构建ArrayList的类。下面看看如果没有泛型的话，我们要怎么做。</p>
-<h2 id="2、-没有泛型会怎样"><a href="#2、-没有泛型会怎样" class="headerlink" title="2、 没有泛型会怎样"></a>2、 没有泛型会怎样</h2><p>先看下面这段代码：</p>
-<p>我们实现两个能够设置点坐标的类，分别设置Integer类型的点坐标和Float类型的点坐标.</p>
-<pre><code class="java">package cn.sakura.demo;
-
-public class Interger {
-
-    private Integer x;
-    private Integer y;
-
-    public Integer getX() {
-        return x;
-    }
-
-    public void setX(Integer x) {
-        this.x = x;
-    }
-
-    public Integer getY() {
-        return y;
-    }
-
-    public void setY(Integer y) {
-        this.y = y;
-    }
-
-    class FloatPoint {
-        private Float x;
-        private Float y;
-
-        public Float getX() {
-            return x;
-        }
-
-        public void setX(Float x) {
-            this.x = x;
-        }
-
-        public Float getY() {
-            return y;
-        }
-
-        public void setY(Float y) {
-            this.y = y;
-        }
-    }
-
-}
-</code></pre>
-<p>发现他们除了变量类型不一样，一个是Integer一个是Float以外，其他并没有是吗区别.下面将两个合成一个。因为Integer和Float都是派生自Object的，下面用代码演示：</p>
-<pre><code class="java">package cn.sakura.demo;
-
-public class ObjectPoint {
-    private Object x;
-    private Object y;
-
-    public Object getX() {
-        return x;
-    }
-
-    public void setX(Object x) {
-        this.x = x;
-    }
-
-    public Object getY() {
-        return y;
-    }
-
-    public void setY(Object y) {
-        this.y = y;
-    }
-}
-</code></pre>
-<p>既全部都用Object来代替所有的子类。</p>
-<p>在使用的时候是这样：</p>
-<pre><code class="java">        ObjectPoint integerPoint = new ObjectPoint();
-        integerPoint.setY(new Integer(100));
-        Integer integerX = (Integer) integerPoint.getX();
-</code></pre>
-<p>在设置的时候，使用new Integer(100)来创建一个Integer</p>
-<pre><code class="java">        integerPoint.setY(new Integer(100));
-</code></pre>
-<p>然后在取值的时候，进行强制转换；</p>
-<pre><code class="java">        Integer integerX = (Integer) integerPoint.getX();
-</code></pre>
-<p>由于在设置的时候，是设置的Integer所以在取值的时候，轻质转换是不会出错的。</p>
-<p>同理，FloatPoint的设置和取值也是类似的，代码如下：</p>
-<pre><code class="java">        ObjectPoint floatPoint = new ObjectPoint();
-        integerPoint.setY(new Float(100,12f));
-        Integer floatX = (Integer) floatPoint.getX();
-</code></pre>
-<p>如果改成下面这样也不会报错。</p>
-<pre><code class="java">        ObjectPoint floatPoint = new ObjectPoint();
-        integerPoint.setY(new Float(100,12f));
-        String floatX = (String) floatPoint.getX();
-</code></pre>
-<p>强制转换时，因为编译器也不知道你传进去的是什么，而floatPoint.get()返回类型是Object，所以编译时，将Object强传成String事成立的。必然不会报错。</p>
-<p>而在运行时，则不然，在运行时，floatPoint实例中期明明传进去的是Float类型的变量，非要把他强制转换成String类型，肯定会报类型转换的错误。</p>
-<p>那有什么办法在编译阶段，既能合并成同一个，又能在编译时检查出来传回去类型不对呢？</p>
-<p>当然，这就是泛型。</p>
-<p>下面将对泛型的写法和做法一一讲解。</p>
-<h1 id="二、-各种泛型定义及使用"><a href="#二、-各种泛型定义及使用" class="headerlink" title="二、 各种泛型定义及使用"></a>二、 各种泛型定义及使用</h1><h2 id="1、-泛型类定义及使用"><a href="#1、-泛型类定义及使用" class="headerlink" title="1、 泛型类定义及使用"></a>1、 泛型类定义及使用</h2><p>先看看泛型的类是怎么定义的；</p>
-<pre><code class="java">package cn.sakura.demo;
-
-public class Point&lt;T&gt; {
-    private T x;
-    private T y;
-
-    public T getX() {
-        return x;
-    }
-
-    public void setX(T x) {
-        this.x = x;
-    }
-
-    public T getY() {
-        return y;
-    }
-
-    public void setY(T y) {
-        this.y = y;
-    }
-
-    @Override
-    public String toString() {
-        return &quot;Point{&quot; +
-                &quot;x=&quot; + x +
-                &quot;, y=&quot; + y +
-                &#39;}&#39;;
-    }
-
-    public static void main(String[] args) {
-
-    //IntegerPoint使用  
-        Point&lt;Integer&gt; pointInt = new Point&lt;&gt;();
-        pointInt.setX(new Integer(100));
-        System.out.println(pointInt.getX());
-
-    //FloatPoint使用  
-        Point&lt;Float&gt; floatPoint = new Point&lt;&gt;();
-        floatPoint.setX(new Float(100.12f));
-        System.out.println(floatPoint.getX());
-
-
-    }
-
-}
-
-</code></pre>
-<p>运行结果：</p>
-<pre><code>100
-100.12
-</code></pre><h3 id="（1）、-定义泛型：-Point"><a href="#（1）、-定义泛型：-Point" class="headerlink" title="（1）、 定义泛型： Point"></a>（1）、 定义泛型： Point<t></t></h3><p>Point<t> 既类名后面加一个尖括号，括号里是一个大写字母。这里写的是T，其实这个字母可以是任何大写字母，任何大写字母，意义相同。</t></p>
-<h3 id="（2）、-类中使用泛型"><a href="#（2）、-类中使用泛型" class="headerlink" title="（2）、 类中使用泛型"></a>（2）、 类中使用泛型</h3><p>这个T表示派生自Object类的任何类，比如String,Integer,Double等等。这里要注意的是，T一定是派生于Object类的。为了方便起见，大家可以在这里把T当成String，既String在类中怎么使用，那T在类中就可以怎么用。下面是定义变量，作为返回值，作为参数传入的定义。</p>
-<pre><code class="java">    //定义变量
-    private T x;
-    //作为返回值
-    public T getX() {
-        return x;
-    }
-    //作为参数
-    public void setX(T x) {
-        this.x = x;
-    }
-</code></pre>
-<h3 id="（3）、-使用泛型类"><a href="#（3）、-使用泛型类" class="headerlink" title="（3）、 使用泛型类"></a>（3）、 使用泛型类</h3><p>用法：</p>
-<pre><code class="java">        Point&lt;Integer&gt; pointInt = new Point&lt;&gt;();
-        pointInt.setX(new Integer(100));
-        System.out.println(pointInt.getX());
-
-        Point&lt;Float&gt; floatPoint = new Point&lt;&gt;();
-        floatPoint.setX(new Float(100.12f));
-        System.out.println(floatPoint.getX());
-</code></pre>
-<p>首先，是构造一个实例：</p>
-<pre><code class="java">        Point&lt;String&gt; p = new Point&lt;&gt;();
-</code></pre>
-<p>这里与普通构造类实例的不同之点在于，普通类构造函数时这样的 Point p =new Point();</p>
-<p>而泛型类的构造则需要在类名后添上<string>，既一对尖括号，中间写上要传入的类型。</string></p>
-<p>因为我们构造时，是这样的：class Point<t>,所以在使用的时候也要在Point后加上类型来定义T代表的意义。</t></p>
-<p>然后在getVar（）和setVar() 时候就没有什么特殊的了，直接调用即可。</p>
-<p>从上面的使用时，明显可以看出泛式的作用，在构造泛式的实例的时候：</p>
-<pre><code class="java">        Point&lt;Integer&gt; pointInt = new Point&lt;&gt;();
-
-        Point&lt;Float&gt; floatPoint = new Point&lt;&gt;();
-</code></pre>
-<p>尖括号中，你传进去的是什么，T就代表什么类型。这就是泛型的最大作用，我们只需要考虑逻辑实现，就能拿给各种类来用。</p>
-<h3 id="（4）、-使用泛型实现的优势"><a href="#（4）、-使用泛型实现的优势" class="headerlink" title="（4）、 使用泛型实现的优势"></a>（4）、 使用泛型实现的优势</h3><p>相比较开篇时使用Object的方式，又两个优点：</p>
-<h4 id="（4-1）、-不用强制转换"><a href="#（4-1）、-不用强制转换" class="headerlink" title="（4.1）、 不用强制转换"></a>（4.1）、 不用强制转换</h4><p>​            //使用Object作为返回值，要强制转化成指定类型</p>
-<p>​            Float floatX = (Float)floatPoint.getX();</p>
-<p>​            //使用泛型时，不用强制转换，直接出来就是String</p>
-<p>​            System.out.println(p.getVar());</p>
-<h4 id="（4-2）、-在setX-如果传入类型不对，编译时会报错"><a href="#（4-2）、-在setX-如果传入类型不对，编译时会报错" class="headerlink" title="（4.2）、 在setX()如果传入类型不对，编译时会报错"></a>（4.2）、 在setX()如果传入类型不对，编译时会报错</h4><p>​            <img src="https://s2.ax1x.com/2020/02/28/3DP6Z6.png" alt></p>
-<p>​            可以看出，当我们构造时使用的是String，而在setX时，传进去Integer类型时，就会报错，而不是像Object实现方式一样，在运行时才会报强制转换错误。</p>
-<h2 id="2、-多泛型变量定义及字母规范"><a href="#2、-多泛型变量定义及字母规范" class="headerlink" title="2、 多泛型变量定义及字母规范"></a>2、 多泛型变量定义及字母规范</h2><h3 id="（1）、-多泛型变量定义"><a href="#（1）、-多泛型变量定义" class="headerlink" title="（1）、 多泛型变量定义"></a>（1）、 多泛型变量定义</h3><p>上在我们只定义了一个泛型变量T，那如果我们需要传进去多个泛型呢？</p>
-<p>只需要在类似下面这样就可以了；</p>
-<pre><code class="java">class morePoint&lt;T,U&gt;{
-}
-</code></pre>
-<p>也就是在原来的T后面用逗号隔开，多个就像下面这样：</p>
-<pre><code class="java">class morePoint&lt;T,U,A,C,B&gt;{
-}
-</code></pre>
-<p>举个例子，我们在Point上再加另一个字段name，也可泛型来表示，代码如下：</p>
-<pre><code class="java">package cn.sakura.demo;
-
-public class MorePoint&lt;T, U&gt; {
-
-    private T x;
-    private T y;
-
-    private U name;
-
-    public T getX() {
-        return x;
-    }
-
-    public void setX(T x) {
-        this.x = x;
-    }
-
-    public T getY() {
-        return y;
-    }
-
-    public void setY(T y) {
-        this.y = y;
-    }
-
-    public U getName() {
-        return name;
-    }
-
-    public void setName(U name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return &quot;morePoint{&quot; +
-                &quot;x=&quot; + x +
-                &quot;, y=&quot; + y +
-                &quot;, name=&quot; + name +
-                &#39;}&#39;;
-    }
-
-
-    public static void main(String[] args) {
-        MorePoint&lt;Integer, String&gt; morePoint = new MorePoint&lt;Integer, String&gt;();
-        morePoint.setName(&quot;sakura&quot;);
-        System.out.println(morePoint.getName());
-    }
-
-
-}
-</code></pre>
-<h3 id="（2）、-字母规范"><a href="#（2）、-字母规范" class="headerlink" title="（2）、 字母规范"></a>（2）、 字母规范</h3><p>在定义泛型类时，我们已经提到用于指定泛型的变量是一个大写字母：</p>
-<pre><code class="java">class Point&lt;T&gt;{  
- …………  
-}  
-</code></pre>
-<p>其中任何大写字母都可以，他们的意义完全相同，但是为了提高可读性，大家默认在不同的情境下使用的字母意义如下：</p>
+          <h1 id="Live2D-Widget"><a href="#Live2D-Widget" class="headerlink" title="Live2D Widget"></a>Live2D Widget</h1><p><img src="https://forthebadge.com/images/badges/built-with-love.svg" alt><br><img src="https://forthebadge.com/images/badges/uses-html.svg" alt><br><img src="https://forthebadge.com/images/badges/made-with-javascript.svg" alt><br><img src="https://forthebadge.com/images/badges/contains-cat-gifs.svg" alt><br><img src="https://forthebadge.com/images/badges/powered-by-electricity.svg" alt><br><img src="https://forthebadge.com/images/badges/makes-people-smile.svg" alt></p>
+<h2 id="特性-Feature"><a href="#特性-Feature" class="headerlink" title="特性 Feature"></a>特性 Feature</h2><p>在网页中添加 Live2D 看板娘。兼容 PJAX，支持无刷新加载。<br>Add Live2D widget to web page. Compatible with PJAX.</p>
+<p><strong>警告：本项目使用了大量 ES6 语法，且依赖于 WebGL。不支持 IE 11 等老旧浏览器。</strong><br><strong>WARNING: This project does not support legacy browsers such as IE 11.</strong></p>
+<h2 id="示例-Demo"><a href="#示例-Demo" class="headerlink" title="示例 Demo"></a>示例 Demo</h2><p>在<a href="https://zhangshuqiao.org" target="_blank" rel="noopener">米米的博客</a>的左下角可查看效果。</p>
+<p><img src="https://s2.ax1x.com/2020/02/21/3nIcDO.png" alt><br><img src="https://s2.ax1x.com/2020/02/21/3nIRVe.png" alt><br><img src="https://s2.ax1x.com/2020/02/21/3nIgbD.png" alt></p>
+<p>这个仓库中也提供了两个 Demo，即</p>
 <ul>
-<li>E    Element,常用在java，Collection里，如： List<e>,lterator<e>,Set<e></e></e></e></li>
-<li>K,V    Key,Value,代表Map的键值对</li>
-<li>N    Number,数字</li>
-<li>T    Type,类型，如String,Integer等等</li>
+<li><a href="https://mi.js.org/live2d-widget/demo/demo1.html" target="_blank" rel="noopener">demo1.html</a> ，展现基础效果</li>
+<li><a href="https://mi.js.org/live2d-widget/demo/demo2.html" target="_blank" rel="noopener">demo2.html</a> ，仿 NPM 的登陆界面</li>
 </ul>
-<h2 id="3、-泛型接口定义及使用"><a href="#3、-泛型接口定义及使用" class="headerlink" title="3、 泛型接口定义及使用"></a>3、 泛型接口定义及使用</h2><p>在接口上定义泛型与在类中定义泛型是一样的，代码如下：</p>
-<pre><code class="java">interface Info&lt;T&gt; {        // 在接口上定义泛型    
-    public T getVar(); // 定义抽象方法，抽象方法的返回值就是泛型类型    
-
-    public void setVar(T x);
-}    
+<h2 id="依赖-Dependencies"><a href="#依赖-Dependencies" class="headerlink" title="依赖 Dependencies"></a>依赖 Dependencies</h2><p>本插件需要 Font Awesome 4.7.0 支持，请确保相关样式表已在页面中加载，例如在 <code>&lt;head&gt;</code> 中加入：<br>Font Awesome 4.7.0 is required for this plugin. You can add this to <code>&lt;head&gt;</code>:</p>
+<pre><code class="xml">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot;&gt;
 </code></pre>
-<p>与泛型类的定义一样，也是在接口名后加尖括号；</p>
-<h3 id="（1）、-使用方法一：非泛型类"><a href="#（1）、-使用方法一：非泛型类" class="headerlink" title="（1）、 使用方法一：非泛型类"></a>（1）、 使用方法一：非泛型类</h3><p>在使用的时候，就出现了问题，先看看下面的这个使用方法：</p>
+<p>否则无法正常显示。（如果网页中已经加载了 Font Awesome，就不要重复加载了）</p>
+<h2 id="使用-Usage"><a href="#使用-Usage" class="headerlink" title="使用 Usage"></a>使用 Usage</h2><p>将这一行代码加入 <code>&lt;head&gt;</code> 或 <code>&lt;body&gt;</code>，即可展现出效果：</p>
+<pre><code class="xml">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>如果网站启用了 PJAX，由于看板娘不必每页刷新，因此要注意将相关脚本放到 PJAX 刷新区域之外。</p>
+<p>换句话说，如果你是小白，或者只需要最基础的功能，就只用把这一行代码，连同前面加载 Font Awesome 的一行代码，一起放到 html 的 <code>&lt;head&gt;</code> 中即可。<br>对于用各种模版引擎（例如 Nunjucks，Jinja 或者 PHP）生成的页面，也要自行修改，方法类似，只是可能略为麻烦。以 Hexo 为例，需要在主题相关的 ejs 或 njk 模版中正确配置路径，才可以加载。</p>
+<p><strong>但是！我们强烈推荐自己进行配置，否则很多功能是不完整的，并且可能产生问题！</strong><br>如果你有兴趣自己折腾的话，请看下面的详细说明。</p>
+<h3 id="Using-CDN"><a href="#Using-CDN" class="headerlink" title="Using CDN"></a>Using CDN</h3><p>要自定义有关内容，可以把这个仓库 Fork 一份，然后进行修改。这时，使用方法对应地变为</p>
+<pre><code class="xml">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/username/live2d-widget@latest/autoload.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>将 <code>username</code> 替换为你的 GitHub 用户名即可。</p>
+<h3 id="Self-host"><a href="#Self-host" class="headerlink" title="Self-host"></a>Self-host</h3><p>你也可以直接把这些文件放到服务器上，而不是通过 CDN 加载。</p>
+<ul>
+<li><p>如果你能够通过 <code>ssh</code> 访问你的主机，请把整个仓库克隆到服务器上。执行：</p>
+<pre><code class="bash">cd /path/to/your/webroot
+# Clone this repository
+git clone https://github.com/stevenjoezhang/live2d-widget.git
+</code></pre>
+</li>
+<li><p>如果你的主机无法用 <code>ssh</code> 连接（例如一般的虚拟主机），请选择 <code>Download ZIP</code>，然后通过 <code>ftp</code> 等方式上传到主机上，再解压到网站的目录下。</p>
+</li>
+<li><p>如果你是通过 Hexo 等工具部署的静态博客，请在本地开命令行进入博客目录，例如 <code>source</code> 下与 <code>_posts</code> 同级的目录，然后再执行前述的 <code>git clone</code> 命令。重新部署博客时，相关文件就会自动上传到对应的路径下。</p>
+</li>
+</ul>
+<p>这样，整个项目就可以通过你的服务器 IP 或者域名从公网访问了。不妨试试能否正常地通过浏览器打开 <code>autoload.js</code> 和 <code>live2d.min.js</code> 等文件，并确认这些文件的内容是正确的，没有出现乱码。<br>一切正常的话，接下来修改一些配置就行了。（需要通过服务器上的文本编辑器修改；你也可以先在本地完成这一步骤，再上传到服务器上）<br>修改 <code>autoload.js</code> 中的常量 <code>live2d_path</code> 为 <code>live2d-widget</code> 这一文件夹在公网上的路径。比如说，如果你能够通过</p>
+<pre><code>https://www.example.com/path/to/live2d-widget/live2d.min.js
+</code></pre><p>访问到 <code>live2d.min.js</code>，那么就把 <code>live2d_path</code> 的值修改为</p>
+<pre><code>https://www.example.com/path/to/live2d-widget/
+</code></pre><p>路径末尾的 <code>/</code> 一定要加上。具体可以参考 <code>autoload.js</code> 内的注释。<br>完成后，在你要添加看板娘的界面加入</p>
+<pre><code class="xml">&lt;script src=&quot;https://www.example.com/path/to/live2d-widget/autoload.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>就可以加载了。</p>
+<h2 id="目录结构-Files"><a href="#目录结构-Files" class="headerlink" title="目录结构 Files"></a>目录结构 Files</h2><ul>
+<li><code>waifu-tips.json</code> 中包含了触发条件（<code>selector</code>，选择器）和触发时显示的文字（<code>text</code>）；</li>
+<li><code>waifu.css</code> 是看板娘的样式表。</li>
+</ul>
+<p>源文件是对 Hexo 的 NexT 主题有效的，为了适用于你自己的网页，可能需要自行修改，或增加新内容。<br><strong>警告：作者不对包括但不限于 <code>waifu-tips.json</code> 和 <code>waifu-tips.js</code> 文件中的内容负责，请自行确保它们是合适的。</strong></p>
+<p>如果有任何疑问，欢迎提 Issue。如果有任何修改建议，欢迎提 Pull Request。</p>
+<h2 id="鸣谢-Credits"><a href="#鸣谢-Credits" class="headerlink" title="鸣谢 Credits"></a>鸣谢 Credits</h2><p>感谢 BrowserStack 容许我们在真实的浏览器中测试此项目。<br>Thanks to BrowserStack for allowing us to test this project in real browsers.</p>
+<p>代码自这篇博文魔改而来：<br><a href="https://www.fghrsh.net/post/123.html" target="_blank" rel="noopener">https://www.fghrsh.net/post/123.html</a></p>
+<p>点击看板娘的纸飞机按钮时，会出现一个彩蛋，这来自于 <a href="http://www.websiteasteroids.com" target="_blank" rel="noopener">WebsiteAsteroids</a>。</p>
+<h2 id="更多-More"><a href="#更多-More" class="headerlink" title="更多 More"></a>更多 More</h2><p>更多内容可以参考：<br><a href="https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02" target="_blank" rel="noopener">https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02</a><br><a href="https://github.com/xiazeyu/live2d-widget.js" target="_blank" rel="noopener">https://github.com/xiazeyu/live2d-widget.js</a><br><a href="https://github.com/summerscar/live2dDemo" target="_blank" rel="noopener">https://github.com/summerscar/live2dDemo</a></p>
+<p>还可以自行搭建后端 API，并增加模型（需要修改的内容比较多，此处不再赘述）：<br><a href="https://github.com/fghrsh/live2d_api" target="_blank" rel="noopener">https://github.com/fghrsh/live2d_api</a><br><a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">https://github.com/xiazeyu/live2d-widget-models</a><br><a href="https://github.com/xiaoski/live2d_models_collection" target="_blank" rel="noopener">https://github.com/xiaoski/live2d_models_collection</a></p>
+<p>除此之外，还有桌面版本：<br><a href="https://github.com/amorist/platelet" target="_blank" rel="noopener">https://github.com/amorist/platelet</a><br><a href="https://github.com/akiroz/Live2D-Widget" target="_blank" rel="noopener">https://github.com/akiroz/Live2D-Widget</a></p>
+<h2 id="许可证-License"><a href="#许可证-License" class="headerlink" title="许可证 License"></a>许可证 License</h2><p>Released under the GNU General Public License v3<br><a href="http://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">http://www.gnu.org/licenses/gpl-3.0.html</a></p>
+<p>本仓库中涉及的所有 Live2D 模型、图片、动作数据等版权均属于其原作者，仅供研究学习，不得用于商业用途。</p>
+<p>Live2D 官方网站：<br><a href="https://www.live2d.com/en/" target="_blank" rel="noopener">https://www.live2d.com/en/</a><br><a href="https://live2d.github.io" target="_blank" rel="noopener">https://live2d.github.io</a></p>
+<p>Live2D Cubism Core は Live2D Proprietary Software License で提供しています。<br><a href="https://www.live2d.com/eula/live2d-proprietary-software-license-agreement_en.html" target="_blank" rel="noopener">https://www.live2d.com/eula/live2d-proprietary-software-license-agreement_en.html</a><br>Live2D Cubism Components は Live2D Open Software License で提供しています。<br><a href="http://www.live2d.com/eula/live2d-open-software-license-agreement_en.html" target="_blank" rel="noopener">http://www.live2d.com/eula/live2d-open-software-license-agreement_en.html</a></p>
 <blockquote>
-<p>未完</p>
+<p>The terms and conditions do prohibit modification, but obfuscating in <code>live2d.min.js</code> would not be considered illegal modification.</p>
 </blockquote>
-<h1 id="转载原网址："><a href="#转载原网址：" class="headerlink" title="转载原网址："></a>转载原网址：</h1><p><a href="https://www.cnblogs.com/jpfss/p/9928747.html" target="_blank" rel="noopener">https://www.cnblogs.com/jpfss/p/9928747.html</a></p>
+<p><a href="https://community.live2d.com/discussion/140/webgl-developer-licence-and-javascript-question" target="_blank" rel="noopener">https://community.live2d.com/discussion/140/webgl-developer-licence-and-javascript-question</a></p>
+<h2 id="更新-Update"><a href="#更新-Update" class="headerlink" title="更新 Update"></a>更新 Update</h2><p>2018年10月31日，由 fghrsh 提供的原 API 停用，请更新至新地址。参考文章：<br><a href="https://www.fghrsh.net/post/170.html" target="_blank" rel="noopener">https://www.fghrsh.net/post/170.html</a></p>
+<p>2020年1月1日起，本项目不再依赖于 jQuery。</p>
 
         </div>
 		
@@ -717,15 +501,15 @@ public class MorePoint&lt;T, U&gt; {
           
             <div class="post-nepre half previous">
           
-            <a href="/java/MysqlStudy.html" rel="prev">
+            <a href="/technology/javafor.html" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/191215/000846-15763397267e73.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/191215/000846-15763397267e73.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://s2.ax1x.com/2020/02/24/38Awi6.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://s2.ax1x.com/2020/02/24/38Awi6.jpg">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                MySQL 学习笔记 （一）</h3>
+                Java 高级for循环 学习笔记</h3>
                 <hr>
               </div>
             </a>
@@ -735,15 +519,15 @@ public class MorePoint&lt;T, U&gt; {
           
             <div class="post-nepre half next">
           
-            <a href="/java/lambda.html" rel="next">
+            <a href="/technology/hexo.html" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/200102/193708-15779650287a6a.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/200102/193708-15779650287a6a.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.6.8/cover/webp/AK-05.jpg.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.6.8/cover/webp/AK-05.jpg.webp">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                Java8 Lambda表达式 学习笔记</h3>
+                Hexo 常用命令</h3>
                 <hr>
               </div>
             </a>
@@ -807,7 +591,7 @@ public class MorePoint&lt;T, U&gt; {
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>The shortest way to do many things is to only one thing at a time.</p>
+        <p><i class="iconfont icon-write"></i>小坏孩</p>
       </section>
     </main><!-- #main -->
   </div><!-- #primary -->

@@ -4,7 +4,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">RSS 介绍 | 樱花🌸</title>
+<meta name="keywords" content="Java,泛型,学习,练习,Hexo,Sakura,樱花,前端博客,JavaScript,html5,css3,Jquery,NodeJs,Ubuntu,hexo,sakura,github,Github,博客,免费博客,学生博客,css,js,html,java">
+
+  
+<meta name="description" content="Java泛型">
+
+  
+  <title itemprop="name">Java泛型 学习笔记 | 樱花🌸</title>
   
     <link rel="shortcut icon" href="https://2heng.xin/favicon.ico">
   
@@ -355,11 +361,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(http://pic.netbian.com/uploads/allimg/191129/183446-157502368699b5.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/191129/183446-157502368699b5.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(http://pic.netbian.com/uploads/allimg/200216/183702-1581849422e4c0.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/200216/183702-1581849422e4c0.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      RSS 介绍</h1>
+      Java泛型 学习笔记</h1>
       <p class="entry-census">
         <span>
           <a href="sakura521.cn">
@@ -371,7 +377,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2020-2-28<span class="bull">
+        2020-2-27<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -385,56 +391,295 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="RSS"><a href="#RSS" class="headerlink" title="RSS"></a><strong>RSS</strong></h1><p>​        <strong>RSS</strong>（<strong>简易信息聚合</strong>）是一种<a href="https://zh.wikipedia.org/wiki/消息來源" target="_blank" rel="noopener">消息来源</a>格式规范，用以<strong>聚合经常发布更新数据的网站</strong>，例如<a href="https://zh.wikipedia.org/wiki/部落格" target="_blank" rel="noopener">博客</a>文章、新闻、<a href="https://zh.wikipedia.org/wiki/音訊" target="_blank" rel="noopener">音频</a>或<a href="https://zh.wikipedia.org/wiki/視訊" target="_blank" rel="noopener">视频</a>的网摘。RSS文件（或称做摘要、网络摘要、或频更新，提供到频道）包含全文或是节录的文字，再加上发布者所订阅之网摘数据和授权的元数据。</p>
-<p>​        “资源描述框架站点摘要”（RDF Site Summary）就是RSS的英文原意，后来通过<a href="https://zh.wikipedia.org/wiki/逆向首字母缩略词" target="_blank" rel="noopener">逆向首字母缩略词</a>变更为Really Simple Syndication“简易信息聚合”。把新闻标题、摘要（Feed）、内容按照用户的要求，“送”到用户的桌面就是RSS的目的。RSS一词有时候大体上意为社会性书签，包括各种RSS的不同格式。例如，Blogspace对使用网摘于一集成器内之动作标为RSS info和RSS reader。虽然它的第一个句子就包含明确的<a href="https://zh.wikipedia.org/wiki/Atom_(標準" target="_blank" rel="noopener">Atom</a>)格式：“RSS和Atom文件能够用简单的格式从网站更新消息至你的电脑！”</p>
-<p>​        RSS摘要可以借由RSS阅读器、feed reader或是aggregator等网页或以桌面为架构的软件来阅读。标准的XML档式可允许信息在一次发布后透过不同的程序阅览。用户借由将网摘输入RSS阅读器或是用鼠标点取浏览器上指向订阅程序的RSS小图标之<a href="https://zh.wikipedia.org/wiki/URI" target="_blank" rel="noopener">URI</a>（非通常称为<a href="https://zh.wikipedia.org/wiki/URL" target="_blank" rel="noopener">URL</a>）来订阅网摘。RSS阅读器定期检阅是否有更新，然后下载给监看用户界面。</p>
-<p>RSS可以是以下三种解释中任一种的缩写，但其实这三者都是指同一种联合供稿（Syndication）的技术：</p>
+          <p><code>**Java泛型详解： 和Class的使用。 泛型类，泛型方法的详细使用实例**</code></p>
+<hr>
+<h1 id="一、-引入"><a href="#一、-引入" class="headerlink" title="一、 引入"></a>一、 引入</h1><h2 id="1、-泛型是什么"><a href="#1、-泛型是什么" class="headerlink" title="1、 泛型是什么"></a>1、 泛型是什么</h2><p>ArrayList 就是泛型。那ArrayList能完成哪些想不到的功能呢？先看下面这段代码：</p>
+<pre><code class="java">    ArrayList&lt;String&gt; strList = new ArrayList&lt;String&gt;();
+    ArrayList&lt;Integer&gt; intList = new ArrayList&lt;Integer&gt;();
+    ArrayList&lt;Double&gt; doubleList = new ArrayList&lt;Double&gt;();
+</code></pre>
+<p>这里构造了三个List分别装String、Integer和Double；这就是ArrayList的过人之处，既各种类型的变量都可以组装成对应的List。而不必针对每个类型分别实现一个构建ArrayList的类。下面看看如果没有泛型的话，我们要怎么做。</p>
+<h2 id="2、-没有泛型会怎样"><a href="#2、-没有泛型会怎样" class="headerlink" title="2、 没有泛型会怎样"></a>2、 没有泛型会怎样</h2><p>先看下面这段代码：</p>
+<p>我们实现两个能够设置点坐标的类，分别设置Integer类型的点坐标和Float类型的点坐标.</p>
+<pre><code class="java">package cn.sakura.demo;
+
+public class Interger {
+
+    private Integer x;
+    private Integer y;
+
+    public Integer getX() {
+        return x;
+    }
+
+    public void setX(Integer x) {
+        this.x = x;
+    }
+
+    public Integer getY() {
+        return y;
+    }
+
+    public void setY(Integer y) {
+        this.y = y;
+    }
+
+    class FloatPoint {
+        private Float x;
+        private Float y;
+
+        public Float getX() {
+            return x;
+        }
+
+        public void setX(Float x) {
+            this.x = x;
+        }
+
+        public Float getY() {
+            return y;
+        }
+
+        public void setY(Float y) {
+            this.y = y;
+        }
+    }
+
+}
+</code></pre>
+<p>发现他们除了变量类型不一样，一个是Integer一个是Float以外，其他并没有是吗区别.下面将两个合成一个。因为Integer和Float都是派生自Object的，下面用代码演示：</p>
+<pre><code class="java">package cn.sakura.demo;
+
+public class ObjectPoint {
+    private Object x;
+    private Object y;
+
+    public Object getX() {
+        return x;
+    }
+
+    public void setX(Object x) {
+        this.x = x;
+    }
+
+    public Object getY() {
+        return y;
+    }
+
+    public void setY(Object y) {
+        this.y = y;
+    }
+}
+</code></pre>
+<p>既全部都用Object来代替所有的子类。</p>
+<p>在使用的时候是这样：</p>
+<pre><code class="java">        ObjectPoint integerPoint = new ObjectPoint();
+        integerPoint.setY(new Integer(100));
+        Integer integerX = (Integer) integerPoint.getX();
+</code></pre>
+<p>在设置的时候，使用new Integer(100)来创建一个Integer</p>
+<pre><code class="java">        integerPoint.setY(new Integer(100));
+</code></pre>
+<p>然后在取值的时候，进行强制转换；</p>
+<pre><code class="java">        Integer integerX = (Integer) integerPoint.getX();
+</code></pre>
+<p>由于在设置的时候，是设置的Integer所以在取值的时候，轻质转换是不会出错的。</p>
+<p>同理，FloatPoint的设置和取值也是类似的，代码如下：</p>
+<pre><code class="java">        ObjectPoint floatPoint = new ObjectPoint();
+        integerPoint.setY(new Float(100,12f));
+        Integer floatX = (Integer) floatPoint.getX();
+</code></pre>
+<p>如果改成下面这样也不会报错。</p>
+<pre><code class="java">        ObjectPoint floatPoint = new ObjectPoint();
+        integerPoint.setY(new Float(100,12f));
+        String floatX = (String) floatPoint.getX();
+</code></pre>
+<p>强制转换时，因为编译器也不知道你传进去的是什么，而floatPoint.get()返回类型是Object，所以编译时，将Object强传成String事成立的。必然不会报错。</p>
+<p>而在运行时，则不然，在运行时，floatPoint实例中期明明传进去的是Float类型的变量，非要把他强制转换成String类型，肯定会报类型转换的错误。</p>
+<p>那有什么办法在编译阶段，既能合并成同一个，又能在编译时检查出来传回去类型不对呢？</p>
+<p>当然，这就是泛型。</p>
+<p>下面将对泛型的写法和做法一一讲解。</p>
+<h1 id="二、-各种泛型定义及使用"><a href="#二、-各种泛型定义及使用" class="headerlink" title="二、 各种泛型定义及使用"></a>二、 各种泛型定义及使用</h1><h2 id="1、-泛型类定义及使用"><a href="#1、-泛型类定义及使用" class="headerlink" title="1、 泛型类定义及使用"></a>1、 泛型类定义及使用</h2><p>先看看泛型的类是怎么定义的；</p>
+<pre><code class="java">package cn.sakura.demo;
+
+public class Point&lt;T&gt; {
+    private T x;
+    private T y;
+
+    public T getX() {
+        return x;
+    }
+
+    public void setX(T x) {
+        this.x = x;
+    }
+
+    public T getY() {
+        return y;
+    }
+
+    public void setY(T y) {
+        this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;Point{&quot; +
+                &quot;x=&quot; + x +
+                &quot;, y=&quot; + y +
+                &#39;}&#39;;
+    }
+
+    public static void main(String[] args) {
+
+    //IntegerPoint使用  
+        Point&lt;Integer&gt; pointInt = new Point&lt;&gt;();
+        pointInt.setX(new Integer(100));
+        System.out.println(pointInt.getX());
+
+    //FloatPoint使用  
+        Point&lt;Float&gt; floatPoint = new Point&lt;&gt;();
+        floatPoint.setX(new Float(100.12f));
+        System.out.println(floatPoint.getX());
+
+
+    }
+
+}
+
+</code></pre>
+<p>运行结果：</p>
+<pre><code>100
+100.12
+</code></pre><h3 id="（1）、-定义泛型：-Point"><a href="#（1）、-定义泛型：-Point" class="headerlink" title="（1）、 定义泛型： Point"></a>（1）、 定义泛型： Point<t></t></h3><p>Point<t> 既类名后面加一个尖括号，括号里是一个大写字母。这里写的是T，其实这个字母可以是任何大写字母，任何大写字母，意义相同。</t></p>
+<h3 id="（2）、-类中使用泛型"><a href="#（2）、-类中使用泛型" class="headerlink" title="（2）、 类中使用泛型"></a>（2）、 类中使用泛型</h3><p>这个T表示派生自Object类的任何类，比如String,Integer,Double等等。这里要注意的是，T一定是派生于Object类的。为了方便起见，大家可以在这里把T当成String，既String在类中怎么使用，那T在类中就可以怎么用。下面是定义变量，作为返回值，作为参数传入的定义。</p>
+<pre><code class="java">    //定义变量
+    private T x;
+    //作为返回值
+    public T getX() {
+        return x;
+    }
+    //作为参数
+    public void setX(T x) {
+        this.x = x;
+    }
+</code></pre>
+<h3 id="（3）、-使用泛型类"><a href="#（3）、-使用泛型类" class="headerlink" title="（3）、 使用泛型类"></a>（3）、 使用泛型类</h3><p>用法：</p>
+<pre><code class="java">        Point&lt;Integer&gt; pointInt = new Point&lt;&gt;();
+        pointInt.setX(new Integer(100));
+        System.out.println(pointInt.getX());
+
+        Point&lt;Float&gt; floatPoint = new Point&lt;&gt;();
+        floatPoint.setX(new Float(100.12f));
+        System.out.println(floatPoint.getX());
+</code></pre>
+<p>首先，是构造一个实例：</p>
+<pre><code class="java">        Point&lt;String&gt; p = new Point&lt;&gt;();
+</code></pre>
+<p>这里与普通构造类实例的不同之点在于，普通类构造函数时这样的 Point p =new Point();</p>
+<p>而泛型类的构造则需要在类名后添上<string>，既一对尖括号，中间写上要传入的类型。</string></p>
+<p>因为我们构造时，是这样的：class Point<t>,所以在使用的时候也要在Point后加上类型来定义T代表的意义。</t></p>
+<p>然后在getVar（）和setVar() 时候就没有什么特殊的了，直接调用即可。</p>
+<p>从上面的使用时，明显可以看出泛式的作用，在构造泛式的实例的时候：</p>
+<pre><code class="java">        Point&lt;Integer&gt; pointInt = new Point&lt;&gt;();
+
+        Point&lt;Float&gt; floatPoint = new Point&lt;&gt;();
+</code></pre>
+<p>尖括号中，你传进去的是什么，T就代表什么类型。这就是泛型的最大作用，我们只需要考虑逻辑实现，就能拿给各种类来用。</p>
+<h3 id="（4）、-使用泛型实现的优势"><a href="#（4）、-使用泛型实现的优势" class="headerlink" title="（4）、 使用泛型实现的优势"></a>（4）、 使用泛型实现的优势</h3><p>相比较开篇时使用Object的方式，又两个优点：</p>
+<h4 id="（4-1）、-不用强制转换"><a href="#（4-1）、-不用强制转换" class="headerlink" title="（4.1）、 不用强制转换"></a>（4.1）、 不用强制转换</h4><p>​            //使用Object作为返回值，要强制转化成指定类型</p>
+<p>​            Float floatX = (Float)floatPoint.getX();</p>
+<p>​            //使用泛型时，不用强制转换，直接出来就是String</p>
+<p>​            System.out.println(p.getVar());</p>
+<h4 id="（4-2）、-在setX-如果传入类型不对，编译时会报错"><a href="#（4-2）、-在setX-如果传入类型不对，编译时会报错" class="headerlink" title="（4.2）、 在setX()如果传入类型不对，编译时会报错"></a>（4.2）、 在setX()如果传入类型不对，编译时会报错</h4><p>​            <img src="https://s2.ax1x.com/2020/02/28/3DP6Z6.png" alt></p>
+<p>​            可以看出，当我们构造时使用的是String，而在setX时，传进去Integer类型时，就会报错，而不是像Object实现方式一样，在运行时才会报强制转换错误。</p>
+<h2 id="2、-多泛型变量定义及字母规范"><a href="#2、-多泛型变量定义及字母规范" class="headerlink" title="2、 多泛型变量定义及字母规范"></a>2、 多泛型变量定义及字母规范</h2><h3 id="（1）、-多泛型变量定义"><a href="#（1）、-多泛型变量定义" class="headerlink" title="（1）、 多泛型变量定义"></a>（1）、 多泛型变量定义</h3><p>上在我们只定义了一个泛型变量T，那如果我们需要传进去多个泛型呢？</p>
+<p>只需要在类似下面这样就可以了；</p>
+<pre><code class="java">class morePoint&lt;T,U&gt;{
+}
+</code></pre>
+<p>也就是在原来的T后面用逗号隔开，多个就像下面这样：</p>
+<pre><code class="java">class morePoint&lt;T,U,A,C,B&gt;{
+}
+</code></pre>
+<p>举个例子，我们在Point上再加另一个字段name，也可泛型来表示，代码如下：</p>
+<pre><code class="java">package cn.sakura.demo;
+
+public class MorePoint&lt;T, U&gt; {
+
+    private T x;
+    private T y;
+
+    private U name;
+
+    public T getX() {
+        return x;
+    }
+
+    public void setX(T x) {
+        this.x = x;
+    }
+
+    public T getY() {
+        return y;
+    }
+
+    public void setY(T y) {
+        this.y = y;
+    }
+
+    public U getName() {
+        return name;
+    }
+
+    public void setName(U name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;morePoint{&quot; +
+                &quot;x=&quot; + x +
+                &quot;, y=&quot; + y +
+                &quot;, name=&quot; + name +
+                &#39;}&#39;;
+    }
+
+
+    public static void main(String[] args) {
+        MorePoint&lt;Integer, String&gt; morePoint = new MorePoint&lt;Integer, String&gt;();
+        morePoint.setName(&quot;sakura&quot;);
+        System.out.println(morePoint.getName());
+    }
+
+
+}
+</code></pre>
+<h3 id="（2）、-字母规范"><a href="#（2）、-字母规范" class="headerlink" title="（2）、 字母规范"></a>（2）、 字母规范</h3><p>在定义泛型类时，我们已经提到用于指定泛型的变量是一个大写字母：</p>
+<pre><code class="java">class Point&lt;T&gt;{  
+ …………  
+}  
+</code></pre>
+<p>其中任何大写字母都可以，他们的意义完全相同，但是为了提高可读性，大家默认在不同的情境下使用的字母意义如下：</p>
 <ul>
-<li>RSS 2.0（<strong>Really Simple Syndication</strong>）</li>
-<li>RSS 0.91, RSS 1.0（<strong><a href="https://zh.wikipedia.org/wiki/資源描述框架" target="_blank" rel="noopener">RDF</a>（Resource Description Framework）Site Summary</strong>）</li>
-<li>RSS 0.9 and 1.0（<strong>Rich Site Summary</strong>）</li>
+<li>E    Element,常用在java，Collection里，如： List<e>,lterator<e>,Set<e></e></e></e></li>
+<li>K,V    Key,Value,代表Map的键值对</li>
+<li>N    Number,数字</li>
+<li>T    Type,类型，如String,Integer等等</li>
 </ul>
-<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>当前RSS规范的主要版本有0.91、1.0和2.0等。0.91版和1.0版完全不同，风格不同，制定标准的人也不同。0.91版和2.0版一脉相承。1.0版更接近<a href="https://zh.wikipedia.org/wiki/XML" target="_blank" rel="noopener">XML</a>标准。当前世界上大多数知名，虽有很多种不同的RSS，但都定型于两个重要的支干（RDF和2.<em>）。RDF或RSS 1.</em>的分支包括下列版本：</p>
-<ul>
-<li>RSS 0.90原本属于美国网景公司的版本。这个RSS被称为<em><a href="https://zh.wikipedia.org/wiki/万维网联盟" target="_blank" rel="noopener">RDF</a> Site Summary</em>，但其基础构图创建在初期的RDF规格上，以及和末版的RDF推荐标准不兼容。</li>
-<li>RSS 1.0是一个开放式的版本，由RSS-DEV工作团队再次创建为<em>RDF Site Summary</em>。RSS 1.0是一个像RSS 0.90的RDF形式，但是并没有完全的和他兼容，自从1.0基新闻网站都提供RSS订阅支持。</li>
-</ul>
-<h2 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h2><p>RSS格式采纳之前有过几次web联合化的尝试，但都没有达到广泛的传播。关于重构web站点信息的基本思想可以追溯到早至1995年，当时<a href="https://zh.wikipedia.org/w/index.php?title=Ramanathan_V._Guha&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">Ramanathan V. Guha</a>{以及他在<a href="https://zh.wikipedia.org/wiki/苹果公司" target="_blank" rel="noopener">苹果公司</a>高科技小组的同事开发出<a href="https://zh.wikipedia.org/wiki/元内容框架" target="_blank" rel="noopener">元内容框架</a>。对这些早期发展的更详细讨论，请参见<a href="https://zh.wikipedia.org/w/index.php?title=网页联合供稿技术的历史&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">网页联合供稿技术的历史</a>。</p>
-<p>RSS的第一个版本为RDF Site Summary，在1999年三月由美国<a href="https://zh.wikipedia.org/wiki/網景" target="_blank" rel="noopener">网景</a>公司的Guha为了用在My.Netscape.Com门户网站而开发。这个版本开始以RSS0.9为名。在1999年七月，美国网景公司的Dan Libby发明了新版本RSS 0.91，此版本简化了形式，借由 撤去RDF元素及合并Dave Winer的scriptingNews企业联合组织化格式。Libby并且将此重命名为RSS，全名“Rich Site Summary”，并且在“Futures document”论述了未来的发展形式。</p>
-<p>这会是<a href="https://zh.wikipedia.org/wiki/Netscape" target="_blank" rel="noopener">Netscape</a>在RSS八年的研究中最后一次的参与，当RSS被一些想要他们的feeds被用在My.Netscape.Com和其他早期RSS入口的网络出版者环绕，美国“网景”公司下降RSS并支持MY. Netscape.Com在2001年四月期间新主人AOL的重建公司，还取消了支撑格式化的使用帮助文档和工具。</p>
-<p>其中，<a href="https://zh.wikipedia.org/wiki/Google_Reader" target="_blank" rel="noopener">Google Reader</a>曾集成了RSS的分类与自定义标题，网页功能。但于2013年7月15日已终止服务。</p>
-<h2 id="发展"><a href="#发展" class="headerlink" title="发展"></a>发展</h2><p>随着越来越多的站点对RSS的支持，RSS当前已经成为成功的XML应用。RSS搭建了信息迅速传播的一个技术平台，使得每个人都成为潜在的信息提供者。</p>
-<p>RSS 2.*的分支包括下列版本：</p>
-<ul>
-<li>RSS 0.91是一个精简的RSS形式，由美国网景公司所发行，同时也是原创的排行第一的版本编号，由Dave Winer从Userland软件所制作。网景公司的版本现在被称为<em>Rich Site Summary</em>； 这个是不久前的RDF格式，但是相对而言比较不方便使用。</li>
-<li>RSS 0.92透过0.94被扩大为RSS 0.91版本，更容易与其他兼容以及和Winer的RSS 0.91版本，但仍然和RSS 0.90不兼容。在所有的Userland RSS 0.9x规格里，RSS不再只是个缩写。</li>
-<li>RSS 2.0.1是国内版本编号2.0。RSS 2.0.1虽被声称冻结，但是仍是一个网页然可以快速下载，之后再声称没有改变版本编号。RSS现今代表着<em>简易供稿系统</em>。主要的改变在这个版本里使用伸的机制。</li>
-</ul>
-<p>对大部分而言，和较早的版本比较起来（除了无兼容性的RDF语法在0.90），较新的版本接触到各个分支时为逆兼容性，以及大部分的版本严格上来说包括以延伸机构使用XML Namespaces来证明，另一方面正好（在2.<em> 分支）或透过RDF（在1.</em> 分支），大部分的企业联合组织化软件都有支持这两种分支。</p>
-<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><p>RSS模块的主要目标是延伸基本的<a href="https://zh.wikipedia.org/wiki/XML" target="_blank" rel="noopener">XML</a>概要来获得更健全的内容汇集。此种传承允许更多的变化却又能够符合标准，在不用更改RSS核心之下运行。为了达成此项延伸，严密规范的字汇（在RSS中为“模块”；XML中为“概要”）透过XML namesspace命名各种概念之中的概念。</p>
-<h2 id="点对点应用及RSS"><a href="#点对点应用及RSS" class="headerlink" title="点对点应用及RSS"></a>点对点应用及RSS</h2><p>几种以<a href="https://zh.wikipedia.org/wiki/BitTorrent_(协议" target="_blank" rel="noopener">BitTorrent</a>)为基准和点对点的应用也支持RSS。此种<a href="https://zh.wikipedia.org/wiki/網摘" target="_blank" rel="noopener">网摘</a>允许客户端的应用程序在侦测到更新时自动下载。</p>
-<h2 id="阅读器"><a href="#阅读器" class="headerlink" title="阅读器"></a>阅读器</h2><p>主条目：<a href="https://zh.wikipedia.org/wiki/聚合器" target="_blank" rel="noopener">聚合器</a></p>
-<p>RSS信息的获取与订阅，可以通过称为<a href="https://zh.wikipedia.org/wiki/RSS閱讀器" target="_blank" rel="noopener">聚合器</a>一类的软件或服务来实现。通常情况下RSS阅读器除了客户端软件之外，还存在一类基于Web应用的在线阅读器（例如<a href="https://zh.wikipedia.org/wiki/Digg.com" target="_blank" rel="noopener">digg.com</a>）。较常用的有预载于Acer个人电脑当中的易搜比软件、Snarfer。</p>
-<p>微软的IE浏览器也可当作RSS阅读器使用，也含有存储的功能。</p>
-<h2 id="参见"><a href="#参见" class="headerlink" title="参见"></a>参见</h2><ul>
-<li><a href="https://zh.wikipedia.org/wiki/消息來源" target="_blank" rel="noopener">消息来源</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/Atom_(標準" target="_blank" rel="noopener">Atom (标准)</a>)</li>
-<li><a href="https://zh.wikipedia.org/wiki/XML" target="_blank" rel="noopener">XML</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/OPML" target="_blank" rel="noopener">OPML</a></li>
-</ul>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
-<li><strong><a href="https://zh.wikipedia.org/wiki/RSS#cite_ref-1" target="_blank" rel="noopener">^</a></strong> <a href="http://www.rssboard.org/rss-mime-type-application.txt" target="_blank" rel="noopener">The application/rss+xml Media Type</a>. Network Working Group. 2006-05-22 [2007-08-16].</li>
-</ol>
-<h2 id="外部链接"><a href="#外部链接" class="headerlink" title="外部链接"></a>外部链接</h2><ul>
-<li><a href="http://www.rssboard.org/rss-0-9-0" target="_blank" rel="noopener">RSS 0.90 Specification</a></li>
-<li><a href="http://www.rssboard.org/rss-0-9-1-netscape" target="_blank" rel="noopener">RSS 0.91 Specification</a></li>
-<li><a href="http://web.resource.org/rss/1.0/" target="_blank" rel="noopener">RSS 1.0 Specifications</a></li>
-<li><a href="http://www.rssboard.org/rss-specification" target="_blank" rel="noopener">RSS 2.0 Specification</a></li>
-<li><a href="https://web.archive.org/web/20110718034619/http://diveintomark.org/archives/2002/09/06/history_of_the_rss_fork" target="_blank" rel="noopener">History of the RSS Fork</a> (Mark Pilgrim)</li>
-<li><a href="http://www.xul.fr/en-xml-rss.html" target="_blank" rel="noopener">Building a RSS feed</a> Tutorial with example</li>
-<li><a href="https://codebeautify.org/rssviewer" target="_blank" rel="noopener">View RSS feed</a> RSS查看器</li>
-</ul>
-<h1 id="本文来源"><a href="#本文来源" class="headerlink" title="本文来源"></a>本文来源</h1><p><a href="https://zh.wikipedia.org/wiki/RSS" target="_blank" rel="noopener">RSS</a>  维基百科，自由的百科全书。</p>
+<h2 id="3、-泛型接口定义及使用"><a href="#3、-泛型接口定义及使用" class="headerlink" title="3、 泛型接口定义及使用"></a>3、 泛型接口定义及使用</h2><p>在接口上定义泛型与在类中定义泛型是一样的，代码如下：</p>
+<pre><code class="java">interface Info&lt;T&gt; {        // 在接口上定义泛型    
+    public T getVar(); // 定义抽象方法，抽象方法的返回值就是泛型类型    
+
+    public void setVar(T x);
+}    
+</code></pre>
+<p>与泛型类的定义一样，也是在接口名后加尖括号；</p>
+<h3 id="（1）、-使用方法一：非泛型类"><a href="#（1）、-使用方法一：非泛型类" class="headerlink" title="（1）、 使用方法一：非泛型类"></a>（1）、 使用方法一：非泛型类</h3><p>在使用的时候，就出现了问题，先看看下面的这个使用方法：</p>
+<blockquote>
+<p>未完</p>
+</blockquote>
+<h1 id="转载原网址："><a href="#转载原网址：" class="headerlink" title="转载原网址："></a>转载原网址：</h1><p><a href="https://www.cnblogs.com/jpfss/p/9928747.html" target="_blank" rel="noopener">https://www.cnblogs.com/jpfss/p/9928747.html</a></p>
 
         </div>
 		
@@ -478,15 +723,15 @@
           
             <div class="post-nepre half previous">
           
-            <a href="/技术/freeCDN.html" rel="prev">
+            <a href="/technology/MysqlStudy.html" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/190413/202741-15551584619a4b.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/190413/202741-15551584619a4b.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/191215/000846-15763397267e73.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/191215/000846-15763397267e73.jpg">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                免费CDN：jsDeliver+Github 搭建过程记录</h3>
+                MySQL 学习笔记 （一）</h3>
                 <hr>
               </div>
             </a>
@@ -496,15 +741,15 @@
           
             <div class="post-nepre half next">
           
-            <a href="/java/MysqlStudy.html" rel="next">
+            <a href="/technology/lambda.html" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/191215/000846-15763397267e73.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/191215/000846-15763397267e73.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/200102/193708-15779650287a6a.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/200102/193708-15779650287a6a.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                MySQL 学习笔记 （一）</h3>
+                Java8 Lambda表达式 学习笔记</h3>
                 <hr>
               </div>
             </a>
@@ -568,7 +813,7 @@
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>While there is life there is hope</p>
+        <p><i class="iconfont icon-write"></i>The shortest way to do many things is to only one thing at a time.</p>
       </section>
     </main><!-- #main -->
   </div><!-- #primary -->

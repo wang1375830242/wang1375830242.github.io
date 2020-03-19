@@ -4,7 +4,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">免费CDN：jsDeliver+Github 搭建过程记录 | 樱花🌸</title>
+<meta name="keywords" content="Java,高级,for,循环,Hexo,Sakura,樱花,前端博客,JavaScript,html5,css3,Jquery,NodeJs,Ubuntu,hexo,sakura,github,Github,博客,免费博客,学生博客,css,js,html,java">
+
+  
+<meta name="description" content="Java 高级for循环">
+
+  
+  <title itemprop="name">Java 高级for循环 学习笔记 | 樱花🌸</title>
   
     <link rel="shortcut icon" href="https://2heng.xin/favicon.ico">
   
@@ -355,11 +361,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(http://pic.netbian.com/uploads/allimg/190413/202741-15551584619a4b.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/190413/202741-15551584619a4b.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://s2.ax1x.com/2020/02/24/38Awi6.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://s2.ax1x.com/2020/02/24/38Awi6.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      免费CDN：jsDeliver+Github 搭建过程记录</h1>
+      Java 高级for循环 学习笔记</h1>
       <p class="entry-census">
         <span>
           <a href="sakura521.cn">
@@ -371,7 +377,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2020-3-2<span class="bull">
+        2020-2-25<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -385,54 +391,59 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="CDN-维基百科解释"><a href="#CDN-维基百科解释" class="headerlink" title="CDN 维基百科解释"></a>CDN 维基百科解释</h1><p><strong>内容分发网络</strong>（英语：<strong>C</strong>ontent <strong>D</strong>elivery <strong>N</strong>etwork或<strong>C</strong>ontent <strong>D</strong>istribution <strong>N</strong>etwork，缩写：<strong>CDN</strong>）是指一种透过<a href="https://zh.wikipedia.org/wiki/互聯網" target="_blank" rel="noopener">互联网</a>互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、影片、应用程序及其他文件发送给用户，来提供高性能、可扩展性及低成本的网络内容传递给用户。</p>
-<h1 id="1、-首先创建一个Github仓库"><a href="#1、-首先创建一个Github仓库" class="headerlink" title="1、 首先创建一个Github仓库"></a>1、 首先创建一个Github仓库</h1><p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/GITHUBCDN.png" alt></p>
-<p><code>我的仓库名为CDN并不是图中的CDNNAME，因为我已经创建了名字为CDN的仓库，不能创建重复的。</code></p>
-<h1 id="2、-克隆Github仓库到本地"><a href="#2、-克隆Github仓库到本地" class="headerlink" title="2、 克隆Github仓库到本地"></a>2、 克隆Github仓库到本地</h1><p>先在本地创建一个文件夹，任意位置都可以（最好不要在C盘），然后进入到文件夹中。</p>
-<p>然后再去Github仓库，复制仓库的ssh地址。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/wewae.png" alt></p>
-<p>在本地目录中右键Git Bash Here,在命令窗口中执行一下命令：</p>
-<pre><code class="Git">git clone 复制的仓库ssh地址
+          <h1 id="高级for循环"><a href="#高级for循环" class="headerlink" title="高级for循环"></a>高级for循环</h1><h2 id="格式："><a href="#格式：" class="headerlink" title="格式："></a><strong>格式：</strong></h2><p>for(数据类型 变量名：被遍历的集合(Collection)或者数组)<br>{<br>}</p>
+<p>对集合进行遍历。</p>
+<p>只能获取元素，但是不能对集合进行操作。</p>
+<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p><a href="[https://baike.baidu.com/item/%E8%BF%AD%E4%BB%A3%E5%99%A8](https://baike.baidu.com/item/迭代器">迭代器</a>)除了遍历，还可以进行remove集合中元素的动作。</p>
+<p>如果使用Listlerator,还可以在遍历的过程中对集合进行增删改查的动作。</p>
+<h2 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h2><p>传统for循环和高级for循环的<strong>区别</strong></p>
+<p>高级for有一个局限性。必须有被遍历的目标。</p>
+<blockquote>
+<p>建议：在遍历数组的时候，还是希望使用传统for，因为传统for可以定义脚标。</p>
+</blockquote>
+<h2 id="实例："><a href="#实例：" class="headerlink" title="实例："></a><strong>实例</strong>：</h2><pre><code class="java">import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class ForEachDemo {
+
+    public static void main(String[] args) {
+        ArrayList&lt;String&gt; al = new ArrayList&lt;String&gt;();
+
+        al.add(&quot;add1&quot;);
+        al.add(&quot;add2&quot;);
+        al.add(&quot;add3&quot;);
+
+        for (String s : al) {
+            System.out.println(s);
+        }
+        System.out.println(al);
+
+        HashMap&lt;Integer, String&gt; hm = new HashMap&lt;Integer, String&gt;();
+        hm.put(1, &quot;hello1&quot;);
+        hm.put(3, &quot;hello3&quot;);
+        hm.put(2, &quot;hello2&quot;);
+        hm.put(4, &quot;hello4&quot;);
+
+        Set&lt;Integer&gt; set = hm.keySet();
+        for (Integer i : set) {
+            sop(i + &quot;..&quot; + hm.get(i));
+        }
+
+        Set&lt;Map.Entry&lt;Integer, String&gt;&gt; set1 = hm.entrySet();
+        for (Map.Entry&lt;Integer, String&gt; me : set1) {
+            Integer key = me.getKey();
+            String value = me.getValue();
+            sop(key + &quot;: &quot; + value);
+        }
+    }
+
+    private static void sop(Object s) {
+        System.out.println(s);
+    }
+}
 </code></pre>
-<h1 id="3、-上传文件到Github仓库"><a href="#3、-上传文件到Github仓库" class="headerlink" title="3、 上传文件到Github仓库"></a>3、 上传文件到Github仓库</h1><p>将你要上传的图片视频保存到刚才那个本地文件夹中（上传的单个文件不要大于50M），然后在文件夹中右键Git Bash Here,执行一下命令：</p>
-<pre><code class="Git">git status                    //查看状态
-git add .                     //添加所有文件到暂存区  不要忘记后面那个.
-git commit -m &#39;提交信息&#39;      //把文件提交到仓库
-git push                      //推送至远程仓库
-</code></pre>
-<h1 id="4、-发布版本"><a href="#4、-发布版本" class="headerlink" title="4、 发布版本"></a>4、 发布版本</h1><p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/ASDDA.png" alt></p>
-<p>然后自定义一个发布版本号</p>
-<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/wdadw.png" alt></p>
-<p>到现在就可以使用了。</p>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4531214479514249" data-ad-slot="6907628200"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-
-
-<h1 id="5、-更新版本"><a href="#5、-更新版本" class="headerlink" title="5、 更新版本"></a>5、 更新版本</h1><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>可以跟上面3、4步骤一样去更新它。</p>
-<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>还有更简便的，前提是已经安装了TortoiseGit.如果没有直接跳过此方法。</p>
-<p>1、 首先右键 Git提交</p>
-<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/23FDSF.png" alt></p>
-<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/2FSDF.jpg" alt></p>
-<p><code>提交右边有个向下的小箭头，可以点选提交并推送。直接完事，然后去github上创建新的版本就可以了。</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/ASDASD.png" alt></p>
-<p>成功后点击推送。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/fefefxc.png" alt></p>
-<p>这就提交到了Github</p>
-<p>接下来就是进行第四步的创建版本了。</p>
-<h1 id="6、-使用方法"><a href="#6、-使用方法" class="headerlink" title="6、 使用方法"></a>6、 使用方法</h1><p>文件网址位置：<a href="https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径</a>        </p>
-<p>@发布的版本号 可以不写，默认就是最新版本。</p>
-<pre><code>https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.02/images/Konachan.com-ls-black_hair-f-toriki-touhou.jpg
-
-https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/Konachan.com-ls-black_hair-f-toriki-touhou.jpg
-</code></pre><p><code>第一个是代版本号的，第二个不带版本号。两个都是一样的图片。</code></p>
-<h1 id="7、-更加具体的方法官网查看"><a href="#7、-更加具体的方法官网查看" class="headerlink" title="7、 更加具体的方法官网查看"></a>7、 更加具体的方法官网查看</h1><p><a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">https://www.jsdelivr.com/</a></p>
-<h1 id="8、-更方便的一种方式"><a href="#8、-更方便的一种方式" class="headerlink" title="8、 更方便的一种方式"></a>8、 更方便的一种方式</h1><p>2020.3.13更新的新方法</p>
-<p>使用 <a href="https://www.sakura521.cn/2020/03/13/picgocdn.html">PicGo+jsDelivr+GitHub搭建免费cdn加速图床</a></p>
 
         </div>
 		
@@ -476,15 +487,15 @@ https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/Konachan.com-ls-black_hair
           
             <div class="post-nepre half previous">
           
-            <a href="/java/jackson.html" rel="prev">
+            <a href="/technology/map.html" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/191012/103831-15708479117885.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/191012/103831-15708479117885.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://s2.ax1x.com/2020/02/24/38k4KJ.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://s2.ax1x.com/2020/02/24/38k4KJ.jpg">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                SpringBoot 使用jackson处理json数据 学习笔记</h3>
+                java中Map及Map.Entry详解 学习笔记</h3>
                 <hr>
               </div>
             </a>
@@ -494,15 +505,15 @@ https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/Konachan.com-ls-black_hair
           
             <div class="post-nepre half next">
           
-            <a href="/null/RSSExplanation.html" rel="next">
+            <a href="/technology/live2D.html" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com/uploads/allimg/191129/183446-157502368699b5.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com/uploads/allimg/191129/183446-157502368699b5.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://pic.netbian.com//uploads/allimg/180803/084010-15332568107994.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://pic.netbian.com//uploads/allimg/180803/084010-15332568107994.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                RSS 介绍</h3>
+                live 2d 看板娘 官方文档</h3>
                 <hr>
               </div>
             </a>
@@ -566,7 +577,7 @@ https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/Konachan.com-ls-black_hair
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>All things come to those who wait.</p>
+        <p><i class="iconfont icon-write"></i>ほんとうにまじめに努力（どりょく）することは</p>
       </section>
     </main><!-- #main -->
   </div><!-- #primary -->
