@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-<meta name="keywords" content="Hexo,Sakura,樱花,前端博客,JavaScript,html5,css3,Jquery,NodeJs,Ubuntu,hexo,sakura,github,Github,博客,免费博客,学生博客,css,js,html,java">
+<meta name="keywords" content="全网独家,hexo,seo,优化,关键词,简介,优化,教程,Hexo,Sakura,樱花,前端博客,JavaScript,html5,css3,Jquery,NodeJs,Ubuntu,hexo,sakura,github,Github,博客,免费博客,学生博客,css,js,html,java">
 
   
-<meta name="description" content="樱花博客，一个记录个人成长的地方。">
+<meta name="description" content="全网独家 hexo seo优化之关键词和简介的优化">
 
   
-  <title itemprop="name">Category: 干货 | 樱花🌸</title>
+  <title itemprop="name">全网独家 hexo seo优化之关键词和简介的优化 | 樱花🌸</title>
   
     <link rel="shortcut icon" href="https://2heng.xin/favicon.ico">
   
@@ -362,237 +362,233 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img data-src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/gfhgh.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200320142500.webp);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200320142500.webp">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      全网独家 hexo seo优化之关键词和简介的优化</h1>
+      <p class="entry-census">
+        <span>
+          <a href="sakura521.cn">
+            <img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/8972361_tiny.th.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="sakura521.cn">小坏孩</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-3-20<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">干货</h1>
-    <span class="cat-des">
-      <p>entertainment</p>
-    </span>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近网站一直在内部修改，今天改的是关键词以及简介的优化。</p>
+<p>这就是我现在网站首页的关键词和简介。</p>
+<pre><code class="html">&lt;meta name=&quot;keywords&quot; content=&quot;Hexo,Sakura,JavaScript,html5,css3,Jquery,NodeJs,github,css,js,html,java&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;樱花博客，一个记录个人成长的地方。&quot;&gt;
+</code></pre>
+<p>我用的主题是Sakura（所有主题基本通用此教程），生成的每篇文章都会有keywords:和description:。但是貌似并没有用上，或者用上了我没有发现。。。</p>
+<p>一下就是我自己研究的修改的地方。</p>
+<h1 id="关键词优化"><a href="#关键词优化" class="headerlink" title="关键词优化"></a>关键词优化</h1><p>首先打开网站根目录下的_config.yml配置文件。找到</p>
+<pre><code class="yml"># Site
+title: 樱花🌸
+subtitle:
+description: 樱花🌸，小坏孩的小博客
+keywords: 关键词1,关键词2，关键词3
+author: 小坏孩
+language: zh-cn
+timezone:
+</code></pre>
+<p>这keywords添加的是网站的关键词。</p>
+<p>接下来打开Hexo\themes\Sakura\layout_partial\head.ejs</p>
+<p>别的主题也是找到这个head.ejs.</p>
+<p>在文件中添加一下代码即可</p>
+<pre><code class="ejs">  &lt;% if (page.keywords){ %&gt;
+&lt;meta name=&quot;keywords&quot; content=&quot;&lt;%= page.keywords %&gt;,&lt;%= config.keywords %&gt;&quot;&gt;
+&lt;% } else if (config.keywords){ %&gt;
+&lt;meta name=&quot;keywords&quot; content=&quot;&lt;%= config.keywords %&gt;&quot;&gt;
+&lt;%} %&gt;
+  &lt;% if (page.description){ %&gt;
+&lt;meta name=&quot;description&quot; content=&quot;&lt;%= page.description %&gt;&quot;&gt;
+&lt;% } else { %&gt;
+&lt;meta name=&quot;description&quot; content=&quot;樱花博客，一个记录个人成长的地方。&quot;&gt;
+&lt;%} %&gt;
+</code></pre>
+<p>然后构建一下就可以了</p>
+<pre><code>hexo g
+</code></pre><h1 id="路径优化"><a href="#路径优化" class="headerlink" title="路径优化"></a>路径优化</h1><p>seo优化很重要的一点就是路径。网页不能太深，原本的生成文章的路径是/年/月/日/文章</p>
+<p>后来我也更改了一下。</p>
+<p>首先打开网站根目录下的_config.yml配置文件。找到#URL，更改效果如下</p>
+<pre><code># URL
+url: https://www.sakura521.cn
+root: /
+permalink: :type/:fileName.html
+permalink_defaults:
+</code></pre><p><code>当然还有一种方法是用永久链接，用插件生成id。这里就不写了，因为我也没用过。</code></p>
+<p>打开Hexo\scaffolds\post.md</p>
+<p>在最下面添加</p>
+<pre><code class="markdown">fileName: demo   那么这个文章就是demo.html
+type: test   那么这个文章路径就是  网址.com/test/demo.html
+</code></pre>
+<p>最终效果（因主题而异）：</p>
+<pre><code class="markdown">title: {{ title }}
+date: {{ date }}
+author: 小坏孩
+avatar: &#39;https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/8972361_tiny.th.jpg&#39;
+authorLink: sakura521.cn
+authorAbout: 一个好奇的人
+authorDesc: 一个好奇的人
+categories: 技术
+comments: true
+tags: 
+keywords: 
+description: 
+photos: 
+fileName: 
+type: 
+</code></pre>
+<p>这就是今天的教程</p>
+<p><code>完</code></p>
+
+        </div>
+		
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 底部窄 -->
+<ins class="adsbygoogle"
+     style="display:block;width:728px;height:90px;margin:auto"
+     data-ad-client="ca-pub-4531214479514249"
+     data-ad-slot="6023288923"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+ 
+		
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.02/images/zfb.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.02/images/wx.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/realstuff/IDEAPlugins.html" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200316173926.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200316173926.webp">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                给新手推荐的IDEA插件 干货分享</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/realstuff/seokeywords.html">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200320142500.webp" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/realstuff/seokeywords.html">
-    全网独家 hexo seo优化之关键词和简介的优化</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-3-20</div>
-    <p>
-    全网独家 hexo seo优化之关键词和简介的优化</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/realstuff/seokeywords.html">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/realstuff/IDEAPlugins.html">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200316173926.webp" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/realstuff/IDEAPlugins.html">
-    给新手推荐的IDEA插件 干货分享</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-3-17</div>
-    <p>
-    给新手推荐的IDEA插件 干货分享</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/realstuff/IDEAPlugins.html">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/realstuff/JetBrainsMono.html">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200316165234.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/realstuff/JetBrainsMono.html">
-    编程专用字体 JetBrains Mono</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-3-16</div>
-    <p>
-    编程专用字体 JetBrains Mono</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/realstuff/JetBrainsMono.html">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+<div id="vcomments"></div>
+
+<!-- 横向广告 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 横向2 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4531214479514249"
+     data-ad-slot="7543226488"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- 横向广告结束 -->
+
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "rNqgMHWy3w8Nrka5h7qEuHXb-gzGzoHsz",
+        appKey: "IwkVmKGABneOkwfgUAKQiTYY",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ...",
+		notify: false
+      })
+  }
+</script>
+
+<!-- 横向广告 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 横向 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4531214479514249"
+     data-ad-slot="6596690914"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- 横向广告结束 -->
 
 
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="sakura521.cn" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/8972361_tiny.th.jpg" itemprop="image" alt="小坏孩" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="sakura521.cn" itemprop="url" rel="author">小坏孩</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>シャレオツ（注）な真似しやがる。それでこそ倒し甲斐があるってもんだぜ！</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
 
-<!-- 
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/realstuff/seokeywords.html">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200320142500.webp" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/realstuff/seokeywords.html">
-    全网独家 hexo seo优化之关键词和简介的优化</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-3-20</div>
-    <p>
-    全网独家 hexo seo优化之关键词和简介的优化</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/realstuff/seokeywords.html">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/realstuff/IDEAPlugins.html">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200316173926.webp" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/realstuff/IDEAPlugins.html">
-    给新手推荐的IDEA插件 干货分享</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-3-17</div>
-    <p>
-    给新手推荐的IDEA插件 干货分享</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/realstuff/IDEAPlugins.html">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/realstuff/JetBrainsMono.html">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200316165234.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/realstuff/JetBrainsMono.html">
-    编程专用字体 JetBrains Mono</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-3-16</div>
-    <p>
-    编程专用字体 JetBrains Mono</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/realstuff/JetBrainsMono.html">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
 
- -->
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

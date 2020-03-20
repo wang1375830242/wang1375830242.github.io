@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sakura521.cn/"/>
-  <updated>2020-03-19T14:27:22.254Z</updated>
+  <updated>2020-03-20T06:47:53.382Z</updated>
   <id>https://www.sakura521.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>全网独家 hexo seo优化之关键词和简介的优化</title>
+    <link href="https://www.sakura521.cn/realstuff/seokeywords.html"/>
+    <id>https://www.sakura521.cn/realstuff/seokeywords.html</id>
+    <published>2020-03-20T06:18:10.000Z</published>
+    <updated>2020-03-20T06:47:53.382Z</updated>
+    
+    <summary type="html">
+    
+      全网独家 hexo seo优化之关键词和简介的优化
+    
+    </summary>
+    
+      <category term="干货" scheme="https://www.sakura521.cn/categories/%E5%B9%B2%E8%B4%A7/"/>
+    
+    
+      <category term="web" scheme="https://www.sakura521.cn/tags/web/"/>
+    
+      <category term="悦读" scheme="https://www.sakura521.cn/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>给新手推荐的IDEA插件 干货分享</title>
@@ -409,24 +431,6 @@
       <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
     
       <category term="java" scheme="https://www.sakura521.cn/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>live 2d 看板娘 官方文档</title>
-    <link href="https://www.sakura521.cn/technology/live2D.html"/>
-    <id>https://www.sakura521.cn/technology/live2D.html</id>
-    <published>2020-02-21T06:17:16.000Z</published>
-    <updated>2020-03-19T14:28:57.580Z</updated>
-    
-    <summary type="html">
-    
-      live 2d 看板娘
-    
-    </summary>
-    
-      <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
-    
     
   </entry>
   
