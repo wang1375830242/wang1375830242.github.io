@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <title>樱花导航</title>
+    <link rel="shortcut icon" href="https://2heng.xin/favicon.ico">
+    <meta name="keywords" content="QQ技术导航,樱花导航,导航天下,技术导航,娱乐网,小刀娱乐网,爱Q,QQ技术,QQ导航QQ技术导航,导航天下,技术导航,娱乐网,小刀娱乐网,爱Q,QQ技术,QQ导航">
+    <meta name="description" content="一个可以做完你浏览器主页的导航！">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/nav/static/css/layui.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/nav/static/css/public.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/nav/static/css/home.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/nav/static/css/index.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/nav/static/css/swiper.min.css" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body οnlοad="disableInfo()">
+<div class="page-top" style="height:700px">
+    <header>
+        <div class="layui-clear">
+            <a href="#" class="logo">
+                <div class="jb">樱花导航</div>
+            </a>
+            <nav>
+                <div class="hover"><a href="https://www.sakura521.cn/">博客首页</a></div>
+                <span class="border-bottom"></span>
+            </nav>
+            <div class="time-winter">
+                <div class="time"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrap">
+        <div class="head">
+            <div class="head_logo_so">
+                <div class="head_logo_h1">
+                    <div class="head_h1">
+                        <h1>百度一下 · 你就知道</h1>
+                        <p>全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。</p>
+                    </div>
+                </div>
+                <div class="head_soso">
+                    <form action="https://www.baidu.com/s" target="_blank">
+                        <div class="container">
+                            <div class="search">
+                                <meta name="wlhlauth" content="96208c148e8789e0a974d2efa6cf938d">
+                                <input type="text" id="txt" placeholder="请输入搜索的资源关键字" name="wd">
+                            </div>
+                        </div>
+                        <button class="submit" type="submit">百度一下</button>
+                </form></div>
+                <div id="dvmq" style=" height: 22px;" class="box">
+                    <h2>热门推荐:</h2>
+                    <ul>
+                        <li><a href="https://www.sakura521.cn/">樱花博客</a></li>
+                        <li><a href="https://www.bilibili.com/">哔哩哔哩</a></li>
+                        <li><a href="https://www.taobao.com/">淘宝网</a></li>
+                        <li><a href="https://www.tmall.com/">天猫</a></li>
+                        <li><a href="https://www.jd.com/">京东</a></li>
+                        <li><a href="https://www.guoguo-app.com/">菜鸟裹裹</a></li>
+                        <li><a href="https://m.kuaidi100.com/">快递100</a></li>
+                        <li><a href="https://www.52pojie.cn/">吾爱破解</a></li>
+                    </ul>
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="head_new_gj">
+                <div class="zhanbang">
+                    <iframe scrolling="no" src="https://tianqiapi.com/api.php?style=ty&amp;skin=durian" frameborder="0" width="270" height="100" allowtransparency="true" style="padding: 20px 0px 0px 40px;"></iframe>
+                </div>
+                <div class="gongju">
+                    <div class="gongju_title">求关注</div>
+                    <div class="xiaogongju">
+                        <div class="ihucms_icon"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/8972361_tiny.th.jpg"><a href="https://www.sakura521.cn/">樱花博客</a></div>
+                        <div class="ihucms_icon"><img src="https://space.bilibili.com/favicon.ico"><a href="https://space.bilibili.com/8187901">哔哩哔哩</a></div>
+                        <div class="ihucms_icon"><img src="https://www.csdn.net/favicon.ico"><a href="https://me.csdn.net/u011759205">CSDN</a></div>
+                        <div class="ihucms_icon"><img src="https://www.jianshu.com/favicon.ico"><a href="https://www.jianshu.com/u/52fbb4f05cca">简书</a></div>
+                        <div class="ihucms_icon"><img src="https://www.zhihu.com/favicon.ico"><a href="https://www.zhihu.com/people/xiao-pi-hai-99-75">知乎</a></div>
+                        <div class="ihucms_icon"><img src="https://weibo.com/favicon.ico"><a href="https://weibo.com/u/6277735465">微博</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--头部搜索-->
+<article>
+    <div class="count">
+        <div class="count-title">
+            <i class="layui-icon layui-icon-chart"></i> 温馨提示：
+        </div>
+        <ul class="tj-list">
+            <li>
+                <script type="text/javascript">
+                    var now = (new Date()).getHours();
+                    if (now > 0 && now <= 6) {
+                        document.write("午夜，快睡觉去吧，注意身体.");
+                    } else if (now > 6 && now <= 8) {
+                        document.write("早上好，吃早饭了吗?");
+                    } else if (now > 8 && now <= 11) {
+                        document.write("上午好，好好工作了吗?");
+                    } else if (now > 11 && now <= 14) {
+                        document.write("中午好，停下手中的工作，快去吃饭晚了就没的吃了...");
+                    } else if (now > 14 && now <= 18) {
+                        document.write("下午好，累了一上午了，快去休息会吧");
+                    } else {
+                        document.write("晚上好，快睡觉吧别忙了");
+                    }
+                </script>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <ul class="indexWebList layui-clear">
+            <li>
+                <a href="https://www.sakura521.cn/" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/8972361_tiny.th.jpg">樱花博客
+                </a>
+            </li>
+            <li>
+                <a href="https://www.bilibili.com/" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/nav/picture/54cf4607859ec43a603c3dc9c11a22d8.ico">哔哩哔哩
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zhihu.com" target="_blank">
+                    <img src="https://www.zhihu.com/favicon.ico">知乎
+                </a>
+            </li>
+            <li>
+                <a href="https://www.taobao.com" target="_blank">
+                    <img src="	https://www.taobao.com/favicon.ico">淘宝
+                </a>
+            </li>
+            <li>
+                <a href="https://www.1688.com" target="_blank">
+                    <img src="https://www.1688.com/favicon.ico">阿里巴巴
+                </a>
+            </li>
+            <li>
+                <a href="https://www.panww.com/" target="_blank">
+                    <img src="https://www.panww.com/favicon.ico">盘窝窝
+                </a>
+            </li>
+            <li>
+                <a href="http://www.ypppt.com/" target="_blank">
+                    <img src="http://www.ypppt.com/favicon.ico">优品PPT
+                </a>
+            </li>
+            <li>
+                <a href="https://www.xmind.net/" target="_blank">
+                    <img src="https://www.xmind.net/favicon.ico">思维导图XMind
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fotor.com.cn/" target="_blank">
+                    <img src="https://www.fotor.com.cn/favicon.ico">图片设计fortor
+                </a>
+            </li>
+            <li>
+                <a href="https://cli.im/" target="_blank">
+                    <img src="https://cli.im/favicon.ico">草料二维码
+                </a>
+            </li>
+            <li>
+                <a href="http://hao.199it.com/" target="_blank">
+                    <img src="http://hao.199it.com/favicon.ico">大数据导航
+                </a>
+            </li>
+            <li>
+                <a href="https://www.ilovepdf.com/" target="_blank">
+                    <img src="https://www.ilovepdf.com/favicon.ico">PDF文件格式转化
+                </a>
+            </li>
+            <li>
+                <a href="https://temp-mail.org/" target="_blank">
+                    <img src="https://temp-mail.org/favicon.ico">一次性邮箱
+                </a>
+            </li>
+            <li>
+                <a href="https://smsreceivefree.com/" target="_blank">
+                    <img src="https://smsreceivefree.com/favicon.ico">免费短信接收
+                </a>
+            </li>
+        </ul>
+        <div class="other layui-clear">
+<!--            广告位置
+            <div class="right">
+                <div class="tools layui-clear">
+                    <div class="swiper-container" id="swiper1">
+                        <div class="swiper-wrapper swiper-no-swiping">
+                            <div class="swiper-slide color-red">
+                                <a href="1"><img
+                                        src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/nav/picture/85e3b9900b0697353b56a33de4f3ac4f.gif"
+                                        style="height: 220px;width:100%"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+                <script type="text/javascript">
+
+                    //最里层轮播
+                    var mySwiper1 = new Swiper('#swiper1', {
+                        loop: true,
+                        autoplay: 2500,
+                        speed: 600,
+                        autoplayDisableOnInteraction: false
+                    });
+
+                    //上层轮播
+                    var mySwiper2 = new Swiper('#swiper2', {
+                        loop: true,
+                        autoplay: 2500,
+                        speed: 600,
+                        slidesPerView: 2,
+                        autoplayDisableOnInteraction: false
+                    });
+                </script>
+            </div>
+            -->
+            <div class="left">
+                <div class="title">
+                    <h3>分类</h3>
+                </div>
+                <div class="list layui-clear">
+                    <a class="titles" href="#">资源</a>
+                    <ul>
+                        <li data-type_id="1">
+                            <a href="https://www.panww.com" style="color:">盘窝窝</a>
+                        </li>
+                        <li data-type_id="1">
+                            <a href="https://www.bangongziyuan.com/" style="color:">办公资料</a>
+                        </li>
+                        <li data-type_id="1">
+                            <a href="https://www.owllook.net/" style="color:">网络小说搜索</a>
+                        </li>
+                        <li data-type_id="1">
+                            <a href="http://www.kk2w.cc/" style="color:">电影天堂</a>
+                        </li>
+                        <li data-type_id="1">
+                            <a href="https://www.99baiduyun.com/" style="color:">99百度网盘搜索</a>
+                        </li>
+                        <li><a href target="_blank"><i class></i></a></li>
+                    </ul>
+                </div>
+                <div class="list layui-clear">
+                    <a class="titles" href="#">娱乐</a>
+                    <ul>
+                        <li data-type_id="2">
+                            <a href="https://www.bilibili.com/" style="color:">哔哩哔哩</a>
+                        </li>
+                        <li data-type_id="2">
+                            <a href="https://www.youtube.com/?hl=zh-CN" style="color:">YouTube</a>
+                        </li>
+                        <li data-type_id="2">
+                            <a href="https://www.pixiv.net/" style="color:">pixiv插画交流网</a>
+                        </li>
+                        <li data-type_id="2">
+                            <a href="https://www.weibo.com/" style="color:">新浪微博</a>
+                        </li>
+                        <li data-type_id="2">
+                            <a href="https://music.163.com/" style="color:">网易云音乐</a>
+                        </li>
+                        <li><a href target="_blank"><i class></i></a></li>
+                    </ul>
+                </div>
+                <div class="list layui-clear">
+                    <a class="titles" href="#">源码</a>
+                    <ul>
+                        <li data-type_id="5">
+                            <a href="https://github.com/" style="color:0">Github</a>
+                        </li>
+                        <li data-type_id="5">
+                            <a href="https://coding.net/" style="color:">Coding</a>
+                        </li>
+                        <li data-type_id="5">
+                            <a href="https://code.aliyun.com/explore" style="color:">阿里Code</a>
+                        </li>
+                        <li><i class></i></li>
+                    </ul>
+                </div>
+                <div class="list layui-clear">
+                    <a class="titles" href="#">模板</a>
+                    <ul>
+                        <li data-type_id="7">
+                            <a href="https://hislide.io/" style="color:">PPT模板</a>
+                        </li>
+                        <li data-type_id="7">
+                            <a href="https://www.58pic.com/" style="color:">千图网</a>
+                        </li>
+                        <li data-type_id="7">
+                            <a href="http://sc.chinaz.com/" style="color:">站长素材</a>
+                        </li>
+                        <li><a href target="_blank"><i class></i></a></li>
+                    </ul>
+                </div>
+                <div class="list layui-clear">
+                    <a class="titles" href="#">购物</a>
+                    <ul>
+                        <li data-type_id="8">
+                            <a href="https://www.tmall.com/" style="color:">天猫</a>
+                        </li>
+                        <li data-type_id="8">
+                            <a href="https://www.taobao.com/" style="color:">淘宝</a>
+                        </li>
+                        <li data-type_id="8">
+                            <a href="https://www.jd.com/" style="color:">京东</a>
+                        </li>
+                        <li><a href target="_blank"><i class></i></a></li>
+                    </ul>
+                </div>
+                <div class="list layui-clear">
+                    <a class="titles" href="#">社区</a>
+                    <ul>
+                        <li data-type_id="9">
+                            <a href="https://www.52pojie.cn/" style="color:">吾爱破解</a>
+                        </li>
+                        <li data-type_id="9">
+                            <a href="https://www.sohu.com/" style="color:">搜狐</a>
+                        </li>
+                        <li><a href target="_blank"><i class></i></a></li>
+                    </ul>
+                </div>
+                <div class="list layui-clear">
+                    <a class="titles" href="#">博客</a>
+                    <ul>
+                        <li data-type_id="10">
+                            <a href="https://www.sakura521.cn/" style="color:">樱花博客</a>
+                        </li>
+                        <li><a href target="_blank"><i class></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list layui-clear">
+                    <a class="titles" href="#">网盘</a>
+                    <ul>
+                        <li data-type_id="12">
+                            <a href="https://pan.baidu.com/pcloud/home" style="color:">百度网盘</a>
+                        </li>
+                        <li data-type_id="12">
+                            <a href="https://www.lanzous.com/" style="color:">蓝奏云</a>
+                        </li>
+                        <li><a href target="_blank"><i class></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list layui-clear">
+                    <a class="titles" href="#">搜索</a>
+                    <ul>
+                        <li data-type_id="13">
+                            <a href="http://www.baidu.com/" style="color:">百度</a>
+                        </li>
+                        <li data-type_id="13">
+                            <a href="https://www.google.com/?hl=zh_CN" style="color:">谷歌</a>
+                        </li>
+                        <li data-type_id="13">
+                            <a href="https://cn.bing.com/" style="color:">必应</a>
+                        </li>
+                        <li data-type_id="13">
+                            <a href="https://www.sogou.com/" style="color:">搜狗</a>
+                        </li>
+                        <li data-type_id="13">
+                            <a href="https://movie.douban.com/" style="color:">豆瓣</a>
+                        </li>
+                        <li><a href target="_blank"><i class></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list layui-clear">
+                    <a class="titles" href="#">游戏</a>
+                    <ul>
+                        <li data-type_id="14">
+                            <a href="https://down.ali213.net/" style="color:">游侠网</a>
+                        </li>
+                        <li data-type_id="14">
+                            <a href="https://www.3dmgame.com/" style="color:">3DMGAME</a>
+                        </li>
+                        <li data-type_id="14">
+                            <a href="https://www.gamersky.com/" style="color:">游民星空</a>
+                        </li>
+                        <li><a href target="_blank"><i class></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list layui-clear">
+                    <a class="titles" href="#">直播</a>
+                    <ul>
+                        <li data-type_id="15">
+                            <a href="https://live.bilibili.com/" style="color:">哔哩哔哩直播</a>
+                        </li>
+                        <li data-type_id="15">
+                            <a href="https://www.douyu.com/" style="color:">斗鱼直播</a>
+                        </li>
+                        <li data-type_id="15">
+                            <a href="https://live.ixigua.com/" style="color:">西瓜直播</a>
+                        </li>
+                        <li data-type_id="15">
+                            <a href="https://live.kuaishou.com/" style="color:">快手直播</a>
+                        </li>
+                        <li><a href target="_blank"><i class></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list layui-clear">
+                    <a class="titles" href="#">影视</a>
+                    <ul>
+                        <li data-type_id="16">
+                            <a href="https://www.iqiyi.com/" style="color:">爱奇艺</a>
+                        </li>
+                        <li data-type_id="16">
+                            <a href="https://v.qq.com/" style="color:">腾讯视频 </a>
+                        </li>
+                        <li data-type_id="16">
+                            <a href="http://www.youku.com/" style="color:">优酷视频 </a>
+                        </li>
+                        <li><a href target="_blank"><i class></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list layui-clear">
+                    <a class="titles" href="#">音乐</a>
+                    <ul>
+                        <li data-type_id="17">
+                            <a href="https://y.qq.com/" style="color:">QQ音乐 </a>
+                        </li>
+                        <li data-type_id="17">
+                            <a href="https://music.163.com/" style="color:">网易云音乐 </a>
+                        </li>
+                        <li data-type_id="17">
+                            <a href="http://www.kugou.com/" style="color:">酷狗音乐 </a>
+                        </li>
+                        <li data-type_id="17">
+                            <a href="http://www.kuwo.cn/" style="color:">酷我音乐 </a>
+                        </li>
+                        <li data-type_id="17">
+                            <a href="https://www.xiami.com/billboard" style="color:">虾米音乐 </a>
+                        </li>
+                        <li><a href target="_blank"><i class></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list layui-clear">
+                    <a class="titles" href="#">小说</a>
+                    <ul>
+                        <li data-type_id="17">
+                            <a href="http://book.qq.com/" style="color:">腾讯阅读 </a>
+                        </li>
+                        <li><a href target="_blank"><i class></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list layui-clear">
+                    <a class="titles" href="#">动漫</a>
+                    <ul>
+                        <li data-type_id="19">
+                            <a href="https://www.bilibili.com/" style="color:">哔哩哔哩</a>
+                        </li>
+                        <li><a href target="_blank"><i class></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list layui-clear">
+                    <a class="titles" href="#">工具</a>
+                    <ul>
+                        <li data-type_id="20">
+                            <a href="https://www.uupoop.com/" style="color:">在线PS</a>
+                        </li>
+                        <li data-type_id="20">
+                            <a href="https://www.yasuotu.com/" style="color:">图片压缩</a>
+                        </li>
+                        <li data-type_id="20">
+                            <a href="https://www.sojson.com/image/format.html" style="color:">图片格式转化</a>
+                        </li>
+                        <li data-type_id="20">
+                            <a href="https://www.sojson.com/" style="color:">json在线工具</a>
+                        </li>
+                        <li data-type_id="20">
+                            <a href="https://mail.qq.com/" style="color:">QQ邮箱</a>
+                        </li>
+                        <li><a href target="_blank"><i class></i></a>
+                    </li></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="link col-xs-12">
+        <div class="clearfix">
+            <div class="title"><h3>友情链接</h3>
+            </div>
+        </div>
+        <ul class="clearfix" id="app_url">
+            <li><a href="https://www.sakura521.cn/">樱花博客</a></li>
+        </ul>
+    </div>
+</article>
+
+<script type="text/javascript">
+    (function disableInfo() {
+        document.onkeydown = function () {
+            var e = window.event || arguments[0];
+            //屏蔽F12
+            if (e.keyCode == 123) {
+                return false;
+                //屏蔽Ctrl+Shift+I
+            } else if ((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)) {
+                return false;
+                //屏蔽Shift+F10
+            } else if ((e.shiftKey) && (e.keyCode == 121)) {
+                return false;
+            }
+        };
+        //屏蔽右键单击
+        document.oncontextmenu = function () {
+            return false;
+        }
+    })();
+</script>
+</body>
+</html>
+
