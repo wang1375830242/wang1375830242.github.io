@@ -1,0 +1,2046 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+<meta name="keywords" content="Hexo,Sakura,樱花,前端博客,JavaScript,html5,css3,Jquery,NodeJs,Ubuntu,hexo,sakura,github,Github,博客,免费博客,学生博客,css,js,html,java">
+
+  
+<meta name="description" content="樱花博客，一个记录个人成长的地方。">
+
+  
+  <title itemprop="name">bangumi | 樱花🌸</title>
+  
+    <link rel="shortcut icon" href="https://2heng.xin/favicon.ico">
+  
+
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">  -->
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/css/style3.css" type="text/css" media="all">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "さくら荘その小坏孩";
+  mashiro_option.author_name = "小坏孩";
+  mashiro_option.site_url = "https://www.sakura521.cn";
+  mashiro_option.v_appId = "rNqgMHWy3w8Nrka5h7qEuHXb-gzGzoHsz";
+  mashiro_option.v_appKey = "IwkVmKGABneOkwfgUAKQiTYY";
+  mashiro_option.mathjax = "0";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <!--自定义看板娘-->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/live2d-widget/autoload2.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/live2d-widget/font-awesome.min.css"/>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/%EF%BD%A1%EF%BD%A5%EF%BC%9A%EF%BC%8A%EF%BC%9A%EF%BD%A5%E2%9C%BF-PID65231071-by-hakusai.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/ETpv24.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/308827.webp,https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200708154412.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/gui.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/307473.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/Konachan.com-ls-black_hair-f-toriki-touhou.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/Konachan.com-r-1-scaled.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/p1.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/pixiv57793944.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/r63888719_by__LM7_-scaled.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/wallhaven-672007-1.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/アズールレーン_63069334.webp".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script> -->
+  
+    <!--谷歌广告-->
+  <!-- <script data-ad-client="ca-pub-4531214479514249" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+  
+  
+  <!-- 百度的自动推送
+  
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+  -->
+
+
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="樱花🌸" type="application/atom+xml">
+</head>
+
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://www.sakura521.cn">
+          <img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/indexjpg.jpg">
+        </a>
+      </div>
+<div class="header-info">
+        <!-- <p>Live your life with passion! With some drive!</p> -->         
+		<p id="hitokoto" class="hitokoto">正在加载今日一言....</p>
+        <script src="https://v1.hitokoto.cn/?c=a&c=b&encode=js&charset=utf-8" charset="utf-8"></script>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="http://github.com/wang1375830242" target="_blank" class="social-github" title="github">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://www.zhihu.com/people/xiao-pi-hai-99-75" target="_blank" class="social-github" title="zhihu">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/zhihu.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=MQAFAwkDAgkGBQVxQEAfUl5c" target="_blank" class="social-github" title="email">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/email.svg">
+                  </a>
+                </li>
+              
+            
+              
+                <li class="wechat">
+                  <a href="/#">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/wechat.png">
+                  </a>
+                  <div class="wechatInner">
+                    <img src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200408222721.webp">
+                  </div>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">さくら荘その</span>
+            <span class="shironeko">小坏孩</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E5%A8%B1%E4%B9%90/">
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          娱乐
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E5%B9%B2%E8%B4%A7/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          干货
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+                    清单
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/tags/%E6%82%A6%E8%AF%BB/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          书单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/bangumi/">
+                          <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                          番组
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/tags/java/">
+                          <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                          Java
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-headphones" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/photo/">
+                          <i class="fa fa-photo" aria-hidden="true"></i>
+                          图集
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/donate/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+                    赞赏
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/theme-sakura/">
+                          <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                          主题
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/lab/">
+                          <i class="fa fa-cogs" aria-hidden="true"></i>
+                          Lab
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" href="/css/bangumi.css">
+<div class="pattern-center-blank"></div>
+<div id="content" class="site-content">
+  <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
+    <header class="page-header"><h1 class="cat-title">番组计划</h1> <span class="cat-des"><p>这里将是永远的回忆</p> </span></header>
+    
+    <div class="bangumi">
+      <div class="row" id="rootRow">
+        
+          <div class="col s12 m6" id="bangumi-0">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://pic4.zhimg.com/v2-3573b1fe7f5b2b26c373457a96d60bf6_r.jpg);" data-src="https://pic4.zhimg.com/v2-3573b1fe7f5b2b26c373457a96d60bf6_r.jpg">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  CLANNAD<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                クラナド</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  CLANNAD<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  クラナド<br>
+                </span>
+                <span>
+                  放送时间: 2019-08-24 SUN.<span>
+                    <p>在某个小镇，主角冈崎朋也因家庭因素成为不良少年，一直与春原阳平为伍，在光坂高校过着潦倒的生活，但希望终有一天能够离开所在的小镇。某一天，他在学校坡道前发现了一个止步不前的女孩，在朋也认识了这个名为“古河渚”的女孩后，他的生活开始有了重大的变化。</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-1">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://lain.bgm.tv/pic/cover/l/ec/c7/100444_yGsJZ.jpg);" data-src="https://lain.bgm.tv/pic/cover/l/ec/c7/100444_yGsJZ.jpg">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  四月是你的谎言<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                四月は君の嘘</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  四月是你的谎言<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  四月は君の嘘<br>
+                </span>
+                <span>
+                  放送时间: 2014-10-09 THU.<span>
+                    <p>有马公生的母亲一心想把有马培育成举世闻名的钢琴家，而有马也不负母亲的期望，在念小学时就赢得许多钢琴比赛的大奖。11岁的秋天，有马的母亲过世，从此他再也听不见自己弹奏的钢琴声，沮丧的他也只好放弃演奏，但在14岁那年，经由儿时玩伴的介绍，有马认识了小提琴手宫园薰，并被薰的自由奔放吸引，没想到薰竟开口邀请公生在比赛时担任她的伴奏…</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-2">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(http://i0.hdslb.com/bfs/bangumi/9d147171834e100259a91424ed8e5671c42411d8.jpg@220w_280h.webp);" data-src="http://i0.hdslb.com/bfs/bangumi/9d147171834e100259a91424ed8e5671c42411d8.jpg@220w_280h.webp">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  青春之旅《闪烁的青春》<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                アオハライド</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  青春之旅《闪烁的青春》<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  アオハライド<br>
+                </span>
+                <span>
+                  放送时间: 2019-08-30 SUN.<span>
+                    <p>故事主要讲述的是对于不擅长与男生打交道的主人公吉冈双叶来说，“田中君”是特别的存在。由于在暑假时田中君转校了，所以双叶未能向他传达自己内心的感情。之后，受到男生欢迎的双叶也因此被其他女生排挤，就这样度过了难受的中学时代。升入高中以后，为了不被女生讨厌而故意做出一些粗心大意的举动的双叶，与她的初恋对象“田中君”重逢。然而，田中君在初中时的性格也已改变了，故事便由此展开。</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-3">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://bkimg.cdn.bcebos.com/pic/359b033b5bb5c9ea534b31b5df39b6003af3b32f?x-bce-process=image/watermark,g_7,image_d2F0ZXIvYmFpa2UyMjA=,xp_5,yp_5);" data-src="https://bkimg.cdn.bcebos.com/pic/359b033b5bb5c9ea534b31b5df39b6003af3b32f?x-bce-process=image/watermark,g_7,image_d2F0ZXIvYmFpa2UyMjA=,xp_5,yp_5">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  徒然喜欢你<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                徒然チルドレン</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  徒然喜欢你<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  徒然チルドレン<br>
+                </span>
+                <span>
+                  放送时间: 2019-06-24 Tues.<span>
+                    <p>故事讲述了青梅竹马之间、学生会长与不良少女之间、前辈与后辈之间、同学之间等多种不同角色的恋爱群像剧。</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-4">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(http://i0.hdslb.com/bfs/bangumi/image/d179871a635e9c908a53be6580714ce3c6fee5ba.jpg@268w_358h.webp);" data-src="http://i0.hdslb.com/bfs/bangumi/image/d179871a635e9c908a53be6580714ce3c6fee5ba.jpg@268w_358h.webp">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  伍六七之最强发型师<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                Scissor Seven/Killer Seven Ⅱ</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  伍六七之最强发型师<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  Scissor Seven/Killer Seven Ⅱ<br>
+                </span>
+                <span>
+                  放送时间: 2020-01-13 Mon.<span>
+                    <p>全片以主人公伍六七寻找失去的记忆为故事主线，配合角色与角色之间的爱恨情仇组成的支线贯穿始终。通过讲述主人公在帮助别人和寻找自我的过程中，认识不同的人，与不同角色之间发生的有趣的，最终用爱化解仇恨与偏见的故事，想带给观众欢乐的同时表达对生活的热爱，爱与包容可以化解一切</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-5">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(http://i0.hdslb.com/bfs/bangumi/image/6e72b4542110eebc788f4029fa41a9ed77066bad.png@268w_358h.webp);" data-src="http://i0.hdslb.com/bfs/bangumi/image/6e72b4542110eebc788f4029fa41a9ed77066bad.png@268w_358h.webp">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  刀劍神域 Alicization War of Underworld<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                ソードアート・オンライン</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  刀劍神域 Alicization War of Underworld<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  ソードアート・オンライン<br>
+                </span>
+                <span>
+                  放送时间: 2018-08-13 Mon.<span>
+                    <p>桐人、尤吉歐、愛麗絲。距離兩名修劍士和一名整合騎士打敗了最高祭司阿多米尼斯多雷特已過去了半年。結束了戰鬥後，愛麗絲在故鄉盧利特村生活。在她的身旁，是失去了摯友，自己也失去了手臂和心的桐人。獻身般支撐著他的愛麗絲，絲毫沒有保留像以前一樣作為騎士的心。『告訴我，桐人.....我到底該怎麼辦.....』然而，讓整個Under World陷入悲劇《最終負荷實驗》的倒數計時，卻毫不留情地推進著。彷彿與之相呼應一般，在《黑暗領域》的深處，暗黑神・貝庫達已經復活了。他率領暗黑帝國的軍隊，為了奪取《光之巫女》，開始入侵了《人界》。指揮“人界”軍隊的貝爾庫利等人決心與《黑暗領域》的軍隊展開前所未有的大戰。但在身邊，依舊看不到愛麗絲以及拯救了《人界》的兩位英雄的身影—。『SAO』系列中最長最唯美的戰鬥，《Alicization》篇的最終章即將開始!</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-6">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://lain.bgm.tv/pic/cover/l/23/17/221736_hm0HO.jpg);" data-src="https://lain.bgm.tv/pic/cover/l/23/17/221736_hm0HO.jpg">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  我想吃掉你的胰脏<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                君の膵臓をたべたい</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  我想吃掉你的胰脏<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  君の膵臓をたべたい<br>
+                </span>
+                <span>
+                  放送时间: 2018-09-01 SUN.<span>
+                    <p>她如此说了。“我想吃掉你的胰脏”春。晚开的樱花仍在绽放的4月。对他人毫无兴趣，总是独自一人读书的高中生“我”，在医院的等候室捡到了一册文库本。这本用手写的文字写着《共病文库》这一标题的书，是天真烂漫的班上人气王·山内樱良私下记录的日记本。樱良将自己身患胰脏的疾病、已经时日无多这件事，告诉了看到日记内容的“我”。对于她而言，那是对除了家人和医生以外的人隐藏病情的她，获得了唯一一位共享秘密之人的瞬间。樱良想要在临终之日到来之前，一边尽量过着一如既往的日常生活，一边去做想要做的事情，竭尽全力享受人生。在被她那奔放的行动牵着鼻子走的同时，“我”的内心也逐渐产生了变化。——那是，“我”的春日回忆。她的一生回忆。</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-7">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://lain.bgm.tv/pic/cover/l/b9/45/240038_b5j7g.jpg);" data-src="https://lain.bgm.tv/pic/cover/l/b9/45/240038_b5j7g.jpg">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  青春笨蛋少年不做兔女郎学姐的梦<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                青春ブタ野郎はバニーガール先輩の夢を見ない</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  青春笨蛋少年不做兔女郎学姐的梦<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  青春ブタ野郎はバニーガール先輩の夢を見ない<br>
+                </span>
+                <span>
+                  放送时间: 2018-10-03 WED.<span>
+                    <p>思春期症候群——这是一种只发生在易敏感和不稳定的青春期的、不可思议的现象。<br>例如，在梓川咲太面前出现的野生兔女郎。<br>她的真实身份是高中高年级学生，明星活动休止的女演员樱岛麻衣。她迷人的身姿，不知为何在周围的人眼里看不出来。<br>咲太决定解开这一谜题。在于麻衣一起度过的时间里，咲太知道了她秘密的想法……<br>女主人公们一个接一个地出现在咲太的周围，她们都有着“青春期症候群”。在天空和大海都很闪耀的小镇上，开始了令人激动的故事。</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-8">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://lain.bgm.tv/pic/cover/l/1e/e2/183878_Fef1o.jpg);" data-src="https://lain.bgm.tv/pic/cover/l/1e/e2/183878_Fef1o.jpg">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  紫罗兰永恒花园<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                ヴァイオレット・エヴァーガーデン</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  紫罗兰永恒花园<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  ヴァイオレット・エヴァーガーデン<br>
+                </span>
+                <span>
+                  放送时间: 2018-01-10 WED.<span>
+                    <p>某个大陆的、某个时代。<br>大陆南北分割的战争结束了，世界逐渐走向了和平。<br>在战争中、作为军人而战斗的薇尔莉特·伊芙加登离开了军队，来到了大港口城市。怀抱着战场上一个对她而言比谁都重要的人告诉了她“某个话语”――。<br>街道上人群踊跃，有轨电车在排列着煤气灯的马路上穿梭着。薇尔莉特在街道上找到了“代写书信”的工作。那是根据委托人的想法来组织出相应语言的工作。<br>她直面着委托人、触碰着委托人内心深处的坦率感情。与此同时，薇尔莉特在记录书信时，那一天所告知的那句话的意思也逐渐接近了。</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-9">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://lain.bgm.tv/pic/cover/l/84/fc/235612_EHO4Q.jpg);" data-src="https://lain.bgm.tv/pic/cover/l/84/fc/235612_EHO4Q.jpg">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  工作细胞<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                はたらく細胞</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  工作细胞<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  はたらく細胞<br>
+                </span>
+                <span>
+                  放送时间: 2018-07-07 SUN.<span>
+                    <p>这是一个关于你自身的故事。你体内的故事——。<br>人的细胞数量，约为37兆2千亿个。<br>细胞们在名为身体的世界中，今天也精神满满、无休无眠地在工作着。<br>运送着氧气的红细胞，与细菌战斗的白细胞……！<br>这里，有着细胞们不为人知的故事。</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-10">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://lain.bgm.tv/pic/cover/l/77/dd/218711_5Z5t1.jpg);" data-src="https://lain.bgm.tv/pic/cover/l/77/dd/218711_5Z5t1.jpg">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  DARLING in the FRANXX<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                ダーリン・イン・ザ・フランキス</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  DARLING in the FRANXX<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  ダーリン・イン・ザ・フランキス<br>
+                </span>
+                <span>
+                  放送时间: 2018-01-13 SUN.<span>
+                    <p>遥远的未来，因人类过度抽取地球资源，地球变得荒芜，不再适合居住，人类只好居住在移动要塞都市内，但时常需要外出获取无法产出的资源「熔岩燃料」，「熔岩燃料」的开采会吸引来半机械生命体「叫龙」，此时就轮到人类操对抗叫龙的「FranXX」机械人的出场了。究竟这些「叫龙」是敌是友，无从得知。<br>少年阿广，驾驶部队代号016。他在少年时期被称作神童，如今却因无法驾驶「FranXX」，驾驶员生涯跌落谷底，是不被人需要的存在。在这样的广面前，某天，一位被称作02的神秘少女出现了。她的额头，长着两根艳丽的角。少女对广说：「终于找到你了，我的DARLING」。以此次偶遇为契机，广对驾驶机械人重新燃起了信心。</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-11">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://lain.bgm.tv/pic/cover/l/7c/b9/117777_4Ku7z.jpg);" data-src="https://lain.bgm.tv/pic/cover/l/7c/b9/117777_4Ku7z.jpg">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  声之形<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                聲の形</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  声之形<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  聲の形<br>
+                </span>
+                <span>
+                  放送时间: 2016-09-17 SUN.<span>
+                    <p>无比厌恶“无聊”的少年，石田将也。<br>　　小学时期是个孩子王的他，对转校而来的少女西宫硝子产生了兴趣。<br>　　在她到来后，少年无聊的日子得到了解放。<br>　　然而，以硝子身上的某件事为契机，将也被周围孤立了起来。<br>　　而后经过了五年的时间，两人在不同的高中各自成长。<br>　　机缘巧合之下，紧紧封闭自己内心的将也再次见到了硝子。<br>　　这是一个少年，试图接受少女、周围的人们，并接受自己的故事。</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-12">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://lain.bgm.tv/pic/cover/l/0e/1e/218971_2y351.jpg);" data-src="https://lain.bgm.tv/pic/cover/l/0e/1e/218971_2y351.jpg">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  朝花夕誓——于离别之朝束起约定之花<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                さよならの朝に約束の花をかざろう</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  朝花夕誓——于离别之朝束起约定之花<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  さよならの朝に約束の花をかざろう<br>
+                </span>
+                <span>
+                  放送时间: 2018-02-24 SUN.<span>
+                    <p>住在远离尘嚣的土地，一边将每天的事情编织成名为希比欧的布，一边静静生活的伊欧夫人民。在15岁左右外表就停止成长，拥有数百年寿命的他们，被称为“离别的一族”，并被视为活着的传说。没有双亲的伊欧夫少女玛奇亚，过着被伙伴包围的平稳日子，却总感觉“孤身一人”。他们的这种日常，一瞬间就崩溃消失。追求伊欧夫的长寿之血，梅萨蒂军乘坐着名为雷纳特的古代兽发动了进攻。在绝望与混乱之中，伊欧夫的第一美女蕾莉亚被梅萨蒂带走，而玛奇亚暗恋的少年克里姆也失踪了。玛奇亚虽然总算逃脱了，却失去了伙伴和归去之地……。</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-13">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://lain.bgm.tv/pic/cover/l/6c/e8/10440_8HP6O.jpg);" data-src="https://lain.bgm.tv/pic/cover/l/6c/e8/10440_8HP6O.jpg">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  我们仍未知道那天所看见的花的名字。<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                あの日見た花の名前を僕達はまだ知らない</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  我们仍未知道那天所看见的花的名字。<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  あの日見た花の名前を僕達はまだ知らない<br>
+                </span>
+                <span>
+                  放送时间: 2011-04-14 THU.<span>
+                    <p>Aniplex×フジテレビ×A1 Pictures共同制作的原创动画。<br>曾经亲密无间的儿时玩伴，在成为高中生之后，不知何时开始渐行渐远。<br>家里蹲的主人公“仁太”(じんたん)，<br>辣妹一般的“阿鸣”(あなる)，<br>升入重点学校的“雪集”(ゆきあつ)和“鹤子”(つるこ)，<br>没有升学而四处旅行的“波波”(ぽっぽ)，<br>以及,众人之中唯一没有改变的少女“面麻”(めんま，意为笋干)。<br><br>某天，面麻突然对仁太说起“想要实现的愿望”……<br>以面麻的愿望为契机，众人各自的生活再次开始交汇。</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-14">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://lain.bgm.tv/pic/cover/l/36/e7/2585_pn2eP.jpg);" data-src="https://lain.bgm.tv/pic/cover/l/36/e7/2585_pn2eP.jpg">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  科学的超电磁炮<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                とある科学の超電磁砲</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  科学的超电磁炮<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  とある科学の超電磁砲<br>
+                </span>
+                <span>
+                  放送时间: 2009-10-02 FRI.<span>
+                    <p>故事发生在面积占据东京都的三分之一，居住着230万名人口且其中八成人口是学生的巨大都市“学园都市”。学园都市的所有学生均会接受超能力开发，借由药物、催眠术与通电刺激等方式取得超能力。能力者以范围和威力分为LV0至LV5。<br><br>主角御坂美琴是学园都市中仅七位LV5（超能力者）的其中一人，排行第三。她是拥有操纵电击能力的“电击使”，站在电击能力的顶峰，因而被称为“超电磁炮”。<br><br>本作不但通过美琴的视角来描绘学园都市的平常而不平凡的日常生活，也叙述了学园都市秘密进行非人道性质的实验，从而使大家对于本作及本篇《魔法禁书目录》的背景（世界观）的认识也慢慢变得清楚。</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-15">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://lain.bgm.tv/pic/cover/l/41/2c/120187_nXjYb.jpg);" data-src="https://lain.bgm.tv/pic/cover/l/41/2c/120187_nXjYb.jpg">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  干物妹！小埋<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                干物妹! うまるちゃん</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  干物妹！小埋<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  干物妹! うまるちゃん<br>
+                </span>
+                <span>
+                  放送时间: 2015-07-08 WED.<span>
+                    <p>我的妹妹小埋16岁，完美的妹妹，完美的高中生，但在家里却是个超懒的干物妹。<br>然而妹妹在家的一切她生活中的朋友并不知道，居住在同一栋楼的天然少女，以及无意间来到我家的冷酷少女，她们会发现小埋的真实面目吗？</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-16">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://lain.bgm.tv/pic/cover/l/cb/78/140001_Ew1mo.jpg);" data-src="https://lain.bgm.tv/pic/cover/l/cb/78/140001_Ew1mo.jpg">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  Re：从零开始的异世界生活<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                Re:ゼロから始める異世界生活</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  Re：从零开始的异世界生活<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  Re:ゼロから始める異世界生活<br>
+                </span>
+                <span>
+                  放送时间: 2016-04-03 SUN.<span>
+                    <p>从便利店回来的路上突然被召唤到异世界的少年，菜月昴。在无可依赖的异世界，无力的少年所唯一拥有的力量……那就是死后便会使时间倒转的“死亡回归”的力量。为了守护重要的人，并取回那些无可替代的时间，少年向绝望抗争，挺身面对残酷的命运。</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-17">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://lain.bgm.tv/pic/cover/l/9b/d6/120925_Zp040.jpg);" data-src="https://lain.bgm.tv/pic/cover/l/9b/d6/120925_Zp040.jpg">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  夏洛特《Charlotte》<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                シャーロット</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  夏洛特《Charlotte》<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  シャーロット<br>
+                </span>
+                <span>
+                  放送时间: 2016-04-03 SUN.<span>
+                    <p>思春期的少年少女中极少部分人会发作的特殊能力。<br>驱使着无人知晓的能力，过着顺风顺水学园生活的乙坂有宇。<br>突然出现在这样的他的面前的少女，友利奈绪。<br>从与她相遇之日起，被揭露出来的特殊能力者的宿命。<br>这是由麻枝准所描绘的，特殊能力者们奔跑着的青春物语——。</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-18">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://lain.bgm.tv/pic/cover/l/0e/32/49278_8dE0u.jpg);" data-src="https://lain.bgm.tv/pic/cover/l/0e/32/49278_8dE0u.jpg">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  境界的彼方<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                境界の彼方</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  境界的彼方<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  境界の彼方<br>
+                </span>
+                <span>
+                  放送时间: 2013-10-02 WED.<span>
+                    <p>一个偶然的契机，人类和妖梦之间出生的少年——神原秋人，有一天与在学校屋顶看上去要跳楼的少女——栗山未来相遇了。<br>　　有着即使在异界士中也很特殊的“血”之能力的少女，在孤独中战斗着。<br>　　“我看着像——普通的人类吗?”<br>　　少年决心帮助这个命运与自己重叠的少女。由此，围绕在少年身边险恶的战斗开始发生……</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-19">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://lain.bgm.tv/pic/cover/l/cf/a0/259_BlBeX.jpg);" data-src="https://lain.bgm.tv/pic/cover/l/cf/a0/259_BlBeX.jpg">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  夏目友人帐<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                夏目友人帳</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  夏目友人帐<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  夏目友人帳<br>
+                </span>
+                <span>
+                  放送时间: 2008-07-07 MON.<span>
+                    <p>因为看得见妖怪而被人类疏远的女子夏目玲子，为了打发寂寞的日子，她向妖怪们发起挑战，并将败在自己手下的妖怪的名字写在一纸契约上，以此做为妖怪们成为自己属下的证据。 <br>玲子的孙子夏目贵志得到了那些契约书所做成的“友人帐”，还继承了玲子的力量，能看到不会显现在人前的物体。而且也和玲子一样成为了被周围人疏远的一员。 <br>可是，作为唯一继续了玲子血统的他却做出了一个重要的决定：将玲子夺过来的姓怪们的名字一一归还。在这样的夏目的身边，开始聚集起各种各样的妖怪们…… <br>能看到妖怪的少年夏目贵志，与招财猫外表的妖怪喵先生一起，为大家讲述一个奇异、悲伤，怀念、令人感动的怪谈故事。</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-20">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://lain.bgm.tv/pic/cover/l/01/a2/41488_qw09G.jpg);" data-src="https://lain.bgm.tv/pic/cover/l/01/a2/41488_qw09G.jpg">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  樱花庄的宠物女孩<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                さくら荘のペットな彼女</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  樱花庄的宠物女孩<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  さくら荘のペットな彼女<br>
+                </span>
+                <span>
+                  放送时间: 2012-10-08 MON.<span>
+                    <p>　　就读水明艺术大学附属高中的神田空太，一年级夏天时在宿舍养猫，而被校长叫去问话，并要他把猫赶走，不然就搬出宿舍。身为爱猫一族的空太，企图反抗权威，结果被撵出宿舍，流落到恶名昭彰的“樱花庄”。 隔年春天，随着世界级天才画家椎名真白搬进了樱花庄，空太开始过著被这名缺乏常识的少女耍得团团转的日子</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-21">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://i0.hdslb.com/bfs/bangumi/f32f0f1390015c98aae1839e75fb1860065d8994.jpg@450w_600h.webp);" data-src="https://i0.hdslb.com/bfs/bangumi/f32f0f1390015c98aae1839e75fb1860065d8994.jpg@450w_600h.webp">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  无论何时我们的恋情都是10厘米。～告白实行委员会～<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                いつだって僕らの恋は10センチだった。</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  无论何时我们的恋情都是10厘米。～告白实行委员会～<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  いつだって僕らの恋は10センチだった。<br>
+                </span>
+                <span>
+                  放送时间: 2017年12月31日 MON.<span>
+                    <p>　樱丘高中入学仪式。合田美樱与芹泽春辉在樱花树下相遇了。</br>‘美丽的樱花’的美樱。</br>我叫春辉。春天的光辉。</br>春天出生的两人萌生了亲近感。</br>从那以后，他们就会留意追随彼此的目光。</br>美术部的美樱老实内向，而电影研究部的春辉开朗外向，身边总是聚集着一些人。</br>两人是截然不同的类型，可是，在不知不觉间已经是一起放学的关系。</br>也有过被误会成正在交往的情况，两个人一直是朋友以上恋人未满的关系。</br>其实一直有着互相喜欢的心情。</br>两个人总是在回家途中顺路去高台台阶那里坐一坐。</br>“春辉君……有喜欢的人……吗？”</br>春辉听到美樱的话，情不自禁回答道——</br>“有……喜欢的人啊。美樱呢？”</br>两人手的距离是10厘米。</br>明明只有10厘米，</br>这段距离却无法缩短。</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-22">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://i0.hdslb.com/bfs/bangumi/745b04054e591da4f4172923a7d51de3dddb4288.jpg@450w_600h.webp);" data-src="https://i0.hdslb.com/bfs/bangumi/745b04054e591da4f4172923a7d51de3dddb4288.jpg@450w_600h.webp">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  宅男腐女恋爱真难<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                ヲタクに恋は難しい</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  宅男腐女恋爱真难<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  ヲタクに恋は難しい<br>
+                </span>
+                <span>
+                  放送时间: 2018年4月13日 MON.<span>
+                    <p>　桃濑成海是一个深藏腐女属性的OL，不过在情场上十分失意。二藤宏嵩是成海的青梅竹马，虽然是个彻头彻尾的死宅，但是长著一副英俊的面孔带着酷冷的形象。在成海情场失意时，宏嵩迅速拉近了与成海的感情距离，一脸淡然的告白之后正式交往……</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-23">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://i0.hdslb.com/bfs/bangumi/16e8f574911bc1c2fc7b4fe2e2b8fa4fe04e1c13.jpg@450w_600h.webp);" data-src="https://i0.hdslb.com/bfs/bangumi/16e8f574911bc1c2fc7b4fe2e2b8fa4fe04e1c13.jpg@450w_600h.webp">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  月刊少女野崎君<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                月刊少女野崎くん</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  月刊少女野崎君<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  月刊少女野崎くん<br>
+                </span>
+                <span>
+                  放送时间: 2014年9月22日<span>
+                    <p>　高中女生佐仓千代，暗恋著同校粗鲁又神经大条的野崎梅太郎。有一天，千代好不容易鼓起勇气向野崎同学告白，两人对话却阴错阳差。结果千代不仅莫名其妙得到野崎的亲笔签名，还加上“要不要来我家？”这种令人脸红心跳的邀请。<br>千代带着期待来到野崎家，没想到等着她的却是漫画原稿，还被迫当起漫画助手？！原来野崎同学虽然表面上是高中生，私底下还有另一个身分，就是知名少女漫画家梦野咲子！</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col s12 m6" id="bangumi-24">
+            <div class="card hoverable" style="overflow: visible;">
+              <div class="card-image waves-effect waves-block waves-light">
+                <div class="activator itempic lazyload" style="background-image: url(https://i0.hdslb.com/bfs/bangumi/451037aabcdce0379752e087720673609894161a.png@450w_600h.webp);" data-src="https://i0.hdslb.com/bfs/bangumi/451037aabcdce0379752e087720673609894161a.png@450w_600h.webp">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="card-title should-ellipsis activator grey-text text-darken-4">
+                  辉夜大小姐想让我告白~天才们的恋爱头脑战~<i class="fa fa-commenting-o right"></i>
+                </div>
+                <p class="should-ellipsis-full">
+                かぐや様は告らせたい〜天才たちの恋愛頭脳戦〜</p>
+                <ul class="skill-list">
+                  <li class="skill">
+                    <div>
+                    已追完</div>
+                    <progress class="skill-1" max="100" value="100">
+                    </progress>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-reveal" style="display: none; transform: translateY(0%);">
+                <span class="card-title grey-text text-darken-4">
+                  辉夜大小姐想让我告白~天才们的恋爱头脑战~<i class="fa fa-close right"></i>
+                </span>
+                <span>
+                  かぐや様は告らせたい〜天才たちの恋愛頭脳戦〜<br>
+                </span>
+                <span>
+                  放送时间: 2019年1月13日<span>
+                    <p>　家庭背景与人品都很棒！！一大群有前途的秀才所聚集的秀知院学园！！在那里的学生会相遇的副会长·四宫辉夜与会长·白银御行原本应该是彼此受到了对方吸引…但想不到都过半年了却仍然什么事情也没发生！！最麻烦的是这两个自尊心超强、无法坦率的家伙，居然开始想着要“设法让对方向自己告白”！？直到恋情有下落之前会很欢乐的故事！！新感觉“斗智”爱情喜剧、就此开战！！</p>
+                    <ul class="skill-list">
+                      <li class="skill">
+                        <div>
+                        已追完</div>
+                        <progress class="skill-1" max="100" value="100">
+                        </progress>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+    
+  </article>
+</div>
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 小坏孩<br>
+      powered_by <a href="https://www.sakura521.cn" target="_blank">樱花🌸</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+
+
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+<!-- 备案号上 -->
+<!-- <ins class="adsbygoogle"
+     style="display:block;width:728px;height:90px;margin:auto"
+     data-ad-client="ca-pub-4531214479514249"
+     data-ad-slot="7950420598"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> -->
+
+  <!--自定义看板娘-->
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/live2d-widget/autoload2.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/live2d-widget/font-awesome.min.css"/>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/%EF%BD%A1%EF%BD%A5%EF%BC%9A%EF%BC%8A%EF%BC%9A%EF%BD%A5%E2%9C%BF-PID65231071-by-hakusai.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/ETpv24.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/308827.webp,https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200708154412.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/gui.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/307473.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/Konachan.com-ls-black_hair-f-toriki-touhou.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/Konachan.com-r-1-scaled.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/p1.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/pixiv57793944.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/r63888719_by__LM7_-scaled.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/wallhaven-672007-1.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/アズールレーン_63069334.webp".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  
+  <!--百度的自动推送-->
+  
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+ 
+
+
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2022</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <span style="color: #b9b9b9;">Theme <a href="https://www.sakura521.cn" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> 
+		备案/许可证编号为：冀ICP备20003003号</a>
+        </span>
+		</br><span id="sitetime"></span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?51ea89e1e2a8781a80db7231945e68ad";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- 百度自动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+<!-- 建站的时间 -->
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2020, 02, 19, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/js/InsightSearch.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/js/zoom.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!-- <script src='https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/js/valine3.min.js'></script> -->
+<script src='https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/js/botui.js"></script>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/wang1375830242/CDN/video/","name":"The-Pet-Girl-of-Sakurasou.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/wang1375830242/CDN/video/","name":"The-Pet-Girl-of-Sakurasou.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+    <!-- ʵ�ֻ������� -->
+  <div class="skin-menu no-select" id="mainskin" style="position: fixed">
+ <div class="theme-controls row-container">
+  <ul class="menu-list">
+   <li id="white-bg"> <i class="fa fa-television" aria-hidden="true"></i></li>
+   <li id="sakura-bg"> <i class="iconfont icon-sakura"></i></li>
+   <li id="gribs-bg"> <i class="fa fa-slack" aria-hidden="true"></i></li>
+   <li id="KAdots-bg"> <i class="iconfont icon-dots"></i></li>
+   <li id="totem-bg"> <i class="fa fa-optin-monster" aria-hidden="true"></i></li>
+   <li id="pixiv-bg"> <i class="iconfont icon-pixiv"></i></li>
+   <li id="bing-bg"> <i class="iconfont icon-bing"></i></li>
+   <li id="dark-bg"> <i class="fa fa-moon-o" aria-hidden="true"></i></li>
+  </ul>
+ </div>
+</div>
+<canvas id="night-mode-cover"></canvas> 
+  <div class="changeSkin-gear no-select">
+  <div class="keys" id="setbtn"> 
+   <span id="open-skinMenu"> 切换主题 | SCHEME TOOL  
+     <i class="iconfont icon-gear inline-block rotating"></i> 
+   </span>
+  </div>
+</div>
+  
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+  
+    <!-- ���ð��� -->
+     <!--  <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/noSomeKey.js"></script>	-->
+  
+  <!-- Ԥ���� -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+
+<!--	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	-->
+<!-- �ײ�խ -->	
+<!--	<ins class="adsbygoogle"	-->
+<!--     style="display:block;width:728px;height:90px;margin:auto"	-->
+<!--     data-ad-client="ca-pub-4531214479514249"	-->
+<!--     data-ad-slot="6023288923"></ins>	-->
+<!--	<script>	-->
+<!--     (adsbygoogle = window.adsbygoogle || []).push({});	-->
+<!--	</script>	-->
+ 
+ 
+ 
+ 
+<!-- ���� -->
+<!--  <script type="text/javascript"> -->
+<!--   WIDGET = {FID: 'vw92ONuJRL'}	-->
+<!--	</script>	-->
+<!--	<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>	-->
+  
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/indexjpg.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">さくら荘その小坏孩</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/wang1375830242" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="http://weibo.com/mashirozx?is_all=1" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=1428238744&site=qq&menu=yes" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E5%A8%B1%E4%B9%90/">
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                  娱乐
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E5%B9%B2%E8%B4%A7/">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  干货
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+            清单
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/tags/%E6%82%A6%E8%AF%BB/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  书单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/bangumi/">
+                  <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                  番组
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags/java/">
+                  <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                  Java
+                </a>
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <i class="fa fa-headphones" aria-hidden="true"></i>
+                  歌单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/photo/">
+                  <i class="fa fa-photo" aria-hidden="true"></i>
+                  图集
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/donate/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+            赞赏
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+              <li>
+                <a href="/theme-sakura/">
+                  <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                  主题
+                </a>
+              </li>
+            
+              <li>
+                <a href="/lab/">
+                  <i class="fa fa-cogs" aria-hidden="true"></i>
+                  Lab
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/atom.xml">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+            RSS
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <!--  音乐播放器 开始 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+
+  .aplayer .aplayer-lrc p {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+
+  .aplayer .aplayer-lrc p.aplayer-lrc-current {
+    color: #FF1493;
+  }
+
+  .aplayer.aplayer-narrow .aplayer-body {
+    left: -66px !important;
+  }
+
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+    display: none !important;
+  }
+
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js  id="4886582349&"  server="netease"  type="playlist"  fixed="true"  autoplay="false"  loop="all"  order="random"  preload="none"  volume="0.5"  mutex="true"  </meting-js>
+  <script>
+    $(function () {
+      $('body').on('click', '.aplayer', function () {
+        if ($('.aplayer-button').hasClass('aplayer-play')) {
+          $('.aplayer-lrc').removeClass('lrc-show');
+        } else {
+          $('.aplayer-lrc').addClass('lrc-show');
+        }
+      })
+    });hex
+  </script> 
+  <!-- 音乐播放器 结束 -->
+</body>
+</html>

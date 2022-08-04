@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+<meta name="keywords" content="java,springboot,docker,部署,Hexo,Sakura,樱花,前端博客,JavaScript,html5,css3,Jquery,NodeJs,Ubuntu,hexo,sakura,github,Github,博客,免费博客,学生博客,css,js,html,java">
+
+  
+<meta name="description" content="使用Docker部署一个SpringBoot项目">
+
+  
+  <title itemprop="name">使用 Docker 部署一个 Spring Boot 项目 | 樱花🌸</title>
+  
+    <link rel="shortcut icon" href="https://2heng.xin/favicon.ico">
+  
+
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">  -->
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/css/style3.css" type="text/css" media="all">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "さくら荘その小坏孩";
+  mashiro_option.author_name = "小坏孩";
+  mashiro_option.site_url = "https://www.sakura521.cn";
+  mashiro_option.v_appId = "rNqgMHWy3w8Nrka5h7qEuHXb-gzGzoHsz";
+  mashiro_option.v_appKey = "IwkVmKGABneOkwfgUAKQiTYY";
+  mashiro_option.mathjax = "0";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <!--自定义看板娘-->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/live2d-widget/autoload2.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/live2d-widget/font-awesome.min.css"/>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/%EF%BD%A1%EF%BD%A5%EF%BC%9A%EF%BC%8A%EF%BC%9A%EF%BD%A5%E2%9C%BF-PID65231071-by-hakusai.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/ETpv24.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/308827.webp,https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200708154412.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/gui.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/307473.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/Konachan.com-ls-black_hair-f-toriki-touhou.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/Konachan.com-r-1-scaled.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/p1.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/pixiv57793944.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/r63888719_by__LM7_-scaled.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/wallhaven-672007-1.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/アズールレーン_63069334.webp".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script> -->
+  
+    <!--谷歌广告-->
+  <!-- <script data-ad-client="ca-pub-4531214479514249" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+  
+  
+  <!-- 百度的自动推送
+  
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+  -->
+
+
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="樱花🌸" type="application/atom+xml">
+</head>
+
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://www.sakura521.cn">
+          <img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/indexjpg.jpg">
+        </a>
+      </div>
+<div class="header-info">
+        <!-- <p>Live your life with passion! With some drive!</p> -->         
+		<p id="hitokoto" class="hitokoto">正在加载今日一言....</p>
+        <script src="https://v1.hitokoto.cn/?c=a&c=b&encode=js&charset=utf-8" charset="utf-8"></script>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="http://github.com/wang1375830242" target="_blank" class="social-github" title="github">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://www.zhihu.com/people/xiao-pi-hai-99-75" target="_blank" class="social-github" title="zhihu">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/zhihu.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=MQAFAwkDAgkGBQVxQEAfUl5c" target="_blank" class="social-github" title="email">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/email.svg">
+                  </a>
+                </li>
+              
+            
+              
+                <li class="wechat">
+                  <a href="/#">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/wechat.png">
+                  </a>
+                  <div class="wechatInner">
+                    <img src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200408222721.webp">
+                  </div>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">さくら荘その</span>
+            <span class="shironeko">小坏孩</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E5%A8%B1%E4%B9%90/">
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          娱乐
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E5%B9%B2%E8%B4%A7/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          干货
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+                    清单
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/tags/%E6%82%A6%E8%AF%BB/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          书单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/bangumi/">
+                          <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                          番组
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/tags/java/">
+                          <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                          Java
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-headphones" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/photo/">
+                          <i class="fa fa-photo" aria-hidden="true"></i>
+                          图集
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/donate/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+                    赞赏
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/theme-sakura/">
+                          <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                          主题
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/lab/">
+                          <i class="fa fa-cogs" aria-hidden="true"></i>
+                          Lab
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/css/sharejs.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/tocbot/4.10.1/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200708222052.webp);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200708222052.webp">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      使用 Docker 部署一个 Spring Boot 项目</h1>
+      <p class="entry-census">
+        <span>
+          <a href="sakura521.cn">
+            <img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/8972361_tiny.th.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="sakura521.cn">小坏孩</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-7-8<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="Docker-维基百科"><a href="#Docker-维基百科" class="headerlink" title="Docker 维基百科"></a>Docker 维基百科</h1><p><a href="https://zh.wikipedia.org/wiki/Docker" target="_blank" rel="noopener"><strong>Docker</strong></a> 是一个<a href="https://zh.wikipedia.org/wiki/開放原始碼" target="_blank" rel="noopener">开放源代码</a><a href="https://zh.wikipedia.org/wiki/軟體" target="_blank" rel="noopener">软件</a>，是一个<a href="https://zh.wikipedia.org/wiki/開放平臺" target="_blank" rel="noopener">开放平台</a>，用于开发应用、交付（shipping）应用、运行应用。 Docker允许用户将基础设施（Infrastructure）中的应用单独分割出来，形成更小的颗粒（容器），从而提高交付软件的速度。<a href="https://zh.wikipedia.org/wiki/Docker#cite_note-1" target="_blank" rel="noopener">[1]</a></p>
+<p><strong>Docker容器</strong> 与虚拟机类似，但原理上，容器是将<a href="https://zh.wikipedia.org/wiki/作業系統層虛擬化" target="_blank" rel="noopener">操作系统层虚拟化</a>，虚拟机则是虚拟化硬件，因此容器更具有便携性、高效地利用服务器。 容器更多的用于表示 软件的一个标准化单元。由于容器的标准化，因此它可以无视基础设施（Infrastructure）的差异，部署到任何一个地方。另外，Docker也为容器提供更强的业界的隔离兼容。<a href="https://zh.wikipedia.org/wiki/Docker#cite_note-2" target="_blank" rel="noopener">[2]</a></p>
+<p><strong>Docker</strong> 利用<a href="https://zh.wikipedia.org/wiki/Linux核心" target="_blank" rel="noopener">Linux核心</a>中的资源分离机制，例如<a href="https://zh.wikipedia.org/wiki/Cgroups" target="_blank" rel="noopener">cgroups</a>，以及Linux核心<a href="https://zh.wikipedia.org/w/index.php?title=Linux命名空間&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">名字空间</a>（namespaces），来创建独立的<a href="https://zh.wikipedia.org/wiki/作業系統層虛擬化" target="_blank" rel="noopener">容器</a>（containers）。这可以在单一Linux实体下运作，避免引导一个<a href="https://zh.wikipedia.org/wiki/虛擬機器" target="_blank" rel="noopener">虚拟机</a>造成的额外负担<a href="https://zh.wikipedia.org/wiki/Docker#cite_note-3" target="_blank" rel="noopener">[3]</a>。Linux核心对名字空间的支持完全隔离了工作环境中应用程序的视野，包括行程树、<a href="https://zh.wikipedia.org/wiki/计算机网络" target="_blank" rel="noopener">网络</a>、用户ID与挂载文件系统，而核心的cgroup提供资源隔离，包括<a href="https://zh.wikipedia.org/wiki/CPU" target="_blank" rel="noopener">CPU</a>、<a href="https://zh.wikipedia.org/wiki/電腦記憶體" target="_blank" rel="noopener">存储器</a>、block I/O与网络。从0.9版本起，Dockers在使用抽象虚拟是经由<a href="https://zh.wikipedia.org/wiki/Libvirt" target="_blank" rel="noopener">libvirt</a>的<a href="https://zh.wikipedia.org/wiki/LXC" target="_blank" rel="noopener">LXC</a>与systemd - nspawn提供界面的基础上，开始包括libcontainer库做为以自己的方式开始直接使用由Linux核心提供的虚拟化的设施，</p>
+<p>依据行业分析公司“451研究”：“Dockers是有能力打包应用程序及其虚拟容器，可以在任何Linux服务器上运行的依赖性工具，这有助于实现灵活性和便携性，应用程序在任何地方都可以运行，无论是<a href="https://zh.wikipedia.org/wiki/公用雲" target="_blank" rel="noopener">公用云</a>、<a href="https://zh.wikipedia.org/wiki/私有雲" target="_blank" rel="noopener">私有云</a>、单机等。” <a href="https://zh.wikipedia.org/wiki/Docker#cite_note-4" target="_blank" rel="noopener">[4]</a>。</p>
+<h1 id="Docker-安装"><a href="#Docker-安装" class="headerlink" title="Docker 安装"></a>Docker 安装</h1><p>安装方式有很多种，我是第一次接触，所以我安装的windows版本的</p>
+<p>我电脑是Win10 家庭版，所以不能直接安装docker官方的docker-ce-desktop-windows，网上看到有强制开启Hyper-V的，因为改注册表犹豫了下，查了查如果强制开启话的 VMware 可能就无法使用了，而且貌似没有看到关闭的方法。</p>
+<p>所以我使用的安装 docker-toolbox 这个保守的办法。</p>
+<p>安装方法我就我说了，直接百度就有很多种。</p>
+<p>安装完需要配置和修改（有些教程没有注意）</p>
+<h1 id="部署-Spring-Boot项目"><a href="#部署-Spring-Boot项目" class="headerlink" title="部署 Spring Boot项目"></a>部署 Spring Boot项目</h1><h2 id="创建一个spring-boot-项目"><a href="#创建一个spring-boot-项目" class="headerlink" title="创建一个spring boot 项目"></a>创建一个spring boot 项目</h2><h3 id="我的pom-xml"><a href="#我的pom-xml" class="headerlink" title="我的pom.xml"></a>我的pom.xml</h3><p>我看的那个教程在这里面添加了一些东西，但是很多教程在pom.xml并没有做修改。</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;2.3.1.RELEASE&lt;/version&gt;
+        &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;
+    &lt;/parent&gt;
+    &lt;groupId&gt;com.example&lt;/groupId&gt;
+    &lt;artifactId&gt;hello_docker&lt;/artifactId&gt;
+    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+    &lt;name&gt;hello_docker&lt;/name&gt;
+    &lt;description&gt;Demo project for Spring Boot&lt;/description&gt;
+
+    &lt;properties&gt;
+        &lt;java.version&gt;1.8&lt;/java.version&gt;
+        &lt;docker.imager.prefix&gt;springboot&lt;/docker.imager.prefix&gt;
+    &lt;/properties&gt;
+
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+            &lt;exclusions&gt;
+                &lt;exclusion&gt;
+                    &lt;groupId&gt;org.junit.vintage&lt;/groupId&gt;
+                    &lt;artifactId&gt;junit-vintage-engine&lt;/artifactId&gt;
+                &lt;/exclusion&gt;
+            &lt;/exclusions&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;com.spotify&lt;/groupId&gt;
+                &lt;artifactId&gt;docker-maven-plugin&lt;/artifactId&gt;
+                &lt;version&gt;1.0.0&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;imageName&gt;${docker.imager.prefix}/${project.artifactId}&lt;/imageName&gt;
+                    &lt;dockerDirectory&gt;src/main/docker&lt;/dockerDirectory&gt;
+                    &lt;resources&gt;
+                        &lt;resource&gt;
+                            &lt;targetPath&gt;/&lt;/targetPath&gt;
+                            &lt;directory&gt;${project.build.directory}&lt;/directory&gt;
+                            &lt;include&gt;${project.build.finalName}&lt;/include&gt;
+                        &lt;/resource&gt;
+                    &lt;/resources&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+&lt;/project&gt;
+</code></pre>
+<h3 id="然后创建个显示测试效果的"><a href="#然后创建个显示测试效果的" class="headerlink" title="然后创建个显示测试效果的"></a>然后创建个显示测试效果的</h3><p>例如：</p>
+<pre><code class="java">/**
+ * @Author sakura
+ * @Date 2020-07-08 17:13
+ */
+@RestController
+public class helloDockerController {
+
+    @GetMapping(&quot;/hello&quot;)
+    public String helloDocker() {
+        return &quot;hello docker !!!&quot;;
+    }
+
+}
+</code></pre>
+<p>运行访问 127.0.0.1:8080/hello 显示</p>
+<pre><code class="html">hello docker !!!
+</code></pre>
+<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200709095501.webp" alt></p>
+<p>打包完后的文件在target中</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200709095748.webp" alt></p>
+<h3 id="创建-Dockerfile"><a href="#创建-Dockerfile" class="headerlink" title="创建 Dockerfile"></a>创建 Dockerfile</h3><p>在main目录下创建docker文件夹，在此文件夹下创建Dockerfile并且把刚才打包好的文件复制进来</p>
+<p>目录截图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200709100051.png" alt></p>
+<h3 id="编辑Dockerfile"><a href="#编辑Dockerfile" class="headerlink" title="编辑Dockerfile"></a>编辑Dockerfile</h3><pre><code class="dockerfile">FROM java:8
+VOLUME /tmp
+ADD hello_docker-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]
+</code></pre>
+<p><strong>附：【Dockerfile指令详解】</strong></p>
+<pre><code class="text">FROM：指定基础镜像，必须为第一个命令
+MAINTAINER: 维护者信息
+RUN：构建镜像时执行的命令
+ADD：将本地文件添加到容器中，tar类型文件会自动解压(网络压缩资源不会被解压)，可以访问网络资源，类似wget
+COPY：功能类似ADD，但是是不会自动解压文件，也不能访问网络资源
+CMD：构建容器后调用，也就是在容器启动时才进行调用。
+ENTRYPOINT：配置容器，使其可执行化。配合CMD可省去&quot;application&quot;，只使用参数。
+LABEL：用于为镜像添加元数据
+ENV：设置环境变量
+EXPOSE：指定于外界交互的端口
+VOLUME：用于指定持久化目录
+WORKDIR：工作目录，类似于cd命令
+USER:指定运行容器时的用户名或 UID，后续的 RUN 也会使用指定用户。使用USER指定用户时，可以使用用户名、UID或GID，或是两者的组合。当服务不需要管理员权限时，可以通过该命令指定运行用户。并且可以在之前创建所需要的用户
+ARG：用于指定传递给构建运行时的变量
+ONBUILD：用于设置镜像触发器
+ENTRYPOINT:配置容器启动后执行的命令，并且不可被 docker run 提供的参数覆盖。每个 Dockerfile 中只能有一个 ENTRYPOINT ，当指定多个时，只有最后一个起效。
+格式：ENTRYPOINT [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;] ENTRYPOINT command param1 param2 （shell中执行）
+</code></pre>
+<h2 id="使用Docker"><a href="#使用Docker" class="headerlink" title="使用Docker"></a>使用Docker</h2><h3 id="使用Dockerfile创建镜像"><a href="#使用Dockerfile创建镜像" class="headerlink" title="使用Dockerfile创建镜像"></a>使用Dockerfile创建镜像</h3><pre><code class="maven">mvn package docker:build
+</code></pre>
+<p>显示：</p>
+<pre><code class="cmd">...
+[INFO] Building image springboot/hello_docker
+Step 1/4 : FROM java:8
+
+ ---&gt; d23bdf5b1b1b
+Step 2/4 : VOLUME /tmp
+
+ ---&gt; Using cache
+ ---&gt; 8facd0d5489f
+Step 3/4 : ADD hello_docker-0.0.1-SNAPSHOT.jar app.jar
+
+ ---&gt; Using cache
+ ---&gt; 8f39142f4505
+Step 4/4 : ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]
+
+ ---&gt; Using cache
+ ---&gt; 3ee7df4eff03
+ProgressMessage{id=null, status=null, stream=null, error=null, progress=null, progressDetail=null}
+Successfully built 3ee7df4eff03
+Successfully tagged springboot/hello_docker:latest
+[INFO] Built springboot/hello_docker
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  12.577 s
+[INFO] Finished at: 2020-07-09T10:06:31+08:00
+[INFO] ------------------------------------------------------------------------
+</code></pre>
+<h3 id="使用-docker-images-命令查看构建好的镜像"><a href="#使用-docker-images-命令查看构建好的镜像" class="headerlink" title="使用 docker images 命令查看构建好的镜像"></a>使用 <strong>docker images</strong> 命令查看构建好的镜像</h3><pre><code class="cmd">H:\桌面文件\学習\练\hello_docker&gt;docker images
+REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
+springboot/hello_docker   latest              3ee7df4eff03        16 hours ago        660MB
+&lt;none&gt;                    &lt;none&gt;              57b58e5de4e5        17 hours ago        105MB
+openjdk                   8-jdk-alpine        a3562aa0b991        14 months ago       105MB
+java                      8                   d23bdf5b1b1b        3 years ago         643MB
+</code></pre>
+<h3 id="这个springboot-hello-docker就是构建好的镜像，然后运行镜像"><a href="#这个springboot-hello-docker就是构建好的镜像，然后运行镜像" class="headerlink" title="这个springboot/hello_docker就是构建好的镜像，然后运行镜像"></a>这个springboot/hello_docker就是构建好的镜像，然后运行镜像</h3><pre><code class="cmd">docker run -p 8088:8080 -t springboot/hello_docker
+</code></pre>
+<p><code>-p 8088:8080 ：主机的端口和docker容器中的端口做映射</code></p>
+<p>启动命令详情官网：<a href="https://docs.docker.com/engine/reference/commandline/run/" target="_blank" rel="noopener">https://docs.docker.com/engine/reference/commandline/run/</a></p>
+<h3 id="启动后用docker-ps-查看正在运行的镜像"><a href="#启动后用docker-ps-查看正在运行的镜像" class="headerlink" title="启动后用docker ps 查看正在运行的镜像"></a>启动后用docker ps 查看正在运行的镜像</h3><pre><code class="cmd">H:\桌面文件\学習\练\hello_docker&gt;docker ps
+CONTAINER ID        IMAGE                     COMMAND                CREATED             STATUS              PORTS                    NAMES
+23617af8aed8        springboot/hello_docker   &quot;java -jar /app.jar&quot;   6 seconds ago       Up 7 seconds        0.0.0.0:8088-&gt;8080/tcp   zen_feynman
+</code></pre>
+<h3 id="访问浏览器-192-168-99-100-8088-hello"><a href="#访问浏览器-192-168-99-100-8088-hello" class="headerlink" title="访问浏览器 192.168.99.100:8088/hello"></a>访问浏览器 192.168.99.100:8088/hello</h3><pre><code>hello docker !!!
+</code></pre><p>192.168.99.100 这启动docker服务的地方看，每个人可能不一样</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200709101858.webp" alt></p>
+<blockquote>
+<p>第一次接触暂时先写到这</p>
+</blockquote>
+
+        </div>
+		
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 底部窄 -->
+<ins class="adsbygoogle"
+     style="display:block;width:728px;height:90px;margin:auto"
+     data-ad-client="ca-pub-4531214479514249"
+     data-ad-slot="6023288923"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+ 
+		
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.02/images/zfb.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.02/images/wx.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/technology/javastudy20200616.html" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200616163305.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200616163305.webp">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                java 散知识 学习小记</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+
+<!-- 横向广告 -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+<!-- 横向2 -->
+<!-- <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4531214479514249"
+     data-ad-slot="7543226488"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> -->
+<!-- 横向广告结束 -->
+
+<script>
+     window.onload = function () {
+          var valine = new Valine();
+          valine.init({
+               el: '#vcomments',
+               appId: "rNqgMHWy3w8Nrka5h7qEuHXb-gzGzoHsz",
+               appKey: "IwkVmKGABneOkwfgUAKQiTYY",
+               path: window.location.pathname,
+               placeholder: "在昵称处输入QQ号直接调用QQ昵称和QQ邮箱.....",
+               notify: false,
+               recordIP: true,
+               enableQQ: true,
+               emojiCDN: '//i0.hdslb.com/bfs/emote/',
+               emojiMaps: {
+                    "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+                    "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+                    "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+                    "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+                    "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+                    "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+                    "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+                    "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+                    "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+                    "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+                    "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+                    "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+                    "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+                    "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+                    "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+                    "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+                    "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+                    "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+                    "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+                    "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+                    "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+                    "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+                    "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+                    "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+                    "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+                    "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+                    "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+                    "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+                    "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+                    "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+                    "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+                    "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+                    "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+                    "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+                    "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+                    "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+                    "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+                    "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+                    "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+                    "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+                    "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+                    "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+                    "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+                    "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+                    "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+                    "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+                    "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+                    "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+                    "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+                    "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+               }
+          })
+     }
+</script>
+
+<!-- 横向广告 -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+<!-- 横向 -->
+<!-- <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4531214479514249"
+     data-ad-slot="6596690914"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> -->
+<!-- 横向广告结束 -->
+
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="sakura521.cn" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/8972361_tiny.th.jpg" itemprop="image" alt="小坏孩" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="sakura521.cn" itemprop="url" rel="author">小坏孩</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>成功の影には、数多くの失敗の道のりがある。</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 小坏孩<br>
+      powered_by <a href="https://www.sakura521.cn" target="_blank">樱花🌸</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+
+
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+<!-- 备案号上 -->
+<!-- <ins class="adsbygoogle"
+     style="display:block;width:728px;height:90px;margin:auto"
+     data-ad-client="ca-pub-4531214479514249"
+     data-ad-slot="7950420598"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> -->
+
+  <!--自定义看板娘-->
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/live2d-widget/autoload2.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/live2d-widget/font-awesome.min.css"/>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/%EF%BD%A1%EF%BD%A5%EF%BC%9A%EF%BC%8A%EF%BC%9A%EF%BD%A5%E2%9C%BF-PID65231071-by-hakusai.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/ETpv24.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/308827.webp,https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200708154412.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/gui.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/307473.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/Konachan.com-ls-black_hair-f-toriki-touhou.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/Konachan.com-r-1-scaled.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/p1.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/pixiv57793944.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/r63888719_by__LM7_-scaled.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/wallhaven-672007-1.webp,https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/アズールレーン_63069334.webp".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  
+  <!--百度的自动推送-->
+  
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+ 
+
+
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2022</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <span style="color: #b9b9b9;">Theme <a href="https://www.sakura521.cn" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> 
+		备案/许可证编号为：冀ICP备20003003号</a>
+        </span>
+		</br><span id="sitetime"></span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?51ea89e1e2a8781a80db7231945e68ad";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- 百度自动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+<!-- 建站的时间 -->
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2020, 02, 19, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/js/InsightSearch.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/js/zoom.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!-- <script src='https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/js/valine3.min.js'></script> -->
+<script src='https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/sakura/source/js/botui.js"></script>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/wang1375830242/CDN/video/","name":"The-Pet-Girl-of-Sakurasou.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/wang1375830242/CDN/video/","name":"The-Pet-Girl-of-Sakurasou.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+    <!-- ʵ�ֻ������� -->
+  <div class="skin-menu no-select" id="mainskin" style="position: fixed">
+ <div class="theme-controls row-container">
+  <ul class="menu-list">
+   <li id="white-bg"> <i class="fa fa-television" aria-hidden="true"></i></li>
+   <li id="sakura-bg"> <i class="iconfont icon-sakura"></i></li>
+   <li id="gribs-bg"> <i class="fa fa-slack" aria-hidden="true"></i></li>
+   <li id="KAdots-bg"> <i class="iconfont icon-dots"></i></li>
+   <li id="totem-bg"> <i class="fa fa-optin-monster" aria-hidden="true"></i></li>
+   <li id="pixiv-bg"> <i class="iconfont icon-pixiv"></i></li>
+   <li id="bing-bg"> <i class="iconfont icon-bing"></i></li>
+   <li id="dark-bg"> <i class="fa fa-moon-o" aria-hidden="true"></i></li>
+  </ul>
+ </div>
+</div>
+<canvas id="night-mode-cover"></canvas> 
+  <div class="changeSkin-gear no-select">
+  <div class="keys" id="setbtn"> 
+   <span id="open-skinMenu"> 切换主题 | SCHEME TOOL  
+     <i class="iconfont icon-gear inline-block rotating"></i> 
+   </span>
+  </div>
+</div>
+  
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+  
+    <!-- ���ð��� -->
+     <!--  <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/noSomeKey.js"></script>	-->
+  
+  <!-- Ԥ���� -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+
+<!--	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	-->
+<!-- �ײ�խ -->	
+<!--	<ins class="adsbygoogle"	-->
+<!--     style="display:block;width:728px;height:90px;margin:auto"	-->
+<!--     data-ad-client="ca-pub-4531214479514249"	-->
+<!--     data-ad-slot="6023288923"></ins>	-->
+<!--	<script>	-->
+<!--     (adsbygoogle = window.adsbygoogle || []).push({});	-->
+<!--	</script>	-->
+ 
+ 
+ 
+ 
+<!-- ���� -->
+<!--  <script type="text/javascript"> -->
+<!--   WIDGET = {FID: 'vw92ONuJRL'}	-->
+<!--	</script>	-->
+<!--	<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>	-->
+  
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/indexjpg.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">さくら荘その小坏孩</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/wang1375830242" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="http://weibo.com/mashirozx?is_all=1" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=1428238744&site=qq&menu=yes" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E5%A8%B1%E4%B9%90/">
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                  娱乐
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E5%B9%B2%E8%B4%A7/">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  干货
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+            清单
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/tags/%E6%82%A6%E8%AF%BB/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  书单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/bangumi/">
+                  <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                  番组
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags/java/">
+                  <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                  Java
+                </a>
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <i class="fa fa-headphones" aria-hidden="true"></i>
+                  歌单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/photo/">
+                  <i class="fa fa-photo" aria-hidden="true"></i>
+                  图集
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/donate/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+            赞赏
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+              <li>
+                <a href="/theme-sakura/">
+                  <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                  主题
+                </a>
+              </li>
+            
+              <li>
+                <a href="/lab/">
+                  <i class="fa fa-cogs" aria-hidden="true"></i>
+                  Lab
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/atom.xml">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+            RSS
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <!--  音乐播放器 开始 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+
+  .aplayer .aplayer-lrc p {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+
+  .aplayer .aplayer-lrc p.aplayer-lrc-current {
+    color: #FF1493;
+  }
+
+  .aplayer.aplayer-narrow .aplayer-body {
+    left: -66px !important;
+  }
+
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+    display: none !important;
+  }
+
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js  id="4886582349&"  server="netease"  type="playlist"  fixed="true"  autoplay="false"  loop="all"  order="random"  preload="none"  volume="0.5"  mutex="true"  </meting-js>
+  <script>
+    $(function () {
+      $('body').on('click', '.aplayer', function () {
+        if ($('.aplayer-button').hasClass('aplayer-play')) {
+          $('.aplayer-lrc').removeClass('lrc-show');
+        } else {
+          $('.aplayer-lrc').addClass('lrc-show');
+        }
+      })
+    });hex
+  </script> 
+  <!-- 音乐播放器 结束 -->
+</body>
+</html>

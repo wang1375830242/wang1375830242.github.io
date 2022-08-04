@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>樱花🌸</title>
+  
+  
+  <link href="https://www.sakura521.cn/atom.xml" rel="self"/>
+  
+  <link href="https://www.sakura521.cn/"/>
+  <updated>2022-08-04T06:52:27.908Z</updated>
+  <id>https://www.sakura521.cn/</id>
+  
+  <author>
+    <name>小坏孩</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 Docker 部署一个 Spring Boot 项目</title>
+    <link href="https://www.sakura521.cn/technology/docker.html"/>
+    <id>https://www.sakura521.cn/technology/docker.html</id>
+    <published>2020-07-08T13:45:20.000Z</published>
+    <updated>2022-08-04T06:52:27.908Z</updated>
+    
+    
+    <summary type="html">使用Docker部署一个SpringBoot项目</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="java" scheme="https://www.sakura521.cn/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java 散知识 学习小记</title>
+    <link href="https://www.sakura521.cn/technology/javastudy20200616.html"/>
+    <id>https://www.sakura521.cn/technology/javastudy20200616.html</id>
+    <published>2020-06-16T08:31:23.000Z</published>
+    <updated>2022-08-04T06:52:27.905Z</updated>
+    
+    
+    <summary type="html">java 散知识 学习小记</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="java" scheme="https://www.sakura521.cn/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Boot RabbitMQ 小练习</title>
+    <link href="https://www.sakura521.cn/technology/rabbitMQ.html"/>
+    <id>https://www.sakura521.cn/technology/rabbitMQ.html</id>
+    <published>2020-06-14T07:46:04.000Z</published>
+    <updated>2022-08-04T06:52:27.903Z</updated>
+    
+    
+    <summary type="html">Spring Boot RabbitMQ 小练习</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="java" scheme="https://www.sakura521.cn/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java Steam流 学习小笔记</title>
+    <link href="https://www.sakura521.cn/technology/steam.html"/>
+    <id>https://www.sakura521.cn/technology/steam.html</id>
+    <published>2020-06-04T08:49:20.000Z</published>
+    <updated>2022-08-04T06:52:27.898Z</updated>
+    
+    
+    <summary type="html">Steam流 学习小笔记</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="java" scheme="https://www.sakura521.cn/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用OpenCV，Python和dlib进行眨眼检测</title>
+    <link href="https://www.sakura521.cn/technology/winkpython.html"/>
+    <id>https://www.sakura521.cn/technology/winkpython.html</id>
+    <published>2020-04-15T02:24:20.000Z</published>
+    <updated>2022-08-04T06:52:27.907Z</updated>
+    
+    
+    <summary type="html">使用OpenCV，Python和dlib进行眨眼检测。</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>谷歌访问助手破解版下载及安装</title>
+    <link href="https://www.sakura521.cn/technology/google.html"/>
+    <id>https://www.sakura521.cn/technology/google.html</id>
+    <published>2020-04-12T08:58:47.000Z</published>
+    <updated>2022-08-04T06:52:27.912Z</updated>
+    
+    
+    <summary type="html">破解版谷歌访问助手，一个谷歌浏览器的插件</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>满速的百度网盘下载工具-亿寻</title>
+    <link href="https://www.sakura521.cn/technology/yixun.html"/>
+    <id>https://www.sakura521.cn/technology/yixun.html</id>
+    <published>2020-04-05T03:01:05.000Z</published>
+    <updated>2022-08-04T06:52:27.911Z</updated>
+    
+    
+    <summary type="html">亿寻，满速的百度网盘下载工具</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一个可以做主页的导航</title>
+    <link href="https://www.sakura521.cn/technology/sakuranav.html"/>
+    <id>https://www.sakura521.cn/technology/sakuranav.html</id>
+    <published>2020-03-26T07:33:05.000Z</published>
+    <updated>2022-08-04T06:52:27.908Z</updated>
+    
+    
+    <summary type="html">一个可以做完你浏览器主页的导航！</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>全网独家 hexo seo优化之关键词和简介的优化</title>
+    <link href="https://www.sakura521.cn/realstuff/seokeywords.html"/>
+    <id>https://www.sakura521.cn/realstuff/seokeywords.html</id>
+    <published>2020-03-20T06:18:10.000Z</published>
+    <updated>2022-08-04T06:52:27.910Z</updated>
+    
+    
+    <summary type="html">全网独家 hexo seo优化之关键词和简介的优化</summary>
+    
+    
+    
+    <category term="干货" scheme="https://www.sakura521.cn/categories/%E5%B9%B2%E8%B4%A7/"/>
+    
+    
+    <category term="web" scheme="https://www.sakura521.cn/tags/web/"/>
+    
+    <category term="悦读" scheme="https://www.sakura521.cn/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>给新手推荐的IDEA插件 干货分享</title>
+    <link href="https://www.sakura521.cn/realstuff/IDEAPlugins.html"/>
+    <id>https://www.sakura521.cn/realstuff/IDEAPlugins.html</id>
+    <published>2020-03-17T01:52:11.000Z</published>
+    <updated>2022-08-04T06:52:27.911Z</updated>
+    
+    
+    <summary type="html">给新手推荐的IDEA插件 干货分享</summary>
+    
+    
+    
+    <category term="干货" scheme="https://www.sakura521.cn/categories/%E5%B9%B2%E8%B4%A7/"/>
+    
+    
+    <category term="干货" scheme="https://www.sakura521.cn/tags/%E5%B9%B2%E8%B4%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>编程专用字体 JetBrains Mono</title>
+    <link href="https://www.sakura521.cn/realstuff/JetBrainsMono.html"/>
+    <id>https://www.sakura521.cn/realstuff/JetBrainsMono.html</id>
+    <published>2020-03-16T08:35:30.000Z</published>
+    <updated>2022-08-04T06:52:27.912Z</updated>
+    
+    
+    <summary type="html">编程专用字体 JetBrains Mono</summary>
+    
+    
+    
+    <category term="干货" scheme="https://www.sakura521.cn/categories/%E5%B9%B2%E8%B4%A7/"/>
+    
+    
+    <category term="干货" scheme="https://www.sakura521.cn/tags/%E5%B9%B2%E8%B4%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PicGo+jsDelivr+GitHub搭建免费cdn加速图床</title>
+    <link href="https://www.sakura521.cn/technology/picgocdn.html"/>
+    <id>https://www.sakura521.cn/technology/picgocdn.html</id>
+    <published>2020-03-13T04:36:41.000Z</published>
+    <updated>2022-08-04T06:52:27.902Z</updated>
+    
+    
+    <summary type="html">PicGo+jsDelivr+GitHub搭建免费cdn加速图床</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo Sakura主题美化 超详细</title>
+    <link href="https://www.sakura521.cn/technology/sakurameihua.html"/>
+    <id>https://www.sakura521.cn/technology/sakurameihua.html</id>
+    <published>2020-03-13T01:35:44.000Z</published>
+    <updated>2022-08-04T06:52:27.895Z</updated>
+    
+    
+    <summary type="html">Hexo Sakura主题美化 超详细</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Node.js(Windows) 安装详细教程</title>
+    <link href="https://www.sakura521.cn/technology/nodeTutorial.html"/>
+    <id>https://www.sakura521.cn/technology/nodeTutorial.html</id>
+    <published>2020-03-12T07:56:03.000Z</published>
+    <updated>2022-08-04T06:52:27.901Z</updated>
+    
+    
+    <summary type="html">Node.js(Windows) 安装详细教程</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git安装教程(Windows) 以及连接Github</title>
+    <link href="https://www.sakura521.cn/technology/gitTutorial.html"/>
+    <id>https://www.sakura521.cn/technology/gitTutorial.html</id>
+    <published>2020-03-12T07:11:30.000Z</published>
+    <updated>2022-08-04T06:52:27.894Z</updated>
+    
+    
+    <summary type="html">Git安装教程(Windows) 以及连接Github</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo博客 搭建超详细教程</title>
+    <link href="https://www.sakura521.cn/technology/hexoTutorial.html"/>
+    <id>https://www.sakura521.cn/technology/hexoTutorial.html</id>
+    <published>2020-03-12T06:27:40.000Z</published>
+    <updated>2022-08-04T06:52:27.905Z</updated>
+    
+    
+    <summary type="html">Hexo博客 搭建超详细教程</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo接入Google AdSense广告</title>
+    <link href="https://www.sakura521.cn/technology/AdSense.html"/>
+    <id>https://www.sakura521.cn/technology/AdSense.html</id>
+    <published>2020-03-12T04:05:33.000Z</published>
+    <updated>2022-08-04T06:52:27.897Z</updated>
+    
+    
+    <summary type="html">Hexo接入Google AdSense广告</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql 学习笔记 (二)</title>
+    <link href="https://www.sakura521.cn/technology/MysqlStudy2.html"/>
+    <id>https://www.sakura521.cn/technology/MysqlStudy2.html</id>
+    <published>2020-03-10T07:45:41.000Z</published>
+    <updated>2022-08-04T06:52:27.900Z</updated>
+    
+    
+    <summary type="html">MySQL 学习笔记（二）</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="java" scheme="https://www.sakura521.cn/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>B站作品【派大星的独白】一个关于正常人的故事 </title>
+    <link href="https://www.sakura521.cn/recreation/PatrickStar.html"/>
+    <id>https://www.sakura521.cn/recreation/PatrickStar.html</id>
+    <published>2020-03-10T01:40:05.000Z</published>
+    <updated>2022-08-04T06:52:27.893Z</updated>
+    
+    
+    <summary type="html">【派大星的独白】一个关于正常人的故事</summary>
+    
+    
+    
+    <category term="娱乐" scheme="https://www.sakura521.cn/categories/%E5%A8%B1%E4%B9%90/"/>
+    
+    
+    <category term="娱乐" scheme="https://www.sakura521.cn/tags/%E5%A8%B1%E4%B9%90/"/>
+    
+    <category term="B站" scheme="https://www.sakura521.cn/tags/B%E7%AB%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java 递归算法 小练习 学习笔记</title>
+    <link href="https://www.sakura521.cn/technology/recursion.html"/>
+    <id>https://www.sakura521.cn/technology/recursion.html</id>
+    <published>2020-03-05T09:22:35.000Z</published>
+    <updated>2022-08-04T06:52:27.906Z</updated>
+    
+    
+    <summary type="html">java 递归算法 小练习</summary>
+    
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="技术" scheme="https://www.sakura521.cn/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="java" scheme="https://www.sakura521.cn/tags/java/"/>
+    
+  </entry>
+  
+</feed>
