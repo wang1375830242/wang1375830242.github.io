@@ -435,20 +435,21 @@ timezone:
 <p>接下来打开Hexo\themes\Sakura\layout_partial\head.ejs</p>
 <p>别的主题也是找到这个head.ejs.</p>
 <p>在文件中添加一下代码即可</p>
-<pre><code class="ejs">  &lt;% if (page.keywords){ %&gt;
+<pre><code class="ejs">  &lt;% if (page.keywords)&#123; %&gt;
 &lt;meta name=&quot;keywords&quot; content=&quot;&lt;%= page.keywords %&gt;,&lt;%= config.keywords %&gt;&quot;&gt;
-&lt;% } else if (config.keywords){ %&gt;
+&lt;% &#125; else if (config.keywords)&#123; %&gt;
 &lt;meta name=&quot;keywords&quot; content=&quot;&lt;%= config.keywords %&gt;&quot;&gt;
-&lt;%} %&gt;
-  &lt;% if (page.description){ %&gt;
+&lt;%&#125; %&gt;
+  &lt;% if (page.description)&#123; %&gt;
 &lt;meta name=&quot;description&quot; content=&quot;&lt;%= page.description %&gt;&quot;&gt;
-&lt;% } else { %&gt;
+&lt;% &#125; else &#123; %&gt;
 &lt;meta name=&quot;description&quot; content=&quot;樱花博客，一个记录个人成长的地方。&quot;&gt;
-&lt;%} %&gt;
+&lt;%&#125; %&gt;
 </code></pre>
 <p>然后构建一下就可以了</p>
 <pre><code>hexo g
-</code></pre><h1 id="路径优化"><a href="#路径优化" class="headerlink" title="路径优化"></a>路径优化</h1><p>seo优化很重要的一点就是路径。网页不能太深，原本的生成文章的路径是/年/月/日/文章</p>
+</code></pre>
+<h1 id="路径优化"><a href="#路径优化" class="headerlink" title="路径优化"></a>路径优化</h1><p>seo优化很重要的一点就是路径。网页不能太深，原本的生成文章的路径是&#x2F;年&#x2F;月&#x2F;日&#x2F;文章</p>
 <p>后来我也更改了一下。</p>
 <p>首先打开网站根目录下的_config.yml配置文件。找到#URL，更改效果如下</p>
 <pre><code># URL
@@ -456,15 +457,16 @@ url: https://www.sakura521.cn
 root: /
 permalink: :type/:fileName.html
 permalink_defaults:
-</code></pre><p><code>当然还有一种方法是用永久链接，用插件生成id。这里就不写了，因为我也没用过。</code></p>
+</code></pre>
+<p><code>当然还有一种方法是用永久链接，用插件生成id。这里就不写了，因为我也没用过。</code></p>
 <p>打开Hexo\scaffolds\post.md</p>
 <p>在最下面添加</p>
 <pre><code class="markdown">fileName: demo   那么这个文章就是demo.html
 type: test   那么这个文章路径就是  网址.com/test/demo.html
 </code></pre>
 <p>最终效果（因主题而异）：</p>
-<pre><code class="markdown">title: {{ title }}
-date: {{ date }}
+<pre><code class="markdown">title: &#123;&#123; title &#125;&#125;
+date: &#123;&#123; date &#125;&#125;
 author: 小坏孩
 avatar: &#39;https://cdn.jsdelivr.net/gh/wang1375830242/CDN@1.01/images/8972361_tiny.th.jpg&#39;
 authorLink: sakura521.cn

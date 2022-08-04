@@ -94,7 +94,7 @@
   </style>
   <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
   </style>
-<link rel="alternate" href="/atom.xml" title="樱花🌸" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="樱花🌸" type="application/atom+xml">
 </head>
 
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
@@ -422,40 +422,41 @@
 import java.util.Iterator;
 import java.util.Map;
 
-public class mapEntryDemo {
-    public static void main(String[] args) {
+public class mapEntryDemo &#123;
+    public static void main(String[] args) &#123;
         Map&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();
         map.put(&quot;key1&quot;, &quot;value1&quot;);
         map.put(&quot;key2&quot;, &quot;value2&quot;);
         map.put(&quot;key3&quot;, &quot;value3&quot;);
 </code></pre>
 <h3 id="第一种-通过map-keySet遍历key和value"><a href="#第一种-通过map-keySet遍历key和value" class="headerlink" title="第一种  通过map.keySet遍历key和value"></a>第一种  通过map.keySet遍历key和value</h3><pre><code class="java">        sop(&quot;通过map.keySet遍历key和value&quot;);
-        for (String key : map.keySet()) {
+        for (String key : map.keySet()) &#123;
             sop(&quot;key=&quot; + key + &quot;+ &quot; + &quot;: value=&quot;+map.get(key));
-        }
+        &#125;
 </code></pre>
 <h3 id="第二种-通过Map-entrySet使用iterator遍历key和value"><a href="#第二种-通过Map-entrySet使用iterator遍历key和value" class="headerlink" title="第二种  通过Map.entrySet使用iterator遍历key和value"></a>第二种  通过Map.entrySet使用iterator遍历key和value</h3><pre><code class="java">         sop(&quot;通过Map.entrySet使用iterator遍历key和value&quot;);
         Iterator&lt;Map.Entry&lt;String,String&gt;&gt; it = map.entrySet().iterator();
-        while (it.hasNext()){
+        while (it.hasNext())&#123;
             Map.Entry&lt;String,String&gt; entry = it.next();
             sop(&quot;key=&quot;+entry.getKey()+&quot;+ value=&quot;+entry.getValue());
-        }
+        &#125;
 </code></pre>
 <h3 id="第三种-通过Map-entrySet遍历key和value"><a href="#第三种-通过Map-entrySet遍历key和value" class="headerlink" title="第三种  通过Map.entrySet遍历key和value"></a>第三种  通过Map.entrySet遍历key和value</h3><pre><code class="java">        sop(&quot;通过Map.entrySet遍历key和value&quot;);
-        for (Map.Entry&lt;String,String&gt; entry:map.entrySet()){
+        for (Map.Entry&lt;String,String&gt; entry:map.entrySet())&#123;
             sop(entry.getKey()+&quot;:&quot;+entry.getValue());
-        }
+        &#125;
 </code></pre>
 <h3 id="第四种-通过Map-values-遍历所有的value，但不遍历key"><a href="#第四种-通过Map-values-遍历所有的value，但不遍历key" class="headerlink" title="第四种  通过Map.values()遍历所有的value，但不遍历key"></a>第四种  通过Map.values()遍历所有的value，但不遍历key</h3><pre><code>        sop(&quot;通过Map.values()遍历所有的value，但不遍历key&quot;);
-        for (String v : map.values()) {
+        for (String v : map.values()) &#123;
             sop(&quot;value:&quot; + v);
-        }
-</code></pre><h3 id="补充-sop"><a href="#补充-sop" class="headerlink" title="补充 sop"></a>补充 sop</h3><pre><code class="java">    private static void sop(Object s) {
-        System.out.println(s);
-    }
-}
+        &#125;
 </code></pre>
-<h2 id="转载原地址："><a href="#转载原地址：" class="headerlink" title="转载原地址："></a>转载原地址：</h2><p><a href="https://blog.csdn.net/yaomingyang/article/details/78748130" target="_blank" rel="noopener">java中Map及Map.Entry详解</a></p>
+<h3 id="补充-sop"><a href="#补充-sop" class="headerlink" title="补充 sop"></a>补充 sop</h3><pre><code class="java">    private static void sop(Object s) &#123;
+        System.out.println(s);
+    &#125;
+&#125;
+</code></pre>
+<h2 id="转载原地址："><a href="#转载原地址：" class="headerlink" title="转载原地址："></a>转载原地址：</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yaomingyang/article/details/78748130">java中Map及Map.Entry详解</a></p>
 
         </div>
 		

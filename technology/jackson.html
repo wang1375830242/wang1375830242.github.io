@@ -94,7 +94,7 @@
   </style>
   <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
   </style>
-<link rel="alternate" href="/atom.xml" title="樱花🌸" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="樱花🌸" type="application/atom+xml">
 </head>
 
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
@@ -452,7 +452,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Date;
 
-public class User {
+public class User &#123;
     private String name;
     //不JSON序列化加    @JsonIgnore
 //    @JsonIgnore
@@ -463,47 +463,47 @@ public class User {
     private String url;
 
     @Override
-    public String toString() {
-        return &quot;User{&quot; +
+    public String toString() &#123;
+        return &quot;User&#123;&quot; +
                 &quot;name=&#39;&quot; + name + &#39;\&#39;&#39; +
                 &quot;, age=&quot; + age +
                 &quot;, date=&quot; + date +
                 &quot;, url=&#39;&quot; + url + &#39;\&#39;&#39; +
-                &#39;}&#39;;
-    }
+                &#39;&#125;&#39;;
+    &#125;
 
-    public String getUrl() {
+    public String getUrl() &#123;
         return url;
-    }
+    &#125;
 
-    public void setUrl(String url) {
+    public void setUrl(String url) &#123;
         this.url = url;
-    }
+    &#125;
 
-    public String getName() {
+    public String getName() &#123;
         return name;
-    }
+    &#125;
 
-    public void setName(String name) {
+    public void setName(String name) &#123;
         this.name = name;
-    }
+    &#125;
 
-    public Integer getAge() {
+    public Integer getAge() &#123;
         return age;
-    }
+    &#125;
 
-    public void setAge(Integer age) {
+    public void setAge(Integer age) &#123;
         this.age = age;
-    }
+    &#125;
 
-    public Date getDate() {
+    public Date getDate() &#123;
         return date;
-    }
+    &#125;
 
-    public void setDate(Date date) {
+    public void setDate(Date date) &#123;
         this.date = date;
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 <h2 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h2><pre><code class="java">ObjectMapper是JSON操作的核心，Jackson的所有JSON操作都是在ObjectMapper中实现。
 ObjectMapper有多个JSON序列化的方法，可以把JSON字符串保存File、OutputStream等不同的介质中。
@@ -513,7 +513,12 @@ writeValueAsBytes(Object arg0)把arg0转成json序列，并把结果输出成字
 writeValueAsString(Object arg0)把arg0转成json序列，并把结果输出成字符串。
 </code></pre>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4531214479514249" data-ad-slot="9593307772"></ins>
+<p><ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4531214479514249"
+     data-ad-slot="9593307772"></ins></p>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
@@ -532,9 +537,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class jacksonDemo {
+public class jacksonDemo &#123;
 
-    public static void main(String[] args) throws ParseException, IOException {
+    public static void main(String[] args) throws ParseException, IOException &#123;
         User user = new User();
         user.setName(&quot;小坏孩&quot;);
         user.setAge(21);
@@ -549,25 +554,25 @@ public class jacksonDemo {
         ObjectMapper mapper = new ObjectMapper();
 
         //类转JSON
-        //输出结果是：{&quot;name&quot;:&quot;小坏孩&quot;,&quot;age&quot;:21,&quot;date&quot;:1583251200000,&quot;url&quot;:&quot;www.sakura521.cn&quot;}
+        //输出结果是：&#123;&quot;name&quot;:&quot;小坏孩&quot;,&quot;age&quot;:21,&quot;date&quot;:1583251200000,&quot;url&quot;:&quot;www.sakura521.cn&quot;&#125;
         //User类Date加上（格式化日期属性）@JsonFormat(pattern = &quot;yyyy年MM月dd日&quot;)后
-        //结果为：{&quot;name&quot;:&quot;小坏孩&quot;,&quot;age&quot;:21,&quot;date&quot;:&quot;2020年03月04日&quot;,&quot;url&quot;:&quot;www.sakura521.cn&quot;}
+        //结果为：&#123;&quot;name&quot;:&quot;小坏孩&quot;,&quot;age&quot;:21,&quot;date&quot;:&quot;2020年03月04日&quot;,&quot;url&quot;:&quot;www.sakura521.cn&quot;&#125;
         String json = mapper.writeValueAsString(user);
         System.out.println(json);
 
         //集合转JSON
-        //输出结果是：[{&quot;name&quot;:&quot;小坏孩&quot;,&quot;age&quot;:21,&quot;date&quot;:1583251200000,&quot;url&quot;:&quot;www.sakura521.cn&quot;}]
+        //输出结果是：[&#123;&quot;name&quot;:&quot;小坏孩&quot;,&quot;age&quot;:21,&quot;date&quot;:1583251200000,&quot;url&quot;:&quot;www.sakura521.cn&quot;&#125;]
         //User类Date加上（格式化日期属性）@JsonFormat(pattern = &quot;yyyy年MM月dd日&quot;)后
-        //结果为：[{&quot;name&quot;:&quot;小坏孩&quot;,&quot;age&quot;:21,&quot;date&quot;:&quot;2020年03月04日&quot;,&quot;url&quot;:&quot;www.sakura521.cn&quot;}]
+        //结果为：[&#123;&quot;name&quot;:&quot;小坏孩&quot;,&quot;age&quot;:21,&quot;date&quot;:&quot;2020年03月04日&quot;,&quot;url&quot;:&quot;www.sakura521.cn&quot;&#125;]
         List&lt;User&gt; users = new ArrayList&lt;&gt;();
         users.add(user);
         String jsonlist = mapper.writeValueAsString(users);
         System.out.println(jsonlist);
 
-    }
+    &#125;
 
 
-}
+&#125;
 </code></pre>
 <h2 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h2><pre><code class="java">package cn.sakura521.jacksondemo;
 
@@ -582,24 +587,24 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class jacksonDemo {
+public class jacksonDemo &#123;
 
-    public static void main(String[] args) throws ParseException, IOException {
+    public static void main(String[] args) throws ParseException, IOException &#123;
 
-        String json1 = &quot;{\&quot;name\&quot;:\&quot;小坏孩\&quot;,\&quot;age\&quot;:21,\&quot;date\&quot;:1583251200000,\&quot;url\&quot;:\&quot;www.sakura521.cn\&quot;}&quot;;
+        String json1 = &quot;&#123;\&quot;name\&quot;:\&quot;小坏孩\&quot;,\&quot;age\&quot;:21,\&quot;date\&quot;:1583251200000,\&quot;url\&quot;:\&quot;www.sakura521.cn\&quot;&#125;&quot;;
 
 
         /**
          * ObjectMapper支持从byte[]、File、InputStream、字符串等数据的JSON反序列化。
          */
-        //输出结果：User{name=&#39;小坏孩&#39;, age=21, date=Wed Mar 04 00:00:00 CST 2020, url=&#39;www.sakura521.cn&#39;}
+        //输出结果：User&#123;name=&#39;小坏孩&#39;, age=21, date=Wed Mar 04 00:00:00 CST 2020, url=&#39;www.sakura521.cn&#39;&#125;
         User user1 = mapper.readValue(json1,User.class);
         System.out.println(user1);
 
-    }
+    &#125;
 
 
-}
+&#125;
 </code></pre>
 <h2 id="JSON注释"><a href="#JSON注释" class="headerlink" title="JSON注释"></a>JSON注释</h2><pre><code class="tex">Jackson提供了一系列注解，方便对JSON序列化和反序列化进行控制，下面介绍一些常用的注解。
 
@@ -638,7 +643,12 @@ ObjectNode node2 = (ObjectNode) node1;
 node2.put(&quot;rpcMsgId&quot;, &quot;abc&quot;); 
 </code></pre>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4531214479514249" data-ad-slot="8220709878"></ins>
+<p><ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4531214479514249"
+     data-ad-slot="8220709878"></ins></p>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
@@ -668,7 +678,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
  *       &lt;b&gt;Date:&lt;/b&gt; 2018年5月24日 下午12:50:59
  */
 
-public class JsonUtils {
+public class JsonUtils &#123;
 
     /**
      * ObjectMapper是JSON操作的核心，Jackson的所有JSON操作都是在ObjectMapper中实现。
@@ -684,7 +694,7 @@ public class JsonUtils {
      */
     private static ObjectMapper mapper = new ObjectMapper();
 
-    static {
+    static &#123;
         // 解决实体未包含字段反序列化时抛出异常
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
@@ -696,7 +706,7 @@ public class JsonUtils {
 
         // 允许单引号
         mapper.configure(Feature.ALLOW_SINGLE_QUOTES, true);
-    }
+    &#125;
 
     /**
      *
@@ -710,15 +720,15 @@ public class JsonUtils {
      *       &lt;b&gt;Date:&lt;/b&gt; 2018年5月24日 下午1:26:53 &lt;br&gt;
      *       &lt;b&gt;Version:&lt;/b&gt; 1.0
      */
-    public static String objectToJson(Object obj) {
+    public static String objectToJson(Object obj) &#123;
         String json = null;
-        try {
+        try &#123;
             json = mapper.writeValueAsString(obj);
-        } catch (Exception e) {
+        &#125; catch (Exception e) &#123;
             e.printStackTrace();
-        }
+        &#125;
         return json;
-    }
+    &#125;
 
     /**
      * ObjectMapper支持从byte[]、File、InputStream、字符串等数据的JSON反序列化。
@@ -738,15 +748,15 @@ public class JsonUtils {
      *       &lt;b&gt;Date:&lt;/b&gt; 2018年5月24日 下午3:26:18 &lt;br&gt;
      *       &lt;b&gt;Version:&lt;/b&gt; 1.0
      */
-    public static &lt;T&gt; T jsonToClass(String json, Class&lt;T&gt; beanType) {
+    public static &lt;T&gt; T jsonToClass(String json, Class&lt;T&gt; beanType) &#123;
         T t = null;
-        try {
+        try &#123;
             t = mapper.readValue(json, beanType);
-        } catch (Exception e) {
+        &#125; catch (Exception e) &#123;
             e.printStackTrace();
-        }
+        &#125;
         return t;
-    }
+    &#125;
 
     /**
      *
@@ -760,15 +770,15 @@ public class JsonUtils {
      *       &lt;b&gt;Date:&lt;/b&gt; 2018年5月24日 下午3:29:37 &lt;br&gt;
      *       &lt;b&gt;Version:&lt;/b&gt; 1.0
      */
-    public static Map&lt;String, Object&gt; jsonToMap(String json) {
+    public static Map&lt;String, Object&gt; jsonToMap(String json) &#123;
         Map&lt;String, Object&gt; map = null;
-        try {
-            map = mapper.readValue(json, new TypeReference&lt;Map&lt;String, Object&gt;&gt;() {});
-        } catch (Exception e) {
+        try &#123;
+            map = mapper.readValue(json, new TypeReference&lt;Map&lt;String, Object&gt;&gt;() &#123;&#125;);
+        &#125; catch (Exception e) &#123;
             e.printStackTrace();
-        }
+        &#125;
         return map;
-    }
+    &#125;
 
     /**
      *
@@ -782,16 +792,16 @@ public class JsonUtils {
      *       &lt;b&gt;Date:&lt;/b&gt; 2018年5月24日 下午3:28:35 &lt;br&gt;
      *       &lt;b&gt;Version:&lt;/b&gt; 1.0
      */
-    public static &lt;T&gt; List&lt;T&gt; jsonToList(String json, Class&lt;T&gt; beanType) {
+    public static &lt;T&gt; List&lt;T&gt; jsonToList(String json, Class&lt;T&gt; beanType) &#123;
         List&lt;T&gt; list = null;
-        try {
+        try &#123;
             JavaType javaType = mapper.getTypeFactory().constructParametricType(List.class, beanType);
             list = mapper.readValue(json, javaType);
-        } catch (Exception e) {
+        &#125; catch (Exception e) &#123;
             e.printStackTrace();
-        }
+        &#125;
         return list;
-    }
+    &#125;
 
     /**
      *
@@ -807,20 +817,20 @@ public class JsonUtils {
      *       &lt;b&gt;Date:&lt;/b&gt; 2018年5月31日 上午10:00:09 &lt;br&gt;
      *       &lt;b&gt;Version:&lt;/b&gt; 1.0
      */
-    public static String findValue(String resData, String resPro) {
+    public static String findValue(String resData, String resPro) &#123;
         String result = null;
-        try {
+        try &#123;
             JsonNode node = mapper.readTree(resData);
             JsonNode resProNode = node.get(resPro);
             result = JsonUtils.objectToJson(resProNode);
-        } catch (Exception e) {
+        &#125; catch (Exception e) &#123;
             e.printStackTrace();
-        }
+        &#125;
         return result;
-    }
-}
+    &#125;
+&#125;
 </code></pre>
-<h1 id="引用地址："><a href="#引用地址：" class="headerlink" title="引用地址："></a>引用地址：</h1><p>作者：渊默十三<br>链接：<a href="https://www.jianshu.com/p/b804874b7a69" target="_blank" rel="noopener">https://www.jianshu.com/p/b804874b7a69</a><br>来源：简书</p>
+<h1 id="引用地址："><a href="#引用地址：" class="headerlink" title="引用地址："></a>引用地址：</h1><p>作者：渊默十三<br>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b804874b7a69">https://www.jianshu.com/p/b804874b7a69</a><br>来源：简书</p>
 
         </div>
 		
@@ -864,15 +874,15 @@ public class JsonUtils {
           
             <div class="post-nepre half previous">
           
-            <a href="/technology/recursion.html" rel="prev">
+            <a href="/recreation/PatrickStar.html" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/gui.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/webp/gui.webp">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/d28fc94c3b63.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/wang1375830242/CDN/images/d28fc94c3b63.jpg">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                java 递归算法 小练习 学习笔记</h3>
+                B站作品【派大星的独白】一个关于正常人的故事 </h3>
                 <hr>
               </div>
             </a>

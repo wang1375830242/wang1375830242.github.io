@@ -422,7 +422,8 @@
 <pre><code>+--------------------+       +------+   +------+   +---+   +-------+
 | stream of elements +-----&gt; |filter+-&gt; |sorted+-&gt; |map+-&gt; |collect|
 +--------------------+       +------+   +------+   +---+   +-------+
-</code></pre><h2 id="学习代码记录"><a href="#学习代码记录" class="headerlink" title="学习代码记录"></a>学习代码记录</h2><pre><code class="java">List&lt;Long&gt; nums = Arrays.asList(3L, 3L, 39L, 32L, 123L, 534L, 46542L, 3211L);
+</code></pre>
+<h2 id="学习代码记录"><a href="#学习代码记录" class="headerlink" title="学习代码记录"></a>学习代码记录</h2><pre><code class="java">List&lt;Long&gt; nums = Arrays.asList(3L, 3L, 39L, 32L, 123L, 534L, 46542L, 3211L);
 nums.stream()
         .map(integer -&gt; integer * integer + &quot;  &quot;)
         .distinct()
@@ -511,23 +512,24 @@ System.out.println(&quot;平均数:&quot;+intSummaryStatistics.getAverage());
 平均数:17.7
 
 Process finished with exit code 0
-</code></pre><h1 id="6-5更新"><a href="#6-5更新" class="headerlink" title="6.5更新"></a><code>6.5更新</code></h1><p>利用steam流对学生成绩进行分区</p>
+</code></pre>
+<h1 id="6-5更新"><a href="#6-5更新" class="headerlink" title="6.5更新"></a><code>6.5更新</code></h1><p>利用steam流对学生成绩进行分区</p>
 <h2 id="学生实体类"><a href="#学生实体类" class="headerlink" title="学生实体类"></a>学生实体类</h2><pre><code class="java">import lombok.Data;
 
 @Data
-public class Student {
+public class Student &#123;
 
     private String name;
     private int score;
 
 
-    public Student(String name, int score) {
+    public Student(String name, int score) &#123;
         this.name = name;
         this.score = score;
-    }
-}
+    &#125;
+&#125;
 </code></pre>
-<h2 id="处理"><a href="#处理" class="headerlink" title="处理"></a>处理</h2><pre><code class="java">public static void main(String[] args) {
+<h2 id="处理"><a href="#处理" class="headerlink" title="处理"></a>处理</h2><pre><code class="java">public static void main(String[] args) &#123;
     List&lt;Student&gt; students = Arrays.asList(
             new Student(&quot;小红&quot;, 61),
             new Student(&quot;小绿&quot;, 51),
@@ -544,9 +546,9 @@ public class Student {
     System.out.println(&quot;不及格的&quot;);
     System.out.println(collect.get(false));
 
-}
+&#125;
 </code></pre>
-<h2 id="打印结果-1"><a href="#打印结果-1" class="headerlink" title="打印结果"></a>打印结果</h2><pre><code>collect = {false=[Student(name=小绿, score=51), Student(name=小灰, score=59)], true=[Student(name=小红, score=61), Student(name=小蓝, score=60), Student(name=小紫, score=99), Student(name=小粉, score=100)]}
+<h2 id="打印结果-1"><a href="#打印结果-1" class="headerlink" title="打印结果"></a>打印结果</h2><pre><code>collect = &#123;false=[Student(name=小绿, score=51), Student(name=小灰, score=59)], true=[Student(name=小红, score=61), Student(name=小蓝, score=60), Student(name=小紫, score=99), Student(name=小粉, score=100)]&#125;
 及格的
 [Student(name=小红, score=61), Student(name=小蓝, score=60), Student(name=小紫, score=99), Student(name=小粉, score=100)]
 不及格的
@@ -554,6 +556,7 @@ public class Student {
 
 Process finished with exit code 0
 </code></pre>
+
         </div>
 		
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

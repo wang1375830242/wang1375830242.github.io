@@ -94,7 +94,7 @@
   </style>
   <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
   </style>
-<link rel="alternate" href="/atom.xml" title="樱花🌸" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="樱花🌸" type="application/atom+xml">
 </head>
 
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
@@ -426,73 +426,73 @@
 <p>我们实现两个能够设置点坐标的类，分别设置Integer类型的点坐标和Float类型的点坐标.</p>
 <pre><code class="java">package cn.sakura.demo;
 
-public class Interger {
+public class Interger &#123;
 
     private Integer x;
     private Integer y;
 
-    public Integer getX() {
+    public Integer getX() &#123;
         return x;
-    }
+    &#125;
 
-    public void setX(Integer x) {
+    public void setX(Integer x) &#123;
         this.x = x;
-    }
+    &#125;
 
-    public Integer getY() {
+    public Integer getY() &#123;
         return y;
-    }
+    &#125;
 
-    public void setY(Integer y) {
+    public void setY(Integer y) &#123;
         this.y = y;
-    }
+    &#125;
 
-    class FloatPoint {
+    class FloatPoint &#123;
         private Float x;
         private Float y;
 
-        public Float getX() {
+        public Float getX() &#123;
             return x;
-        }
+        &#125;
 
-        public void setX(Float x) {
+        public void setX(Float x) &#123;
             this.x = x;
-        }
+        &#125;
 
-        public Float getY() {
+        public Float getY() &#123;
             return y;
-        }
+        &#125;
 
-        public void setY(Float y) {
+        public void setY(Float y) &#123;
             this.y = y;
-        }
-    }
+        &#125;
+    &#125;
 
-}
+&#125;
 </code></pre>
 <p>发现他们除了变量类型不一样，一个是Integer一个是Float以外，其他并没有是吗区别.下面将两个合成一个。因为Integer和Float都是派生自Object的，下面用代码演示：</p>
 <pre><code class="java">package cn.sakura.demo;
 
-public class ObjectPoint {
+public class ObjectPoint &#123;
     private Object x;
     private Object y;
 
-    public Object getX() {
+    public Object getX() &#123;
         return x;
-    }
+    &#125;
 
-    public void setX(Object x) {
+    public void setX(Object x) &#123;
         this.x = x;
-    }
+    &#125;
 
-    public Object getY() {
+    public Object getY() &#123;
         return y;
-    }
+    &#125;
 
-    public void setY(Object y) {
+    public void setY(Object y) &#123;
         this.y = y;
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 <p>既全部都用Object来代替所有的子类。</p>
 <p>在使用的时候是这样：</p>
@@ -525,67 +525,67 @@ public class ObjectPoint {
 <h1 id="二、-各种泛型定义及使用"><a href="#二、-各种泛型定义及使用" class="headerlink" title="二、 各种泛型定义及使用"></a>二、 各种泛型定义及使用</h1><h2 id="1、-泛型类定义及使用"><a href="#1、-泛型类定义及使用" class="headerlink" title="1、 泛型类定义及使用"></a>1、 泛型类定义及使用</h2><p>先看看泛型的类是怎么定义的；</p>
 <pre><code class="java">package cn.sakura.demo;
 
-public class Point&lt;T&gt; {
+public class Point&lt;T&gt; &#123;
     private T x;
     private T y;
 
-    public T getX() {
+    public T getX() &#123;
         return x;
-    }
+    &#125;
 
-    public void setX(T x) {
+    public void setX(T x) &#123;
         this.x = x;
-    }
+    &#125;
 
-    public T getY() {
+    public T getY() &#123;
         return y;
-    }
+    &#125;
 
-    public void setY(T y) {
+    public void setY(T y) &#123;
         this.y = y;
-    }
+    &#125;
 
     @Override
-    public String toString() {
-        return &quot;Point{&quot; +
+    public String toString() &#123;
+        return &quot;Point&#123;&quot; +
                 &quot;x=&quot; + x +
                 &quot;, y=&quot; + y +
-                &#39;}&#39;;
-    }
+                &#39;&#125;&#39;;
+    &#125;
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) &#123;
+    
     //IntegerPoint使用  
         Point&lt;Integer&gt; pointInt = new Point&lt;&gt;();
         pointInt.setX(new Integer(100));
         System.out.println(pointInt.getX());
-
+        
     //FloatPoint使用  
         Point&lt;Float&gt; floatPoint = new Point&lt;&gt;();
         floatPoint.setX(new Float(100.12f));
         System.out.println(floatPoint.getX());
 
 
-    }
+    &#125;
 
-}
-
+&#125;
 </code></pre>
 <p>运行结果：</p>
 <pre><code>100
 100.12
-</code></pre><h3 id="（1）、-定义泛型：-Point"><a href="#（1）、-定义泛型：-Point" class="headerlink" title="（1）、 定义泛型： Point"></a>（1）、 定义泛型： Point<t></t></h3><p>Point<t> 既类名后面加一个尖括号，括号里是一个大写字母。这里写的是T，其实这个字母可以是任何大写字母，任何大写字母，意义相同。</t></p>
+</code></pre>
+<h3 id="（1）、-定义泛型：-Point"><a href="#（1）、-定义泛型：-Point" class="headerlink" title="（1）、 定义泛型： Point"></a>（1）、 定义泛型： Point<T></h3><p>Point<T> 既类名后面加一个尖括号，括号里是一个大写字母。这里写的是T，其实这个字母可以是任何大写字母，任何大写字母，意义相同。</p>
 <h3 id="（2）、-类中使用泛型"><a href="#（2）、-类中使用泛型" class="headerlink" title="（2）、 类中使用泛型"></a>（2）、 类中使用泛型</h3><p>这个T表示派生自Object类的任何类，比如String,Integer,Double等等。这里要注意的是，T一定是派生于Object类的。为了方便起见，大家可以在这里把T当成String，既String在类中怎么使用，那T在类中就可以怎么用。下面是定义变量，作为返回值，作为参数传入的定义。</p>
 <pre><code class="java">    //定义变量
     private T x;
     //作为返回值
-    public T getX() {
+    public T getX() &#123;
         return x;
-    }
+    &#125;
     //作为参数
-    public void setX(T x) {
+    public void setX(T x) &#123;
         this.x = x;
-    }
+    &#125;
 </code></pre>
 <h3 id="（3）、-使用泛型类"><a href="#（3）、-使用泛型类" class="headerlink" title="（3）、 使用泛型类"></a>（3）、 使用泛型类</h3><p>用法：</p>
 <pre><code class="java">        Point&lt;Integer&gt; pointInt = new Point&lt;&gt;();
@@ -599,110 +599,110 @@ public class Point&lt;T&gt; {
 <p>首先，是构造一个实例：</p>
 <pre><code class="java">        Point&lt;String&gt; p = new Point&lt;&gt;();
 </code></pre>
-<p>这里与普通构造类实例的不同之点在于，普通类构造函数时这样的 Point p =new Point();</p>
-<p>而泛型类的构造则需要在类名后添上<string>，既一对尖括号，中间写上要传入的类型。</string></p>
-<p>因为我们构造时，是这样的：class Point<t>,所以在使用的时候也要在Point后加上类型来定义T代表的意义。</t></p>
+<p>这里与普通构造类实例的不同之点在于，普通类构造函数时这样的 Point p &#x3D;new Point();</p>
+<p>而泛型类的构造则需要在类名后添上<String>，既一对尖括号，中间写上要传入的类型。</p>
+<p>因为我们构造时，是这样的：class Point<T>,所以在使用的时候也要在Point后加上类型来定义T代表的意义。</p>
 <p>然后在getVar（）和setVar() 时候就没有什么特殊的了，直接调用即可。</p>
 <p>从上面的使用时，明显可以看出泛式的作用，在构造泛式的实例的时候：</p>
 <pre><code class="java">        Point&lt;Integer&gt; pointInt = new Point&lt;&gt;();
-
+        
         Point&lt;Float&gt; floatPoint = new Point&lt;&gt;();
 </code></pre>
 <p>尖括号中，你传进去的是什么，T就代表什么类型。这就是泛型的最大作用，我们只需要考虑逻辑实现，就能拿给各种类来用。</p>
 <h3 id="（4）、-使用泛型实现的优势"><a href="#（4）、-使用泛型实现的优势" class="headerlink" title="（4）、 使用泛型实现的优势"></a>（4）、 使用泛型实现的优势</h3><p>相比较开篇时使用Object的方式，又两个优点：</p>
-<h4 id="（4-1）、-不用强制转换"><a href="#（4-1）、-不用强制转换" class="headerlink" title="（4.1）、 不用强制转换"></a>（4.1）、 不用强制转换</h4><p>​            //使用Object作为返回值，要强制转化成指定类型</p>
-<p>​            Float floatX = (Float)floatPoint.getX();</p>
-<p>​            //使用泛型时，不用强制转换，直接出来就是String</p>
-<p>​            System.out.println(p.getVar());</p>
-<h4 id="（4-2）、-在setX-如果传入类型不对，编译时会报错"><a href="#（4-2）、-在setX-如果传入类型不对，编译时会报错" class="headerlink" title="（4.2）、 在setX()如果传入类型不对，编译时会报错"></a>（4.2）、 在setX()如果传入类型不对，编译时会报错</h4><p>​            <img src="https://s2.ax1x.com/2020/02/28/3DP6Z6.png" alt></p>
-<p>​            可以看出，当我们构造时使用的是String，而在setX时，传进去Integer类型时，就会报错，而不是像Object实现方式一样，在运行时才会报强制转换错误。</p>
+<h4 id="（4-1）、-不用强制转换"><a href="#（4-1）、-不用强制转换" class="headerlink" title="（4.1）、 不用强制转换"></a>（4.1）、 不用强制转换</h4><p>​			&#x2F;&#x2F;使用Object作为返回值，要强制转化成指定类型</p>
+<p>​			Float floatX &#x3D; (Float)floatPoint.getX();</p>
+<p>​			&#x2F;&#x2F;使用泛型时，不用强制转换，直接出来就是String</p>
+<p>​			System.out.println(p.getVar());</p>
+<h4 id="（4-2）、-在setX-如果传入类型不对，编译时会报错"><a href="#（4-2）、-在setX-如果传入类型不对，编译时会报错" class="headerlink" title="（4.2）、 在setX()如果传入类型不对，编译时会报错"></a>（4.2）、 在setX()如果传入类型不对，编译时会报错</h4><p>​			<img src="https://s2.ax1x.com/2020/02/28/3DP6Z6.png"></p>
+<p>​			可以看出，当我们构造时使用的是String，而在setX时，传进去Integer类型时，就会报错，而不是像Object实现方式一样，在运行时才会报强制转换错误。</p>
 <h2 id="2、-多泛型变量定义及字母规范"><a href="#2、-多泛型变量定义及字母规范" class="headerlink" title="2、 多泛型变量定义及字母规范"></a>2、 多泛型变量定义及字母规范</h2><h3 id="（1）、-多泛型变量定义"><a href="#（1）、-多泛型变量定义" class="headerlink" title="（1）、 多泛型变量定义"></a>（1）、 多泛型变量定义</h3><p>上在我们只定义了一个泛型变量T，那如果我们需要传进去多个泛型呢？</p>
 <p>只需要在类似下面这样就可以了；</p>
-<pre><code class="java">class morePoint&lt;T,U&gt;{
-}
+<pre><code class="java">class morePoint&lt;T,U&gt;&#123;
+&#125;
 </code></pre>
 <p>也就是在原来的T后面用逗号隔开，多个就像下面这样：</p>
-<pre><code class="java">class morePoint&lt;T,U,A,C,B&gt;{
-}
+<pre><code class="java">class morePoint&lt;T,U,A,C,B&gt;&#123;
+&#125;
 </code></pre>
 <p>举个例子，我们在Point上再加另一个字段name，也可泛型来表示，代码如下：</p>
 <pre><code class="java">package cn.sakura.demo;
 
-public class MorePoint&lt;T, U&gt; {
+public class MorePoint&lt;T, U&gt; &#123;
 
     private T x;
     private T y;
 
     private U name;
 
-    public T getX() {
+    public T getX() &#123;
         return x;
-    }
+    &#125;
 
-    public void setX(T x) {
+    public void setX(T x) &#123;
         this.x = x;
-    }
+    &#125;
 
-    public T getY() {
+    public T getY() &#123;
         return y;
-    }
+    &#125;
 
-    public void setY(T y) {
+    public void setY(T y) &#123;
         this.y = y;
-    }
+    &#125;
 
-    public U getName() {
+    public U getName() &#123;
         return name;
-    }
+    &#125;
 
-    public void setName(U name) {
+    public void setName(U name) &#123;
         this.name = name;
-    }
+    &#125;
 
     @Override
-    public String toString() {
-        return &quot;morePoint{&quot; +
+    public String toString() &#123;
+        return &quot;morePoint&#123;&quot; +
                 &quot;x=&quot; + x +
                 &quot;, y=&quot; + y +
                 &quot;, name=&quot; + name +
-                &#39;}&#39;;
-    }
+                &#39;&#125;&#39;;
+    &#125;
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) &#123;
         MorePoint&lt;Integer, String&gt; morePoint = new MorePoint&lt;Integer, String&gt;();
         morePoint.setName(&quot;sakura&quot;);
         System.out.println(morePoint.getName());
-    }
+    &#125;
 
 
-}
+&#125;
 </code></pre>
 <h3 id="（2）、-字母规范"><a href="#（2）、-字母规范" class="headerlink" title="（2）、 字母规范"></a>（2）、 字母规范</h3><p>在定义泛型类时，我们已经提到用于指定泛型的变量是一个大写字母：</p>
-<pre><code class="java">class Point&lt;T&gt;{  
+<pre><code class="java">class Point&lt;T&gt;&#123;  
  …………  
-}  
+&#125;  
 </code></pre>
 <p>其中任何大写字母都可以，他们的意义完全相同，但是为了提高可读性，大家默认在不同的情境下使用的字母意义如下：</p>
 <ul>
-<li>E    Element,常用在java，Collection里，如： List<e>,lterator<e>,Set<e></e></e></e></li>
+<li>E    Element,常用在java，Collection里，如： List<E>,lterator<E>,Set<E></li>
 <li>K,V    Key,Value,代表Map的键值对</li>
 <li>N    Number,数字</li>
 <li>T    Type,类型，如String,Integer等等</li>
 </ul>
 <h2 id="3、-泛型接口定义及使用"><a href="#3、-泛型接口定义及使用" class="headerlink" title="3、 泛型接口定义及使用"></a>3、 泛型接口定义及使用</h2><p>在接口上定义泛型与在类中定义泛型是一样的，代码如下：</p>
-<pre><code class="java">interface Info&lt;T&gt; {        // 在接口上定义泛型    
+<pre><code class="java">interface Info&lt;T&gt; &#123;        // 在接口上定义泛型    
     public T getVar(); // 定义抽象方法，抽象方法的返回值就是泛型类型    
 
     public void setVar(T x);
-}    
+&#125;    
 </code></pre>
 <p>与泛型类的定义一样，也是在接口名后加尖括号；</p>
 <h3 id="（1）、-使用方法一：非泛型类"><a href="#（1）、-使用方法一：非泛型类" class="headerlink" title="（1）、 使用方法一：非泛型类"></a>（1）、 使用方法一：非泛型类</h3><p>在使用的时候，就出现了问题，先看看下面的这个使用方法：</p>
 <blockquote>
 <p>未完</p>
 </blockquote>
-<h1 id="转载原网址："><a href="#转载原网址：" class="headerlink" title="转载原网址："></a>转载原网址：</h1><p><a href="https://www.cnblogs.com/jpfss/p/9928747.html" target="_blank" rel="noopener">https://www.cnblogs.com/jpfss/p/9928747.html</a></p>
+<h1 id="转载原网址："><a href="#转载原网址：" class="headerlink" title="转载原网址："></a>转载原网址：</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jpfss/p/9928747.html">https://www.cnblogs.com/jpfss/p/9928747.html</a></p>
 
         </div>
 		

@@ -94,7 +94,7 @@
   </style>
   <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
   </style>
-<link rel="alternate" href="/atom.xml" title="樱花🌸" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="樱花🌸" type="application/atom+xml">
 </head>
 
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
@@ -435,9 +435,9 @@
 <h2 id="2、-字符集编码"><a href="#2、-字符集编码" class="headerlink" title="2、 字符集编码"></a>2、 字符集编码</h2><pre><code class="mysql">-- MySQL、 数据库、表、字段均可设置编码
 -- 数据编码与客户端编码不需一致
 SHOW VARIABLES LIKE &#39;character_set_%&#39;  -- 查看所有字符集编码项
-    character_set_client    -- 客户端向服务器发送数据时使用的编码
-    character_set_results    -- 服务器端将结果返回给客户端所使用的编码
-    character_set_connection    -- 连接层编码
+    character_set_client	-- 客户端向服务器发送数据时使用的编码
+    character_set_results	-- 服务器端将结果返回给客户端所使用的编码
+    character_set_connection	-- 连接层编码
 SET 变量名 = 变量值
     set character_set_client = gbk;
     set character_set_results = gbk;
@@ -464,7 +464,6 @@ SET NAMES GBK; --相当于完成以上三个设置
     -- 例：int(5)    插入一个数&#39;123&#39;，补填后为&#39;00123&#39;
     -- 在满足要求的情况下，越小越好。
     -- 1表示bool值真，0表示bool值假。MySQL没有布尔类型，通过整型0和1表示。常用tinyint(1)表示布尔型。
-
 </code></pre>
 <h4 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h4><pre><code class="mssql">-- b. 浮点型 ----------
     类型                字节        范围
@@ -514,7 +513,12 @@ SET NAMES GBK; --相当于完成以上三个设置
     char, varchar, text 对应 binary, varbinary, blob.
 </code></pre>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4531214479514249" data-ad-slot="9293693369"></ins>
+<p><ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4531214479514249"
+     data-ad-slot="9293693369"></ins></p>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
@@ -526,7 +530,7 @@ SET NAMES GBK; --相当于完成以上三个设置
     timestamp    4字节    时间戳        19700101000000 到 2038-01-19 03:14:07
     time        3字节    时间            -838:59:59 到 838:59:59
     year        1字节    年份            1901 - 2155
-
+    
 datetime    “YYYY-MM-DD hh:mm:ss”
 timestamp    “YY-MM-DD hh:mm:ss”
             “YYYYMMDDhhmmss”
@@ -591,7 +595,7 @@ set(val1, val2, val3...)
 
 2. unique 唯一索引（唯一约束）
     使得某字段的值也不能重复。
-
+    
 3. null 约束
     null不是数据类型，是列的一个属性。
     表示当前列是否可以为null，表示什么都没有。
@@ -599,7 +603,7 @@ set(val1, val2, val3...)
     not null, 不允许为空。
     insert into tab values (null, &#39;val&#39;);
         -- 此时表示将第一个字段的值设为null, 取决于该字段是否允许为null
-
+    
 4. default 默认值属性
     当前字段的默认值。
     insert into tab values (default, &#39;val&#39;);    -- 此时表示强制使用默认值。
@@ -688,7 +692,7 @@ c. where 子句
 d. group by 子句, 分组子句
     group by 字段/别名 [排序方式]
     分组后会进行排序。升序：ASC，降序：DESC
-
+    
     以下[合计函数]需配合 group by 使用：
     count 返回不同的非NULL值数目    count(*)、count(字段)
     sum 求和
@@ -753,7 +757,12 @@ select语句获得的数据可以用insert插入。
 delete from 需要删除数据多表1，表2 using 表连接操作 条件。
 </code></pre>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4531214479514249" data-ad-slot="6907628200"></ins>
+<p><ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4531214479514249"
+     data-ad-slot="6907628200"></ins></p>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
@@ -860,7 +869,12 @@ TRUNCATE [TABLE] tbl_name
 4，当被用于带分区的表时，truncate 会保留分区
 </code></pre>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4531214479514249" data-ad-slot="9593307772"></ins>
+<p><ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-4531214479514249"
+     data-ad-slot="9593307772"></ins></p>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
@@ -892,7 +906,7 @@ TRUNCATE [TABLE] tbl_name
 <p>视图是一个虚拟表，其内容由查询定义。同真实的表一样，视图包含一系列带有名称的列和行数据。但是，视图并不在数据库中以存储的数据值集形式存在。行和列数据来自由定义视图的查询所引用的表，并且在引用视图时动态生成。<br>    视图具有表结构文件，但不存在数据文件。<br>    对其中所引用的基础表来说，视图的作用类似于筛选。定义视图的筛选可以来自当前或其它数据库的一个或多个表，或者其它视图。通过视图进行查询没有任何限制，通过它们进行数据修改时的限制也很少。<br>    视图是存储在数据库中的查询的sql语句，它主要出于两种原因：安全原因，视图可以隐藏一些数据，如：社会保险基金表，可以用视图只显示姓名，地址，而不显示社会保险号和工资数等，另一原因是可使复杂的查询易于理解和使用。</p>
 </blockquote>
 <pre><code class="mysql">-- 创建视图
-CREATE [OR REPLACE] [ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}] VIEW view_name [(column_list)] AS select_statement
+CREATE [OR REPLACE] [ALGORITHM = &#123;UNDEFINED | MERGE | TEMPTABLE&#125;] VIEW view_name [(column_list)] AS select_statement
     - 视图名必须唯一，同时不能与表重名。
     - 视图可以使用select语句查询到的列名，也可以自己指定相应的列名。
     - 可以指定视图执行的算法，通过ALGORITHM指定。
@@ -922,7 +936,7 @@ CREATE [OR REPLACE] [ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}] VIEW view_name
     UNDEFINED    未定义(默认)，指的是MySQL自主去选择相应的算法。
 </code></pre>
 <p><code>未完</code></p>
-<h2 id="转载原地址"><a href="#转载原地址" class="headerlink" title="转载原地址"></a>转载原地址</h2><p>知乎： <a href="https://zhuanlan.zhihu.com/p/71232689" target="_blank" rel="noopener">老夫整理的1000行MySQL学习笔记传授有缘人</a></p>
+<h2 id="转载原地址"><a href="#转载原地址" class="headerlink" title="转载原地址"></a>转载原地址</h2><p>知乎： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/71232689">老夫整理的1000行MySQL学习笔记传授有缘人</a></p>
 
         </div>
 		

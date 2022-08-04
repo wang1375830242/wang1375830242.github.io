@@ -416,12 +416,12 @@
         <div class="entry-content">
           <p><code>因为某些原因需要眨眼识别，看到这个第一个想到的就是python，但是没接触过这个语言，所以我先看的java的写法，发现挺少。于是开始下载python开始了下载各种软件的道路。。。</code></p>
 <h1 id="原网址"><a href="#原网址" class="headerlink" title="原网址"></a><strong>原网址</strong></h1><p>虽然开始是在CSDN上花45积分下载的，但是发现这只是国外大佬写的。在这里给出国外大佬的原网址，就不给CSDN的了（明明人家免费，还在CSDN上卖45积分(小声BB)）。</p>
-<p><a href="https://www.pyimagesearch.com/2017/04/24/eye-blink-detection-opencv-python-dlib/" target="_blank" rel="noopener">https://www.pyimagesearch.com/2017/04/24/eye-blink-detection-opencv-python-dlib/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.pyimagesearch.com/2017/04/24/eye-blink-detection-opencv-python-dlib/">https://www.pyimagesearch.com/2017/04/24/eye-blink-detection-opencv-python-dlib/</a></p>
 <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>原网址上相关配置已经很详细了。在这里我就写我自己碰到的坑。。。</p>
-<p>主要是这些<strong>opencv</strong> ，<strong>numpy,</strong>以及<strong>dlib库</strong>，<strong>scipy库</strong>。</p>
+<p>主要是这些<strong>opencv</strong> ，<strong>numpy,<strong>以及</strong>dlib库</strong>，<strong>scipy库</strong>。</p>
 <p>除了<strong>dlib库</strong>其他都是直接按照网上教程直接成功的。</p>
 <p>在这就说一下这个安装吧，找了无数的方法。最后成功了，而且还是个超级简单的。。。</p>
-<p>首先下载<a href="https://sakura521.lanzous.com/ibezieh" target="_blank" rel="noopener">dlib-19.17.0-cp37-cp37m-win_amd64.whl</a>我已经把这个文件放在了蓝奏云。</p>
+<p>首先下载<a target="_blank" rel="noopener" href="https://sakura521.lanzous.com/ibezieh">dlib-19.17.0-cp37-cp37m-win_amd64.whl</a>我已经把这个文件放在了蓝奏云。</p>
 <p>然后直接安装，在解压好的文件夹的cmd窗口输入下面的就可以了。</p>
 <pre><code class="cmd">pip install 文件名.whl
 </code></pre>
@@ -560,11 +560,11 @@ while True:
 
         # draw the total number of blinks on the frame along with the computed eye aspect ratio for the frame
         # 绘制帧上眨眼的总数以及计算出的帧的眼睛纵横比
-        cv2.putText(frame, &quot;Blinks: {}&quot;.format(TOTAL), (10, 30),
+        cv2.putText(frame, &quot;Blinks: &#123;&#125;&quot;.format(TOTAL), (10, 30),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
-        cv2.putText(frame, &quot;EAR: {:.2f}&quot;.format(ear), (300, 30),
+        cv2.putText(frame, &quot;EAR: &#123;:.2f&#125;&quot;.format(ear), (300, 30),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
-        cv2.putText(frame, &quot;COUNTER: {}&quot;.format(COUNTER), (140, 30),
+        cv2.putText(frame, &quot;COUNTER: &#123;&#125;&quot;.format(COUNTER), (140, 30),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 
     # show the frame show the frame
@@ -584,7 +584,7 @@ vs.stop()
 python Wink.py --shape-predictor shape_predictor_68_face_landmarks.dat
 </code></pre>
 <h1 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h1><p>这个可以检测摄像头也可以检测视频里的，我都试过了可以，下面来个视频（周董的说好不哭的MV）的效果图（滑稽图）。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200415112959.gif" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wang1375830242/PicGo//img/20200415112959.gif"></p>
 
         </div>
 		

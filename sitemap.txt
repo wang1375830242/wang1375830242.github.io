@@ -6,8 +6,8 @@ https://www.sakura521.cn/scaffolds/post.html
 https://www.sakura521.cn/rss/index.html
 https://www.sakura521.cn/scaffolds/draft.html
 https://www.sakura521.cn/music/index.html
-https://www.sakura521.cn/lab/index.html
 https://www.sakura521.cn/links/index.html
+https://www.sakura521.cn/lab/index.html
 https://www.sakura521.cn/donate/index.html
 https://www.sakura521.cn/comment/index.html
 https://www.sakura521.cn/client/index.html
@@ -24,7 +24,6 @@ https://www.sakura521.cn/technology/sakuranav.html
 https://www.sakura521.cn/technology/docker.html
 https://www.sakura521.cn/technology/live2D.html
 https://www.sakura521.cn/technology/winkpython.html
-https://www.sakura521.cn/technology/recursion.html
 https://www.sakura521.cn/technology/map.html
 https://www.sakura521.cn/technology/hexoTutorial.html
 https://www.sakura521.cn/technology/javastudy20200616.html

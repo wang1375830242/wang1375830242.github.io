@@ -414,7 +414,7 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="java代码"><a href="#java代码" class="headerlink" title="java代码"></a>java代码</h1><pre><code class="java">    public static void main(String[] args) {
+          <h1 id="java代码"><a href="#java代码" class="headerlink" title="java代码"></a>java代码</h1><pre><code class="java">    public static void main(String[] args) &#123;
 
         // int Integer区别
         Integer a = new Integer(3);
@@ -496,9 +496,9 @@
         nums[4] = 2;
 
         int iii = 0;
-        for (int num : nums) {
+        for (int num : nums) &#123;
             iii ^= num;
-        }
+        &#125;
         System.out.println(&quot;只出现一次的数字为&quot; + iii);
         System.out.println(&quot;----------------------------------&quot;);
 
@@ -510,7 +510,7 @@
         char cr = &#39;齉&#39;; // nàng
         System.out.println(&quot;char类型包含一个汉字 = &quot; + cr);
 
-    }
+    &#125;
 </code></pre>
 <h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><pre><code>true
 false
@@ -543,43 +543,45 @@ y = 1
 char类型包含一个汉字 = 齉
 
 Process finished with exit code 0
-</code></pre><h1 id="代码2"><a href="#代码2" class="headerlink" title="代码2"></a>代码2</h1><pre><code class="java">public class A {
+</code></pre>
+<h1 id="代码2"><a href="#代码2" class="headerlink" title="代码2"></a>代码2</h1><pre><code class="java">public class A &#123;
 
-    static {
+    static &#123;
         System.out.print(&quot;1&quot;);
-    }
+    &#125;
 
-    public A() {
+    public A() &#123;
         System.out.print(&quot;2&quot;);
 
 
-    }
-}
-public class B extends A{
+    &#125;
+&#125;
+public class B extends A&#123;
 
-    static {
+    static &#123;
         System.out.print(&quot;a&quot;);
-    }
+    &#125;
 
-    public B() {
+    public B() &#123;
         System.out.print(&quot;b&quot;);
 
 
-    }
-}
-public class AB {
+    &#125;
+&#125;
+public class AB &#123;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) &#123;
 
         A ab = new B();
         ab = new B();
-    }
+    &#125;
 
 
-}
+&#125;
 </code></pre>
 <h1 id="运行结果-1"><a href="#运行结果-1" class="headerlink" title="运行结果"></a>运行结果</h1><pre><code>1a2b2b
 </code></pre>
+
         </div>
 		
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

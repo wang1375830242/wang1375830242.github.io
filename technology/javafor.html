@@ -94,7 +94,7 @@
   </style>
   <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
   </style>
-<link rel="alternate" href="/atom.xml" title="樱花🌸" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="樱花🌸" type="application/atom+xml">
 </head>
 
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
@@ -417,7 +417,7 @@
           <h1 id="高级for循环"><a href="#高级for循环" class="headerlink" title="高级for循环"></a>高级for循环</h1><h2 id="格式："><a href="#格式：" class="headerlink" title="格式："></a><strong>格式：</strong></h2><p>for(数据类型 变量名：被遍历的集合(Collection)或者数组)<br>{<br>}</p>
 <p>对集合进行遍历。</p>
 <p>只能获取元素，但是不能对集合进行操作。</p>
-<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p><a href="[https://baike.baidu.com/item/%E8%BF%AD%E4%BB%A3%E5%99%A8](https://baike.baidu.com/item/迭代器">迭代器</a>)除了遍历，还可以进行remove集合中元素的动作。</p>
+<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p><a href="%5Bhttps://baike.baidu.com/item/%E8%BF%AD%E4%BB%A3%E5%99%A8%5D(https://baike.baidu.com/item/%E8%BF%AD%E4%BB%A3%E5%99%A8)">迭代器</a>除了遍历，还可以进行remove集合中元素的动作。</p>
 <p>如果使用Listlerator,还可以在遍历的过程中对集合进行增删改查的动作。</p>
 <h2 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h2><p>传统for循环和高级for循环的<strong>区别</strong></p>
 <p>高级for有一个局限性。必须有被遍历的目标。</p>
@@ -429,18 +429,18 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class ForEachDemo {
+public class ForEachDemo &#123;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) &#123;
         ArrayList&lt;String&gt; al = new ArrayList&lt;String&gt;();
 
         al.add(&quot;add1&quot;);
         al.add(&quot;add2&quot;);
         al.add(&quot;add3&quot;);
 
-        for (String s : al) {
+        for (String s : al) &#123;
             System.out.println(s);
-        }
+        &#125;
         System.out.println(al);
 
         HashMap&lt;Integer, String&gt; hm = new HashMap&lt;Integer, String&gt;();
@@ -450,22 +450,22 @@ public class ForEachDemo {
         hm.put(4, &quot;hello4&quot;);
 
         Set&lt;Integer&gt; set = hm.keySet();
-        for (Integer i : set) {
+        for (Integer i : set) &#123;
             sop(i + &quot;..&quot; + hm.get(i));
-        }
+        &#125;
 
         Set&lt;Map.Entry&lt;Integer, String&gt;&gt; set1 = hm.entrySet();
-        for (Map.Entry&lt;Integer, String&gt; me : set1) {
+        for (Map.Entry&lt;Integer, String&gt; me : set1) &#123;
             Integer key = me.getKey();
             String value = me.getValue();
             sop(key + &quot;: &quot; + value);
-        }
-    }
+        &#125;
+    &#125;
 
-    private static void sop(Object s) {
+    private static void sop(Object s) &#123;
         System.out.println(s);
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 
         </div>
