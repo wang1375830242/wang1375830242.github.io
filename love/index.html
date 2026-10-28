@@ -65,28 +65,31 @@
 
   /* ---------------- 终幕：数字 + 信 ---------------- */
   .final{
-    position:fixed;z-index:4;left:clamp(24px,5vw,72px);top:clamp(62px,10vh,108px);
-    max-width:min(26em,40vw);pointer-events:none;
-    opacity:0;transform:translateY(14px);
-    transition:opacity 1.4s ease .35s,transform 1.4s cubic-bezier(.2,.7,.2,1) .35s;
+    position:fixed;z-index:4;left:clamp(24px,5vw,72px);bottom:clamp(84px,12vh,140px);
+    max-width:min(24em,34vw);pointer-events:none;
+    opacity:0;transform:translateY(12px);
+    transition:opacity 1.4s ease .5s,transform 1.4s cubic-bezier(.2,.7,.2,1) .5s;
   }
   .final.show{opacity:1;transform:none}
-  .final-k{margin:0 0 6px;font-size:11px;letter-spacing:.38em;color:rgba(255,214,226,.55)}
-  .final-n{
-    margin:0;font-family:Georgia,"Times New Roman",serif;
-    font-size:clamp(58px,7vw,104px);line-height:.9;letter-spacing:-.03em;
-    font-variant-numeric:tabular-nums;color:#FFF1F5;
-    text-shadow:0 0 44px rgba(255,140,185,.38);
-  }
-  .final-n .u{font-size:.22em;letter-spacing:.18em;margin-left:.34em;vertical-align:.14em;color:rgba(255,214,226,.62)}
-  .final-s{margin:14px 0 0;font-size:11px;letter-spacing:.16em;color:rgba(246,242,236,.42);font-variant-numeric:tabular-nums}
-  .final-s .sep{margin:0 .6em;color:rgba(255,214,226,.4)}
-  .final-letter{margin-top:clamp(20px,3.6vh,34px);max-width:22em}
+  .final-letter{max-width:22em}
   .final-letter p{
     margin:0;font-size:clamp(14px,1.1vw,16px);line-height:2.05;letter-spacing:.06em;
     color:rgba(246,242,236,.74);text-shadow:0 0 24px rgba(0,0,0,.55);
   }
   .final-letter p + p{margin-top:.35em}
+  .final-s{
+    margin:18px 0 0;font-size:11px;letter-spacing:.16em;
+    color:rgba(246,242,236,.42);font-variant-numeric:tabular-nums;
+  }
+  .final-s .sep{margin:0 .6em;color:rgba(255,214,226,.4)}
+
+  .final-cap{
+    position:fixed;z-index:4;pointer-events:none;transform:translateX(-50%);
+    font-size:11px;letter-spacing:.38em;color:rgba(255,214,226,.55);
+    opacity:0;transition:opacity 1.2s ease .3s;
+    white-space:nowrap;
+  }
+  .final-cap.show{opacity:1}
   .hint{
     position:fixed;z-index:4;left:50%;bottom:clamp(52px,8vh,84px);transform:translateX(-50%);
     font-size:11px;letter-spacing:.34em;color:rgba(242,238,230,.34);
@@ -110,14 +113,12 @@
 
   @media (max-width:820px){
     .final{
-      left:22px;right:22px;top:auto;bottom:0;max-width:none;padding:22px 0 92px;
-      transform:none;
-      background:linear-gradient(180deg,rgba(3,4,10,0) 0%,rgba(3,4,10,.78) 16%,rgba(3,4,10,.94) 100%);
+      left:22px;right:22px;bottom:0;max-width:none;padding:22px 0 92px;transform:none;
+      background:linear-gradient(180deg,rgba(3,4,10,0) 0%,rgba(3,4,10,.8) 16%,rgba(3,4,10,.95) 100%);
     }
     .final.show{transform:none}
-    .final-n{font-size:clamp(44px,13.5vw,72px)}
-    .final-letter{margin-top:16px}
     .final-letter p{font-size:14px;line-height:1.9;letter-spacing:.04em}
+    .final-cap{font-size:10px;letter-spacing:.3em}
     .hud.bot{padding-bottom:clamp(14px,2.4vh,22px)}
     .hint{bottom:auto;top:clamp(56px,9vh,90px);font-size:10.5px}
     .hud.bot{flex-direction:column-reverse;align-items:flex-end;gap:8px;padding:0 18px clamp(12px,2.2vh,20px)}
@@ -143,16 +144,15 @@
   <span class="date">二〇一七年九月四日</span>
 </div>
 
-<section class="final" id="final" aria-label="在一起的时间与信">
-  <p class="final-k">在一起的第</p>
-  <p class="final-n"><b id="days">—</b><span class="u">天</span></p>
-  <p class="final-s">共 <span id="ym">—</span><span class="sep">·</span><span id="hms">00:00:00</span></p>
+<p class="final-cap" id="finalCap">在一起的第</p>
 
+<section class="final" id="final" aria-label="信">
   <div class="final-letter">
     <p>这一年一年，过得真快。</p>
     <p>有些话当面说不出口，就写在这儿。</p>
     <p>谢谢你，愿意跟我一起数日子。</p>
   </div>
+  <p class="final-s">共 <span id="ym">—</span><span class="sep">·</span><span id="hms">00:00:00</span></p>
 </section>
 
 <div class="hud bot">
@@ -187,6 +187,7 @@
   var nextBtn = document.getElementById('nextBtn');
   var caption = document.getElementById('caption');
   var capDays = document.getElementById('capDays');
+  var finalCap = document.getElementById('finalCap');
   var dots = document.querySelectorAll('#steps i');
 
   /* ---------------- 计时 ---------------- */
@@ -195,7 +196,7 @@
     var now = new Date();
     var ms = Math.max(0, now - SINCE);
     var rest = ms % 86400000;
-    daysEl.textContent = (Math.floor(ms / 86400000) + 1).toLocaleString('en-US');
+    if (daysEl) daysEl.textContent = (Math.floor(ms / 86400000) + 1).toLocaleString('en-US');
     hmsEl.textContent = pad(Math.floor(rest / 3600000)) + ':' + pad(Math.floor(rest % 3600000 / 60000)) + ':' + pad(Math.floor(rest % 60000 / 1000));
     if (ymEl) {
       var now2 = new Date();
@@ -246,17 +247,20 @@
     'varying float vMix;',
     'varying float vSeed;',
     'void main() {',
-    '  float p = clamp((uP - aDelay * 0.16) / 0.84, 0.0, 1.0);',
+    '  float p = clamp((uP - aDelay * 0.06) / 0.94, 0.0, 1.0);',
     '  p = p * p * (3.0 - 2.0 * p);',
     '  vec3 pos = mix(aA, aB, p);',
     '  float burst = sin(p * 3.14159);',
+    '  float sw = burst * 1.1 * (aSeed - 0.5);',
+    '  pos.xy = mat2(cos(sw), -sin(sw), sin(sw), cos(sw)) * pos.xy;',
     '  vec2 dir = normalize(pos.xy + vec2(0.0013, 0.0007));',
-    '  pos.xy += dir * burst * 0.13 * (0.35 + aSeed * 0.85);',
-    '  float ang = uTime * uSpin;',
-    '  pos.xy = mat2(cos(ang), -sin(ang), sin(ang), cos(ang)) * pos.xy;',
-    '  float idle = 0.0016 + aSeed * 0.0026;',
-    '  pos.x += sin(uTime * 1.25 + aSeed * 31.0) * idle * 3.0;',
-    '  pos.y += cos(uTime * 1.05 + aSeed * 27.0) * idle * 3.0;',
+    '  pos.xy += dir * burst * 0.30 * (0.45 + aSeed * 0.8);',
+    '  float fs = 0.9 + aSeed * 1.6;',
+    '  float amp = 0.0034 + aSeed * 0.0042;',
+    '  pos.x += sin(uTime * fs + aSeed * 43.0) * amp;',
+    '  pos.y += cos(uTime * fs * 0.87 + aSeed * 29.0) * amp * 0.85;',
+    '  pos.x += sin(uTime * fs * 2.3 + aSeed * 11.0) * amp * 0.35;',
+    '  pos.y += cos(uTime * fs * 2.1 + aSeed * 17.0) * amp * 0.3;',
     '  pos.x += sin(uTime * 1.5 + pos.y * 3.4 + aSeed * 6.28) * uWind * smoothstep(-0.3, 0.95, pos.y);',
     '  pos.xy *= 1.0 + uBreath;',
     '  gl_Position = vec4(pos.xy, 0.0, 1.0);',
@@ -284,7 +288,8 @@
     '  vec3 col = mix(uColorA, uColorB, clamp(vMix * 0.6 + vSeed * 0.4, 0.0, 1.0));',
     '  col += core * 0.14;',
     '  col *= 0.88 + 0.12 * sin(uTime * 2.1 + vSeed * 40.0);',
-    '  gl_FragColor = vec4(col, a * uAlpha);',
+    '  float mid = 1.0 - 0.45 * sin(vMix * 3.14159);',
+    '  gl_FragColor = vec4(col, a * uAlpha * (0.62 + 0.38 * mid));',
     '}'
   ].join('\n');
 
@@ -375,6 +380,41 @@
     return out;
   }
 
+  /* 把画出来的字/图形按墨迹外框铺到指定大小的矩形里 */
+  function sampleShapeBox(draw, count, size, wNdc, hNdc, ox, oy) {
+    var S = size || 620;
+    var c = document.createElement('canvas');
+    c.width = c.height = S;
+    var x = c.getContext('2d');
+    x.clearRect(0, 0, S, S);
+    draw(x, S);
+    var data = x.getImageData(0, 0, S, S).data;
+    var px = [], py = [], minU = 1, maxU = 0, minV = 1, maxV = 0;
+    for (var v = 0; v < S; v += 2) {
+      for (var u = 0; u < S; u += 2) {
+        if (data[(v * S + u) * 4 + 3] > 110) {
+          var uu = u / S, vv = v / S;
+          px.push(uu); py.push(vv);
+          if (uu < minU) minU = uu;
+          if (uu > maxU) maxU = uu;
+          if (vv < minV) minV = vv;
+          if (vv > maxV) maxV = vv;
+        }
+      }
+    }
+    var out = new Float32Array(count * 3);
+    if (!px.length) return out;
+    var cx = (minU + maxU) / 2, cy = (minV + maxV) / 2;
+    var bw = Math.max(0.001, maxU - minU), bh = Math.max(0.001, maxV - minV);
+    for (var i = 0; i < count; i++) {
+      var k = (Math.random() * px.length) | 0;
+      out[i * 3] = ox + (px[k] - cx) / bw * wNdc + (Math.random() - 0.5) * 0.004;
+      out[i * 3 + 1] = oy - (py[k] - cy) / bh * hNdc + (Math.random() - 0.5) * 0.004;
+      out[i * 3 + 2] = 0;
+    }
+    return out;
+  }
+
   /* ---------------- 四幕的形状 ---------------- */
   function makeGalaxy(count) {
     var out = new Float32Array(count * 3);
@@ -406,26 +446,27 @@
   }
 
   function makeDigits(count) {
-    return sampleShape(function (x, S) {
+    return sampleShapeBox(function (x, S) {
       x.fillStyle = '#fff';
       x.textAlign = 'center';
       x.textBaseline = 'middle';
       var txt = (Math.floor(Math.max(0, Date.now() - SINCE) / 86400000) + 1).toLocaleString('en-US');
-      var size = S * (txt.length > 4 ? 0.40 : 0.52);
-      x.font = '500 ' + size + 'px Georgia, "Times New Roman", serif';
-      x.fillText(txt, S / 2, S / 2 - S * 0.02);
-    }, count, 620, 0.60, 0, 0.0);
+      var size = S * 0.46;
+      x.font = '500 ' + size + 'px "Times New Roman", Times, serif';
+      var tw = x.measureText(txt).width;
+      if (tw > S * 0.9) {
+        size = size * (S * 0.9) / tw;
+        x.font = '500 ' + size + 'px "Times New Roman", Times, serif';
+      }
+      x.fillText(txt, S / 2, S / 2);
+    }, count, 620, 0.82, 0.27, 0, 0.02);
   }
 
-  function makeTree(count) {
-    var ar = aspect();
-    var treeF = ar > 1 ? 0.84 : 0.60;
-    var treeX = ar > 1 ? 0.40 : 0;
-    var treeY = ar > 1 ? -0.02 : 0.32;
+  function heartTreePoints(count, treeF, treeX, treeY) {
     var seed = 987654321;
     function R() { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; }
 
-    var tree = sampleShape(function (x, S) {
+    var sampled = sampleShape(function (x, S) {
       x.strokeStyle = '#fff';
       x.fillStyle = '#fff';
       x.lineCap = 'round';
@@ -443,19 +484,16 @@
         limb(x1, y1, ang + 0.42 + R() * 0.18, len * 0.68, w * 0.62, depth - 1);
       }
 
-      /* 树干 */
       x.lineWidth = S * 0.042;
       x.beginPath();
       x.moveTo(S * 0.5, S * 1.04);
       x.quadraticCurveTo(S * 0.495, S * 0.84, S * 0.5, S * 0.68);
       x.stroke();
 
-      /* 三根主枝把心形树冠托起来 */
       limb(S * 0.5, S * 0.68, -Math.PI / 2 - 0.66, S * 0.19, S * 0.027, 2);
       limb(S * 0.5, S * 0.68, -Math.PI / 2 + 0.02, S * 0.23, S * 0.029, 2);
       limb(S * 0.5, S * 0.68, -Math.PI / 2 + 0.66, S * 0.19, S * 0.027, 2);
 
-      /* 心形花冠：边缘一圈 + 内部铺满 */
       var cx = S * 0.5, cy = S * 0.38, hw = S * 0.30, hh = S * 0.285;
       function heartPoint(t) {
         var hx = 16 * Math.pow(Math.sin(t), 3);
@@ -470,19 +508,16 @@
       x.closePath();
       x.fill();
 
-      /* 边缘再加一层毛茸茸的花 */
       for (var m = 0; m < 420; m++) {
         var t2 = R() * Math.PI * 2;
         var e2 = heartPoint(t2);
         var dx = e2[0] - cx, dy = e2[1] - cy;
-        var d = Math.sqrt(dx * dx + dy * dy) || 1;
         var out = 1 + (R() - 0.5) * 0.10;
         x.beginPath();
         x.arc(cx + dx * out, cy + dy * out, S * (0.008 + R() * 0.013), 0, Math.PI * 2);
         x.fill();
       }
 
-      /* 内部再撒一些，密度更自然 */
       for (var i2 = 0; i2 < 260; i2++) {
         var t3 = R() * Math.PI * 2, rr3 = Math.sqrt(R());
         var q3 = heartPoint(t3);
@@ -492,7 +527,9 @@
       }
     }, Math.round(count * 0.74), 620, treeF, treeX, treeY);
 
-    /* 其余粒子当作飘在花冠周围的花瓣 */
+    var tree = new Float32Array(count * 3);
+    tree.set(sampled);
+
     var rest = count - Math.round(count * 0.74);
     var a = aspect();
     var hcx = treeX;
@@ -508,6 +545,46 @@
     return tree;
   }
 
+  /* 终幕：左上角一团粒子拼成天数，右边一团粒子拼成心形樱花树 */
+  var finalAnchor = { x: -0.4, y: 0.2 };
+  function makeFinal(count) {
+    var ar = aspect();
+    var out = new Float32Array(count * 3);
+    var nD = Math.round(count * 0.38);
+
+    var dF = ar > 1 ? 0.26 : 0.18;
+    var dW = ar > 1 ? 0.68 : 1.52;
+    var dH = ar > 1 ? 0.25 : 0.22;
+    var dX = ar > 1 ? -0.47 : 0;
+    var dY = ar > 1 ? 0.56 : 0.72;
+
+    var digits = sampleShapeBox(function (x, S) {
+      x.fillStyle = '#fff';
+      x.textAlign = 'center';
+      x.textBaseline = 'middle';
+      var txt = (Math.floor(Math.max(0, Date.now() - SINCE) / 86400000) + 1).toLocaleString('en-US');
+      var fs2 = S * 0.46;
+      x.font = '500 ' + fs2 + 'px "Times New Roman", Times, serif';
+      var tw = x.measureText(txt).width;
+      if (tw > S * 0.9) {
+        fs2 = fs2 * (S * 0.9) / tw;
+        x.font = '500 ' + fs2 + 'px "Times New Roman", Times, serif';
+      }
+      x.fillText(txt, S / 2, S / 2);
+    }, nD, 620, dW, dH, dX, dY);
+    out.set(digits, 0);
+
+    var tF = ar > 1 ? 0.84 : 0.46;
+    var tX = ar > 1 ? 0.46 : 0;
+    var tY = ar > 1 ? -0.02 : 0.0;
+    var tree = heartTreePoints(count - nD, tF, tX, tY);
+    out.set(tree, nD * 3);
+
+    finalAnchor.x = dX;
+    finalAnchor.y = dY - dH * 0.5 - 0.05;
+    return out;
+  }
+
   /* ---------------- 初始化 ---------------- */
   function buildScenes() {
     COUNT = NARROW ? 11000 : 20000;
@@ -515,7 +592,9 @@
     scenes.push(makeGalaxy(COUNT));
     scenes.push(makeHeart(COUNT));
     scenes.push(makeDigits(COUNT));
-    scenes.push(makeTree(COUNT));
+    scenes.push(makeFinal(COUNT));
+    finalCap.style.left = ((finalAnchor.x + 1) / 2 * 100).toFixed(2) + '%';
+    finalCap.style.top = ((1 - finalAnchor.y) / 2 * 100).toFixed(2) + '%';
 
     bufSeed = new Float32Array(COUNT);
     bufDelay = new Float32Array(COUNT);
@@ -572,13 +651,17 @@
     gl.uniform1f(loc.uSize, s.size * (NARROW ? 1.25 : 1));
     gl.uniform1f(loc.uAlpha, s.alpha);
     gl.uniform1f(loc.uWind, idx === 3 ? 0.012 : 0);
-    gl.uniform1f(loc.uSpin, idx === 0 ? 0.05 : idx === 2 ? 0.01 : 0.004);
+    gl.uniform1f(loc.uSpin, idx === 0 ? 0.05 : 0);
 
     for (var i = 0; i < dots.length; i++) dots[i].classList.toggle('on', i === idx);
     caption.classList.toggle('show', idx === 2);
 
-    if (idx >= 3) { finalEl.classList.add('show'); hint.classList.remove('show'); }
-    else { finalEl.classList.remove('show'); hint.classList.add('show'); }
+    if (idx >= 3) {
+      finalEl.classList.add('show');
+      finalCap.classList.add('show');
+      hint.classList.remove('show');
+    }
+    else { finalEl.classList.remove('show'); finalCap.classList.remove('show'); hint.classList.add('show'); }
   }
 
   function frame(now) {
@@ -670,6 +753,27 @@
   resize();
   var jump = /[?&]s=(\d)/.exec(location.search);
   goto(jump ? +jump[1] : 0);
+
+  var fz = /[?&]freeze=([\d.]+)/.exec(location.search);
+  if (fz && scenes.length > 3) {
+    gl.bindBuffer(gl.ARRAY_BUFFER, bufA); gl.bufferData(gl.ARRAY_BUFFER, scenes[2], gl.DYNAMIC_DRAW);
+    gl.bindBuffer(gl.ARRAY_BUFFER, bufB); gl.bufferData(gl.ARRAY_BUFFER, scenes[3], gl.DYNAMIC_DRAW);
+    var st = STYLE[3];
+    gl.uniform3fv(loc.uColorA, st.a);
+    gl.uniform3fv(loc.uColorB, st.b);
+    gl.uniform1f(loc.uSize, st.size);
+    gl.uniform1f(loc.uAlpha, st.alpha);
+    gl.uniform1f(loc.uWind, 0.012);
+    gl.uniform1f(loc.uSpin, 0.004);
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.clearColor(0, 0, 0, 0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.uniform1f(loc.uP, +fz[1]);
+    gl.uniform1f(loc.uTime, 0);
+    gl.uniform1f(loc.uDpr, DPR);
+    gl.drawArrays(gl.POINTS, 0, COUNT);
+    return;
+  }
   if (!reduce) {
     startedAt = performance.now();
     raf = requestAnimationFrame(frame);
