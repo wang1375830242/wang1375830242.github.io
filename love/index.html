@@ -196,7 +196,7 @@
     var now = new Date();
     var ms = Math.max(0, now - SINCE);
     var rest = ms % 86400000;
-    if (daysEl) daysEl.textContent = (Math.floor(ms / 86400000) + 1).toLocaleString('en-US');
+    if (daysEl) daysEl.textContent = (Math.floor(ms / 86400000) + 1).toString();
     hmsEl.textContent = pad(Math.floor(rest / 3600000)) + ':' + pad(Math.floor(rest % 3600000 / 60000)) + ':' + pad(Math.floor(rest % 60000 / 1000));
     if (ymEl) {
       var now2 = new Date();
@@ -251,10 +251,10 @@
     '  p = p * p * (3.0 - 2.0 * p);',
     '  vec3 pos = mix(aA, aB, p);',
     '  float burst = sin(p * 3.14159);',
-    '  float sw = burst * 1.1 * (aSeed - 0.5);',
+    '  float sw = burst * 0.5 * (aSeed - 0.5);',
     '  pos.xy = mat2(cos(sw), -sin(sw), sin(sw), cos(sw)) * pos.xy;',
     '  vec2 dir = normalize(pos.xy + vec2(0.0013, 0.0007));',
-    '  pos.xy += dir * burst * 0.30 * (0.45 + aSeed * 0.8);',
+    '  pos.xy += dir * burst * 0.17 * (0.45 + aSeed * 0.8);',
     '  float fs = 0.9 + aSeed * 1.6;',
     '  float amp = 0.0034 + aSeed * 0.0042;',
     '  pos.x += sin(uTime * fs + aSeed * 43.0) * amp;',
@@ -450,7 +450,7 @@
       x.fillStyle = '#fff';
       x.textAlign = 'center';
       x.textBaseline = 'middle';
-      var txt = (Math.floor(Math.max(0, Date.now() - SINCE) / 86400000) + 1).toLocaleString('en-US');
+      var txt = (Math.floor(Math.max(0, Date.now() - SINCE) / 86400000) + 1).toString();
       var size = S * 0.46;
       x.font = '500 ' + size + 'px "Times New Roman", Times, serif';
       var tw = x.measureText(txt).width;
@@ -471,30 +471,15 @@
       x.fillStyle = '#fff';
       x.lineCap = 'round';
 
-      function limb(x0, y0, ang, len, w, depth) {
-        var x1 = x0 + Math.cos(ang) * len;
-        var y1 = y0 + Math.sin(ang) * len;
-        x.lineWidth = w;
-        x.beginPath();
-        x.moveTo(x0, y0);
-        x.quadraticCurveTo((x0 + x1) / 2 + (R() - 0.5) * len * 0.3, (y0 + y1) / 2, x1, y1);
-        x.stroke();
-        if (depth <= 0) return;
-        limb(x1, y1, ang - 0.46 - R() * 0.18, len * 0.66, w * 0.62, depth - 1);
-        limb(x1, y1, ang + 0.42 + R() * 0.18, len * 0.68, w * 0.62, depth - 1);
-      }
-
-      x.lineWidth = S * 0.042;
+      /* 树干：短一点，托住心尖 */
+      x.lineWidth = S * 0.044;
       x.beginPath();
       x.moveTo(S * 0.5, S * 1.04);
-      x.quadraticCurveTo(S * 0.495, S * 0.84, S * 0.5, S * 0.68);
+      x.quadraticCurveTo(S * 0.492, S * 0.86, S * 0.5, S * 0.66);
       x.stroke();
 
-      limb(S * 0.5, S * 0.68, -Math.PI / 2 - 0.66, S * 0.19, S * 0.027, 2);
-      limb(S * 0.5, S * 0.68, -Math.PI / 2 + 0.02, S * 0.23, S * 0.029, 2);
-      limb(S * 0.5, S * 0.68, -Math.PI / 2 + 0.66, S * 0.19, S * 0.027, 2);
-
-      var cx = S * 0.5, cy = S * 0.38, hw = S * 0.30, hh = S * 0.285;
+      /* 心形花冠 */
+      var cx = S * 0.5, cy = S * 0.40, hw = S * 0.305, hh = S * 0.285;
       function heartPoint(t) {
         var hx = 16 * Math.pow(Math.sin(t), 3);
         var hy = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
@@ -508,23 +493,54 @@
       x.closePath();
       x.fill();
 
-      for (var m = 0; m < 420; m++) {
+      /* 边缘毛茸茸的花 */
+      for (var m = 0; m < 380; m++) {
         var t2 = R() * Math.PI * 2;
         var e2 = heartPoint(t2);
         var dx = e2[0] - cx, dy = e2[1] - cy;
-        var out = 1 + (R() - 0.5) * 0.10;
+        var out = 1 + (R() - 0.5) * 0.13;
         x.beginPath();
-        x.arc(cx + dx * out, cy + dy * out, S * (0.008 + R() * 0.013), 0, Math.PI * 2);
+        x.arc(cx + dx * out, cy + dy * out, S * (0.009 + R() * 0.014), 0, Math.PI * 2);
         x.fill();
       }
 
-      for (var i2 = 0; i2 < 260; i2++) {
+      /* 里面再撒一点，别太实 */
+      for (var i2 = 0; i2 < 240; i2++) {
         var t3 = R() * Math.PI * 2, rr3 = Math.sqrt(R());
         var q3 = heartPoint(t3);
         x.beginPath();
-        x.arc(cx + (q3[0] - cx) * rr3, cy + (q3[1] - cy) * rr3, S * (0.010 + R() * 0.014), 0, Math.PI * 2);
+        x.arc(cx + (q3[0] - cx) * rr3, cy + (q3[1] - cy) * rr3, S * (0.012 + R() * 0.016), 0, Math.PI * 2);
         x.fill();
       }
+
+      /* 关键：把枝干从花冠里掏出来，看着才像树不像蘑菇云 */
+      x.save();
+      x.globalCompositeOperation = 'destination-out';
+      x.lineCap = 'round';
+      x.lineWidth = S * 0.020;
+      x.beginPath();
+      x.moveTo(S * 0.5, S * 0.68);
+      x.quadraticCurveTo(S * 0.487, S * 0.52, S * 0.5, S * 0.36);
+      x.stroke();
+      x.lineWidth = S * 0.013;
+      x.beginPath();
+      x.moveTo(S * 0.5, S * 0.60);
+      x.quadraticCurveTo(S * 0.40, S * 0.52, S * 0.35, S * 0.43);
+      x.stroke();
+      x.beginPath();
+      x.moveTo(S * 0.5, S * 0.60);
+      x.quadraticCurveTo(S * 0.60, S * 0.52, S * 0.65, S * 0.43);
+      x.stroke();
+      x.lineWidth = S * 0.009;
+      x.beginPath();
+      x.moveTo(S * 0.5, S * 0.44);
+      x.quadraticCurveTo(S * 0.44, S * 0.36, S * 0.41, S * 0.28);
+      x.stroke();
+      x.beginPath();
+      x.moveTo(S * 0.5, S * 0.44);
+      x.quadraticCurveTo(S * 0.56, S * 0.36, S * 0.59, S * 0.28);
+      x.stroke();
+      x.restore();
     }, Math.round(count * 0.74), 620, treeF, treeX, treeY);
 
     var tree = new Float32Array(count * 3);
@@ -558,20 +574,15 @@
     var dX = ar > 1 ? -0.47 : 0;
     var dY = ar > 1 ? 0.56 : 0.72;
 
-    var digits = sampleShapeBox(function (x, S) {
-      x.fillStyle = '#fff';
-      x.textAlign = 'center';
-      x.textBaseline = 'middle';
-      var txt = (Math.floor(Math.max(0, Date.now() - SINCE) / 86400000) + 1).toLocaleString('en-US');
-      var fs2 = S * 0.46;
-      x.font = '500 ' + fs2 + 'px "Times New Roman", Times, serif';
-      var tw = x.measureText(txt).width;
-      if (tw > S * 0.9) {
-        fs2 = fs2 * (S * 0.9) / tw;
-        x.font = '500 ' + fs2 + 'px "Times New Roman", Times, serif';
-      }
-      x.fillText(txt, S / 2, S / 2);
-    }, nD, 620, dW, dH, dX, dY);
+    var digits = new Float32Array(nD * 3);
+    var src = scenes[2];
+    var srcW = 0.82, srcH = 0.27, srcX = 0, srcY = 0.02;
+    var kx = dW / srcW, ky = dH / srcH;
+    for (var di = 0; di < nD; di++) {
+      digits[di * 3] = dX + (src[di * 3] - srcX) * kx;
+      digits[di * 3 + 1] = dY + (src[di * 3 + 1] - srcY) * ky;
+      digits[di * 3 + 2] = 0;
+    }
     out.set(digits, 0);
 
     var tF = ar > 1 ? 0.84 : 0.46;
@@ -749,7 +760,7 @@
     if (!hidden) { lastT = 0; if (!raf) raf = requestAnimationFrame(frame); }
   });
 
-  capDays.textContent = (Math.floor(Math.max(0, Date.now() - SINCE) / 86400000) + 1).toLocaleString('en-US');
+  capDays.textContent = (Math.floor(Math.max(0, Date.now() - SINCE) / 86400000) + 1).toString();
   resize();
   var jump = /[?&]s=(\d)/.exec(location.search);
   goto(jump ? +jump[1] : 0);
