@@ -14,7 +14,7 @@
   html{background:#03040A}
   body{
     margin:0;background:#03040A;color:#F2EEE6;overflow:hidden;
-    font-family:"Noto Serif SC","Source Han Serif SC","Songti SC",Songti,"STSong","SimSun",Georgia,serif;
+    font-family:"Yuanti SC","YouYuan","幼圆","Hiragino Maru Gothic ProN","PingFang SC","Microsoft YaHei",sans-serif;
     -webkit-font-smoothing:antialiased;
   }
 
@@ -81,7 +81,7 @@
     margin:18px 0 0;font-size:11px;letter-spacing:.16em;
     color:rgba(246,242,236,.42);font-variant-numeric:tabular-nums;
   }
-  .final-s .sep{margin:0 .6em;color:rgba(255,214,226,.4)}
+  .final-s .sep{margin:0 .6em;color:rgba(255,214,226,.4);font-family:"Segoe UI","Microsoft YaHei",system-ui,sans-serif}
 
   .final-cap{
     position:fixed;z-index:4;pointer-events:none;transform:translateX(-50%);
@@ -452,11 +452,11 @@
       x.textBaseline = 'middle';
       var txt = (Math.floor(Math.max(0, Date.now() - SINCE) / 86400000) + 1).toString();
       var size = S * 0.46;
-      x.font = '500 ' + size + 'px "Times New Roman", Times, serif';
+      x.font = '700 ' + size + 'px "Yuanti SC","YouYuan","幼圆","Microsoft YaHei", sans-serif';
       var tw = x.measureText(txt).width;
       if (tw > S * 0.9) {
         size = size * (S * 0.9) / tw;
-        x.font = '500 ' + size + 'px "Times New Roman", Times, serif';
+        x.font = '700 ' + size + 'px "Yuanti SC","YouYuan","幼圆","Microsoft YaHei", sans-serif';
       }
       x.fillText(txt, S / 2, S / 2);
     }, count, 620, 0.82, 0.27, 0, 0.02);
@@ -566,11 +566,11 @@
   function makeFinal(count) {
     var ar = aspect();
     var out = new Float32Array(count * 3);
-    var nD = Math.round(count * 0.38);
+    var nD = Math.round(count * 0.46);
 
     var dF = ar > 1 ? 0.26 : 0.18;
-    var dW = ar > 1 ? 0.68 : 1.52;
-    var dH = ar > 1 ? 0.25 : 0.22;
+    var dW = ar > 1 ? 0.62 : 1.40;
+    var dH = ar > 1 ? 0.235 : 0.205;
     var dX = ar > 1 ? -0.47 : 0;
     var dY = ar > 1 ? 0.56 : 0.72;
 
